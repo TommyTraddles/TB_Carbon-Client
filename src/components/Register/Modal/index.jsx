@@ -1,7 +1,7 @@
 import { Heading, Button, Input } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
-export const Register = () => {
+export const RegisterModal = () => {
   return (
     <>
       <Heading> Register </Heading>

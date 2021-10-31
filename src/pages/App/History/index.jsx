@@ -6,10 +6,9 @@ export const History = () => {
   return (
     <>
       <Heading> History </Heading>
-      Filters
-      <br />
+      <Button colorScheme="secondary">Filter date</Button>
       <HistoryTable />
-      <br />
+      <Button colorScheme="secondary">Pagination</Button>
       <Button>
         <Link to="/new/results"> see result </Link>
       </Button>

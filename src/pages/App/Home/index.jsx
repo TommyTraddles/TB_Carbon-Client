@@ -6,8 +6,10 @@ export const Home = () => {
   return (
     <>
       <Heading> Home </Heading>
+      <Button colorScheme="secondary">Take action</Button>
 
       <Heading size='lg'> Strike </Heading>
+      <Button colorScheme="secondary">Filter date</Button>
       <ResumeStatistics />
       <Button>
         <Link to="/new/results"> See details</Link>

@@ -1,7 +1,7 @@
 import { Heading, Button, Input } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
-export const Forgot = () => {
+export const ForgotModal = () => {
   return (
     <>
       <Button variant="outline">
