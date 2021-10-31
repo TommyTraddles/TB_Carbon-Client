@@ -4,7 +4,7 @@ import { Heading } from "@chakra-ui/react"
 export const HistoryTable = () => {
   return(
     <>
-    <Card bg='orange.100'>
+    <Card>
     <Heading size='md'> Table </Heading>
     </Card>
     </>

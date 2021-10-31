@@ -4,7 +4,7 @@ import { Card } from 'components/Card'
 export const ProfileCard = () => {
   return(
     <>
-    <Card bg='teal.100'>
+    <Card>
       <Text> Name </Text> 
     </Card>
     </>

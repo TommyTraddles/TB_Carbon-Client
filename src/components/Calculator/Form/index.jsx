@@ -4,7 +4,7 @@ import { Heading } from "@chakra-ui/react"
 export const Form = () => {
   return(
     <>
-    <Card bg='orange.100'>
+    <Card>
     <Heading size='md'> Form </Heading>
     </Card>
     </>

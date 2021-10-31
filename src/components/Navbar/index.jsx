@@ -1,4 +1,4 @@
-import { HStack, IconButton } from '@chakra-ui/react'
+import { HStack, Button } from '@chakra-ui/react'
 import { Card } from 'components/Card'
 import { NavLink } from 'react-router-dom'
 import { paths } from 'services/routes'
@@ -13,25 +13,25 @@ export const Navbar = () => {
       // rigth='0'
       >
         <HStack>
-          <IconButton>
+          <Button variant='ghost'>
             <NavLink to={paths.home}> home </NavLink>
-          </IconButton>
+          </Button>
 
-          <IconButton>
+          <Button variant='ghost'>
             <NavLink to={paths.calculator}> new </NavLink>
-          </IconButton>
+          </Button>
 
-          <IconButton>
+          <Button variant='ghost'>
             <NavLink to={paths.history}> history </NavLink>
-          </IconButton>
+          </Button>
 
-          <IconButton>
+          <Button variant='ghost'>
             <NavLink to={paths.leaderboard}> leaderboard </NavLink>
-          </IconButton>
+          </Button>
           
-          <IconButton>
+          <Button variant='ghost'>
             <NavLink to={paths.profile}> me </NavLink>
-          </IconButton>
+          </Button>
         </HStack>
       </Card>
     </>

@@ -4,7 +4,7 @@ import { Heading } from "@chakra-ui/react"
 export const Solutions = () => {
   return(
     <>
-    <Card bg='teal.100'>
+    <Card>
     <Heading size='md'> Solution </Heading>
     </Card>
     </>

@@ -3,7 +3,14 @@ import { ProfileCard } from 'components/Profile/Card'
 import { Link } from 'react-router-dom'
 import { paths } from 'services/routes'
 
+// hooks
+import { useColorMode } from '@chakra-ui/color-mode'
+
+
 export const Profile = () => {
+
+  const { toggleColorMode } = useColorMode()
+
   return (
     <>
       <Heading> Profile </Heading>
@@ -26,6 +33,8 @@ export const Profile = () => {
       <Button>
         <Link to={paths.preferences}> edit profile</Link>
       </Button>
+
+      <Button onClick={toggleColorMode} variant='outline' colorScheme='secondary'> Change mode </Button>
 
       <Divider />
       Loged?

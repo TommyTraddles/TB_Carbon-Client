@@ -5,14 +5,12 @@ import { routes } from 'services/routes'
 export const Private = () => {
   return (
     <>
-        <Switch>
-          {routes.map((e, i) => {
-            if(e.layout === 'private'){
-              return(<Route {...e} exact />)
-            }
-          })}
-        </Switch>
-        <Navbar />
+      <Switch>
+        {routes.map((e, i) => {
+          if (e.layout === 'private') return <Route key={i} {...e} exact />
+        })}
+      </Switch>
+      <Navbar/>
     </>
   )
 }
