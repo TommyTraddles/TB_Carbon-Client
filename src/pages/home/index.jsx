@@ -1,17 +1,25 @@
-import { Center, Heading, Button, Input, Checkbox } from '@chakra-ui/react'
-import { Card } from 'components/Card'
+import { Heading, Button } from '@chakra-ui/react'
+import { ResumeStatistics } from 'components/Home/Statistics'
+import { Link } from 'react-router-dom'
 
 export const Home = () => {
   return (
     <>
-      <Center p={8}>
-        <Card w={96}>
-          <Heading> Hello </Heading>
-          <Checkbox> Hola </Checkbox>
-          <Input placeholder="hello" />
-          <Button> Hello </Button>
-        </Card>
-      </Center>
+      <Heading> Home </Heading>
+
+      <Heading size='lg'> Strike </Heading>
+      <ResumeStatistics />
+      <Button>
+        <Link to="/new/results"> See details</Link>
+      </Button>
+      <Heading size='lg'> New </Heading>
+      <Button>
+        <Link to="/new"> New entry</Link>
+      </Button>
+      <Heading size='lg'> History </Heading>
+      <Button>
+        <Link to="/history"> History</Link>
+      </Button>
     </>
   )
 }
