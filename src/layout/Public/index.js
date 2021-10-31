@@ -5,10 +5,9 @@ export const Public = () => {
   return (
     <>
         <Switch>
-          {routes.map((e, i) => {
-            if(e.layout === 'public'){
-              return(<Route {...e} exact />)
-            }
+          {routes.map((e,i ) => {
+            if(e.layout === 'public') return(<Route key={i} {...e} exact />)
+            return ''
           })}
         </Switch>
     </>

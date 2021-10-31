@@ -8,9 +8,10 @@ export const Private = () => {
       <Switch>
         {routes.map((e, i) => {
           if (e.layout === 'private') return <Route key={i} {...e} exact />
+          return ''
         })}
       </Switch>
-      <Navbar/>
+      <Navbar />
     </>
   )
 }
