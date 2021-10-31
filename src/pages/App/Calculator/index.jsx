@@ -1,6 +1,7 @@
 import { Heading, Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { Form } from 'components/Calculator/Form'
+import { paths } from 'services/routes'
 
 export const Calculator = () => {
   return (
@@ -8,7 +9,7 @@ export const Calculator = () => {
       <Heading> Calculator new entry </Heading>
       <Form />
       <Button>
-        <Link to="/new/results"> see results</Link>
+        <Link to={paths.results}> see results</Link>
       </Button>
     </>
   )

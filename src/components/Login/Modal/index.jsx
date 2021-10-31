@@ -1,5 +1,6 @@
 import { Heading, Button, Input } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
+import { paths } from 'services/routes'
 
 export const LoginModal = () => {
   return (
@@ -11,12 +12,12 @@ export const LoginModal = () => {
         <Button type="submit"> Login </Button>
       </form>
       <Button variant="link">
-        <Link to="/forgot-pass"> forgot password </Link>
+        <Link to={paths.forgot}> forgot password </Link>
       </Button>
       <br />
       Don't have an account?
       <Button variant="outline">
-        <Link to="/register"> register </Link>
+        <Link to={paths.register}> register </Link>
       </Button>
       <br />
       - Or-

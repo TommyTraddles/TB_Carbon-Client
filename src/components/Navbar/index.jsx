@@ -5,7 +5,12 @@ import { NavLink } from 'react-router-dom'
 export const Navbar = () => {
   return (
     <>
-      <Card>
+      <Card
+        // pos="absolute" 
+        // bottom="0" 
+        // left="0"
+        // rigth='0'
+      >
         <HStack justifyContent='space-between'>
           <NavLink to="/"> home </NavLink>
           <NavLink to="/new"> new </NavLink>

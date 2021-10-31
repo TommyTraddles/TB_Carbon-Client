@@ -8,11 +8,11 @@ import 'theme/styles.css'
 
 // components
 import { DEMO_LINKS } from 'components/_DEMO-LINKS'
-import { Navbar } from 'components/Navbar'
 
 // routing
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
-import { routes } from 'services/routes'
+import { Private } from 'layout/Private'
+import { Public } from 'layout/Public'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,12 +20,10 @@ ReactDOM.render(
       <Router>
         <DEMO_LINKS/>
         <Switch>
-          {routes.map((e, i) => (
-            <Route {...e} exact />
-          ))}
-          <Redirect to='/home'/>
+          <Route path='/auth' component={Public} />
+          <Route path='/' component={Private} />
+          <Redirect to='/'/>
         </Switch>
-        <Navbar/>
       </Router>
     </ChakraProvider>
   </React.StrictMode>,

@@ -1,6 +1,7 @@
 import { Heading, Button, HStack } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { Card } from 'components/Card'
+import { paths } from 'services/routes'
 
 export const Onboarding = () => {
   return (
@@ -15,13 +16,13 @@ export const Onboarding = () => {
       </HStack>
 
       <Button>
-        <Link to="/login"> Login </Link>
+        <Link to={paths.login}> Login </Link>
       </Button>
       <Button variant="outline">
-        <Link to="/register"> register</Link>
+        <Link to={paths.register}> register</Link>
       </Button>
       <Button variant="ghost">
-        <Link to="/"> continue without login </Link>
+        <Link to={paths.home}> continue without login </Link>
       </Button>
     </>
   )

@@ -1,12 +1,13 @@
 import { Heading, Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
+import { paths } from 'services/routes'  
 
 export const Preferences = () => {
   return (
     <>
       <Heading> Preferences </Heading>
       <Button>
-        <Link to="/me"> Back</Link>
+        <Link to={paths.profile}> Back</Link>
       </Button>
 
       <Heading size="md"> image </Heading>

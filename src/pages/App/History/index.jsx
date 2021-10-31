@@ -1,6 +1,7 @@
 import { Heading, Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { HistoryTable } from 'components/History/Table'
+import { paths } from 'services/routes'
 
 export const History = () => {
   return (
@@ -10,7 +11,7 @@ export const History = () => {
       <HistoryTable />
       <Button colorScheme="secondary">Pagination</Button>
       <Button>
-        <Link to="/new/results"> see result </Link>
+        <Link to={paths.results}> see result </Link>
       </Button>
     </>
   )

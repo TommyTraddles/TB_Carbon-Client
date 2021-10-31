@@ -5,7 +5,7 @@ import { Forgot } from 'pages/Auth/Forgot-pass'
 import { Reset } from 'pages/Auth/New-pass'
 // app
 import { Onboarding } from 'pages/Auth/Onboarding'
-import { Home } from 'pages/Home'
+import { Home } from 'pages/App/Home'
 import { Calculator } from 'pages/App/Calculator'
 import { Results } from 'pages/App/[results]'
 import { History } from 'pages/App/History'
@@ -15,57 +15,86 @@ import { Profile } from 'pages/User/Profile'
 import { Preferences } from 'pages/User/Preferences'
 import { Subscription } from 'pages/User/Subscription'
 
+export const paths = {
+  onboarding: '/auth/welcome',
+  login: '/auth/login',
+  forgot: '/auth/forgot-pass',
+  reset: '/auth/reset-pass',
+  register: '/auth/register',
+  home: '/',
+  calculator: '/new',
+  history: '/history',
+  results: '/new/results',
+  leaderboard: '/leaderboard',
+  profile: '/user',
+  preferences: '/user/preferences',
+  subscription: '/pricing',
+}
+
 export const routes = [
   {
     component: Onboarding,
-    path: '/welcome',
+    path: paths.onboarding,
+    layout: 'public',
   },
   {
     component: Login,
-    path: '/login',
+    path: paths.login,
+    layout: 'public',
   },
   {
     component: Forgot,
-    path: '/forgot-pass',
+    path: paths.forgot,
+    layout: 'public',
   },
   {
     component: Reset,
-    path: '/reset-pass',
+    path: paths.reset,
+    layout: 'public',
   },
   {
     component: Register,
-    path: '/register',
+    path: paths.register,
+    layout: 'public',
   },
   {
     component: Home,
-    path: '/home',
+    path: paths.home,
+    layout: 'private',
   },
   {
     component: Calculator,
-    path: '/new',
+    path: paths.calculator,
+    layout: 'private',
   },
   {
     component: History,
-    path: '/history',
+    path: paths.history,
+    layout: 'private',
   },
   {
     component: Results,
-    path: '/new/results',
+    path: paths.results,
+    layout: 'private',
   },
   {
     component: Leaderboard,
-    path: '/leaderboard',
+    path: paths.leaderboard,
+    layout: 'private',
   },
   {
     component: Profile,
-    path: '/me',
+    path: paths.profile,
+    layout: 'private',
   },
   {
     component: Preferences,
-    path: '/me/preferences',
+    path: paths.preferences,
+    layout: 'private',
   },
   {
     component: Subscription,
-    path: '/pricing',
+    path: paths.subscription,
+    layout: 'private',
   },
 ]
