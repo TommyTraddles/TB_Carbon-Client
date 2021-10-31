@@ -1,18 +1,16 @@
 import { Heading, Button } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
 import { PriceCard } from 'components/Subscription/Card'
-import { paths } from 'services/routes'
+import { BackButton } from 'components/Button/BackBtn'
 // import { Success } from 'components/Subscription/Success'
 // import { Error } from 'components/Subscription/Error'
+// data
+import { paths } from 'services/routes'
 
 export const Subscription = () => {
   return (
     <>
       <Heading> Subscription </Heading>
-
-      <Button>
-        <Link to={paths.profile}> Back</Link>
-      </Button>
+      <BackButton to={paths.profile} />
 
       {/* <Heading> POP-OVER </Heading>
       <Button>
@@ -23,7 +21,7 @@ export const Subscription = () => {
       </Button> */}
 
       <PriceCard />
-      <br/>
+      <br />
       <PriceCard />
       <Button> Buy</Button>
 

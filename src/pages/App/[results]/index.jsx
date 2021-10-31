@@ -1,15 +1,15 @@
-import { Heading, Button } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
+// components
+import { Heading } from '@chakra-ui/react'
 import { Solutions } from 'components/Results/Solutions'
 import { Statistics } from 'components/Results/Statistics'
+import { BackButton } from 'components/Button/BackBtn'
+// data
 import { paths } from 'services/routes'
 
 export const Results = () => {
   return (
     <>
-      <Button variant="outline">
-        <Link to={paths.home}> back</Link>
-      </Button>
+      <BackButton to={paths.home} />
       <Heading> Results </Heading>
       <Statistics />
       <Solutions />

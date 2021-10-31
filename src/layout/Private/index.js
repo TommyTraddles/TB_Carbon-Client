@@ -1,4 +1,7 @@
+// components
 import { Navbar } from 'components/Navbar'
+
+// routing
 import { Switch, Route } from 'react-router-dom'
 import { routes } from 'services/routes'
 

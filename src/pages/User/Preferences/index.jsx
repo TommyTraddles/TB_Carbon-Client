@@ -1,14 +1,13 @@
-import { Heading, Button } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
-import { paths } from 'services/routes'  
+import { Heading } from '@chakra-ui/react'
+import { paths } from 'services/routes'
+
+import { BackButton } from 'components/Button/BackBtn'
 
 export const Preferences = () => {
   return (
     <>
       <Heading> Preferences </Heading>
-      <Button>
-        <Link to={paths.profile}> Back</Link>
-      </Button>
+      <BackButton to={paths.profile} />
 
       <Heading size="md"> image </Heading>
       <Heading size="md"> username </Heading>

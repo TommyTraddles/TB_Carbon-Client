@@ -1,13 +1,12 @@
 import { Heading, Button, Input } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
 import { paths } from 'services/routes'
+
+import { BackButton } from 'components/Button/BackBtn'
 
 export const ForgotModal = () => {
   return (
     <>
-      <Button variant="outline">
-        <Link to={paths.login}> back</Link>
-      </Button>
+      <BackButton to={paths.login} />
 
       <Heading> Forgot password </Heading>
 
