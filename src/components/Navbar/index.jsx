@@ -7,29 +7,26 @@ export const Navbar = () => {
   return (
     <>
       <Card
-      // pos="absolute"
-      // bottom="0"
-      // left="0"
-      // rigth='0'
+      // position="fixed" maxW="sm" w="100%" h={20} bottom={1} bg="red.900"
       >
         <HStack>
-          <Button variant='ghost'>
+          <Button variant="ghost">
             <NavLink to={paths.home}> home </NavLink>
           </Button>
 
-          <Button variant='ghost'>
+          <Button variant="ghost">
             <NavLink to={paths.calculator}> new </NavLink>
           </Button>
 
-          <Button variant='ghost'>
+          <Button variant="ghost">
             <NavLink to={paths.history}> history </NavLink>
           </Button>
 
-          <Button variant='ghost'>
+          <Button variant="ghost">
             <NavLink to={paths.leaderboard}> leaderboard </NavLink>
           </Button>
-          
-          <Button variant='ghost'>
+
+          <Button variant="ghost">
             <NavLink to={paths.profile}> me </NavLink>
           </Button>
         </HStack>
