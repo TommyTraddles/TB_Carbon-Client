@@ -10,7 +10,7 @@ export const DEMO_LINKS = () => {
       <Card bg="gray.800" mb={8}>
         <Wrap spacing={4}>
           {routes.map((e, i) => (
-            <Button key={i} variant="outline">
+            <Button key={i} variant="outline" size='xs'>
               <NavLink to={e.path}> {e.path} </NavLink>
             </Button>
           ))}
