@@ -1,5 +1,5 @@
 // components
-import { Heading, Divider, Text } from '@chakra-ui/react'
+import { Heading, Divider, Text, VStack } from '@chakra-ui/react'
 import { BackButton } from 'components/ui/Button/Back'
 // import { UserModal } from 'components/User/Profile/Links'
 // import { Modal } from 'components/ui/Modal'
@@ -20,22 +20,23 @@ export const Preferences = () => {
       {/* <UserModal onClick={LoO} icon={<FiUser />} name="Update info" />
       <Modal isOpen={LiO} onClose={LoC} content="Image" /> */}
 
-      <Divider my={4}/>
-      <Heading size='xs'> Update </Heading>
-      <Text> Image </Text>
-      <Text> Email </Text>
-      <Text> User </Text>
-      <Text> Pass </Text>
+      <VStack alignItems="flex-start" w="full" py={4} bg='red.100'>
+        <Heading size="xs"> Update </Heading>
+        <Text> Image </Text>
+        <Text> Email </Text>
+        <Text> User </Text>
+        <Text> Pass </Text>
 
-      <Divider my={4}/>
-      <Heading size='xs'> Manage subsription</Heading>
-      <Text> Planes </Text>
-      <Text> Payment - stripe </Text>
-      <Text> Billing - stripe </Text>
+        <Divider my={4} />
+        <Heading size="xs"> Manage subsription</Heading>
+        <Text> Planes </Text>
+        <Text> Payment - stripe </Text>
+        <Text> Billing - stripe </Text>
 
-      <Divider my={4}/>
-      <Heading size='xs'> Manage account</Heading>
-      <Text> Delete </Text>
+        <Divider my={4} />
+        <Heading size="xs"> Manage account</Heading>
+        <Text> Delete </Text>
+      </VStack>
     </>
   )
 }
