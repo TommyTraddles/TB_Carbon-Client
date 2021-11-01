@@ -34,7 +34,7 @@ export const LoginModal = () => {
 
       <Box my={4}>
         <form form method="POST" onSubmit={handleSubmit}>
-          <InputEmail handleInput={handleInput} info={info} error={error} name='email' type='email'/>
+          <InputEmail handleInput={handleInput} info={info} error={error}/>
           <InputPass handleInput={handleInput} info={info} error={error}/>
           <SubmitBtn isValid={isValid} name='Login'/>
         </form>
