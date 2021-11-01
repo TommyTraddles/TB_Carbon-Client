@@ -16,7 +16,7 @@ export const Private = () => {
             return ''
           })}
         </Switch>
-        {/* <Box h={24} /> */}
+        <Box h={24} />
         <Navbar />
       </Container>
     </>

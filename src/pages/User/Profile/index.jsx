@@ -39,7 +39,7 @@ export const Profile = () => {
       <Divider />
       Loged?
       <Button>
-        <Link to={paths.home}> signout</Link>
+        <Link to={paths.home}> logout</Link>
       </Button>
 
     </>

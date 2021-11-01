@@ -13,6 +13,7 @@ import { DEMO_LINKS } from 'components/_DEMO-LINKS'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import { Private } from 'layout/Private'
 import { Public } from 'layout/Public'
+import { paths } from 'services/routes'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,7 +23,7 @@ ReactDOM.render(
         <Switch>
           <Route path='/auth' component={Public} />
           <Route path='/' component={Private} />
-          <Redirect to='/'/>
+          <Redirect to={paths.onboarding}/>
         </Switch>
       </Router>
     </ChakraProvider>
