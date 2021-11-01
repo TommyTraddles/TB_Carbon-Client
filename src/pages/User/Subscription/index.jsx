@@ -12,14 +12,6 @@ export const Subscription = () => {
       <Heading> Subscription </Heading>
       <BackButton to={paths.profile} />
 
-      {/* <Heading> POP-OVER </Heading>
-      <Button>
-        <Link to="login"> login</Link>
-      </Button>
-      <Button>
-        <Link to="login"> register</Link>
-      </Button> */}
-
       <PriceCard />
       <br />
       <PriceCard />

@@ -1,7 +1,6 @@
 import {
   Box,
   VStack,
-  HStack,
   Heading,
   Button,
   Text,
@@ -50,15 +49,6 @@ export const LoginModal = () => {
         <Button variant="link">
           <Link to={paths.forgot}> forgot password </Link>
         </Button>
-      </VStack>
-
-      <VStack my={2}>
-        <HStack>
-          <Text> Don't have an account? </Text>
-          <Button variant="link">
-            <Link to={paths.register}> register </Link>
-          </Button>
-        </HStack>
       </VStack>
     </>
   )

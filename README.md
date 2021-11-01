@@ -10,6 +10,7 @@
   - 🔥 🔥 carrusel, indicadores inferiores, flechas laterales
 
 - Login
+  - ERROR=BOOL
   - 👉 Formulario
     - Entradas
       - ✅ handle form
@@ -22,16 +23,19 @@
     - 🎁 acceso con Google (Passport)
 
 - Forgot pass
+  - ERROR=BOOL
   - 👉 Formulario
     - ✅ handle form
     - 🎁 Envío email MailJet
 
 - Reset pass
+  - ERROR=BOOL
     - ✅ handle form
     - 🎁 RegEx contraseña
     - 🎁 Envío email MailJet
 
 - Register
+  - ERROR=BOOL
   - 👉 Formulario
     - ✅ handle form
     - 🎁 RegEx contraseña
@@ -39,8 +43,8 @@
     - Mensaje de error
 
 - Home
-  - 👉 Modal 
-    - 🎁 comprar subscripción
+  - 👉 Link 
+    - comprar subscripción
   - 🔥 🔥 Dashboard
     - filtrado por fechas
     - carrusel días seleccionable
@@ -78,12 +82,13 @@
     - Resultados en orden
 
 - Profile
+  - LOGGED=BOOL
+  - 👉 tarjeta de usuario
+    - mostrar si es PRO
   - 👉 Modal
     - 🎁 Login
     - 🎁 Registro
-    - 🎁 Suscripción
-  - 👉 tarjeta de usuario
-    - mostrar si es PRO
+  - 👉 Suscripción
 
 - Preferencias
   - 👉 modificar datos 

@@ -1,13 +1,9 @@
 // components
-import { VStack, HStack } from '@chakra-ui/react'
-import { Heading, Button, Text, Box } from '@chakra-ui/react'
+import { Heading, Box } from '@chakra-ui/react'
 import { InputEmail } from 'components/ui/Input/Email'
 import { InputText } from 'components/ui/Input/Text'
 import { InputPass } from 'components/ui/Input/Password'
 import { SubmitBtn } from 'components/ui/Button/Submit'
-// data
-import { Link } from 'react-router-dom'
-import { paths } from 'services/routes'
 // hooks
 import { useState } from 'react'
 
@@ -38,15 +34,6 @@ export const RegisterModal = () => {
           <SubmitBtn isValid={isValid} name="Register" />
         </form>
       </Box>
-
-      <VStack my={2}>
-        <HStack>
-          <Text> Have an account? </Text>
-          <Button variant="link">
-            <Link to={paths.login}> login </Link>
-          </Button>
-        </HStack>
-      </VStack>
     </>
   )
 }
