@@ -1,6 +1,6 @@
 import { Heading, Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
-import { Form } from 'components/Calculator/Form'
+import { Form } from 'components/App/Calculator/Form'
 import { paths } from 'services/routes'
 import { BackButton } from 'components/ui/Button/Back'
 

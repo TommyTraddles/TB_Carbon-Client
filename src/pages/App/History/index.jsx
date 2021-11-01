@@ -1,6 +1,6 @@
 import { Heading, Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
-import { HistoryTable } from 'components/History/Table'
+import { HistoryTable } from 'components/App/History/Table'
 import { paths } from 'services/routes'
 import { BackButton } from 'components/ui/Button/Back'
 

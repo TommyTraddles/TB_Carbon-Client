@@ -1,5 +1,5 @@
 // components
-import { Navbar } from 'components/Navbar'
+import { Navbar } from 'components/ui/Navbar'
 import { Container, Box } from '@chakra-ui/react'
 
 // routing

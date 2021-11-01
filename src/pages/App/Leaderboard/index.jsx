@@ -1,5 +1,5 @@
 import { Heading, Button } from '@chakra-ui/react'
-import { LeaderboardTable } from 'components/Leaderboard/Table'
+import { LeaderboardTable } from 'components/App/Leaderboard/Table'
 // import { Link } from 'react-router-dom'
 
 export const Leaderboard = () => {

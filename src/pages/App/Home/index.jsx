@@ -1,6 +1,6 @@
 import { Heading, Button } from '@chakra-ui/react'
-import { ResumeStatistics } from 'components/Home/Statistics'
-import { HistoryTable } from 'components/History/Table'   
+import { ResumeStatistics } from 'components/App/Home/Statistics'
+import { HistoryTable } from 'components/App/History/Table'   
 // data
 import { Link } from 'react-router-dom'
 import { paths } from 'services/routes'

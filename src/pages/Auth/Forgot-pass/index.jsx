@@ -1,4 +1,4 @@
-import { ForgotModal } from "components/Forgot-pass/Modal"
+import { ForgotModal } from "components/Auth/Forgot-pass/Modal"
 
 export const Forgot = () => {
   return (
