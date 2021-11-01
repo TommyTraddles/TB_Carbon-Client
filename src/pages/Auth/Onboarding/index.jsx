@@ -14,17 +14,17 @@ export const Onboarding = () => {
     <>
       <Heading> Onboarding </Heading>
 
-      <HStack>
+      <HStack my={2}>
         <Card> 1 </Card>
         <Card> 2 </Card>
         <Card> 3 </Card>
       </HStack>
 
       <VStack>
-        <Button>
+        <Button my={2} w="full" >
           <Link to={paths.login}> Login </Link>
         </Button>
-        <Button variant="outline">
+        <Button variant="outline" w="full" >
           <Link to={paths.register}> register</Link>
         </Button>
         <Button variant="ghost">
