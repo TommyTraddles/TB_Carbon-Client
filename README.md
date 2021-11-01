@@ -12,40 +12,52 @@
   - 👉 Email factory
 - Reset pass
   - 👉 Validation: RegEx
+- Profile
+  - 👉 send feedback
 - Preferences
   - 👉 fields
 
-
 #### Components
 - Onboarding: 
-  - 👉 Carrusel
+  - 👉 👉 Carrusel
 - Home: 
   - 👉 Short Time / Dashboard / See full
   - 👉 Short table / pagination [login]
 - Calculator: 
-  - 👉 Form
+  - 👉 👉 Form
 - History: 
   - 👉 Complete table [login]
 - Results: 
-  - 👉 Complete Dashboard
+  - 👉 👉 Complete Dashboard
   - 👉 Suggested solutions 
 - Leaderboard: 
   - 👉 Complete table [login]
 - Subscription: 
-  - 👉 Pricing table [login]
+  - 👉 👉 Pricing table [login]
 
 #### Integrations
 - Calculator:
   - 👉 phone API
   - 👉 websocket Chatbot
 - Subscription: 
-  - 👉 Stripe
+  - 👉 👉 Stripe
 
 ### States
 - Skeleton - loading
 - Spring - motion
 - States - interaction 
 - States - error / success
+
+### Styling
+- UX Routing
+  - ✅ layout
+  - ✅ pages
+  - ✅ components
+  - ✅ elements
+
+- UI styling
+  - UI Kit
+  - Assets
 
 
 ----------------
@@ -68,14 +80,3 @@
 
 ----------------
 
-### Styling
-- UI styling
-  - ✅ layout
-  - ✅ pages
-  - ✅ components
-  - ✅ elements
-
-- UX routing
-  - ✅ Auth
-  - ✅ App
-  - ✅ User

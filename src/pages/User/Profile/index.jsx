@@ -59,6 +59,9 @@ export const Profile = () => {
           name={colorMode === 'light' ? 'Dark mode' : 'Ligth mode'}
         />
 
+        {/* <UserModal onClick={LoO} icon={<FiUser />} name="Send feedback" /> */}
+        {/* <Modal isOpen={LiO} onClose={LoC} content={<LoginModal />} /> */}
+
         {logged && (
           <>
             <Divider />

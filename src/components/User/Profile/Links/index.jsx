@@ -19,7 +19,7 @@ export const UserLink = ({ icon, name, path }) => {
 export const UserModal = ({ icon, name, onClick }) => {
   return (
     <>
-      <HStack w="100%" onClick={onClick}>
+      <HStack w="100%" onClick={onClick} cursor='pointer'>
         <IconButton icon={icon} variant="ghost" colorScheme="gray" />
         <Text>{name}</Text>
       </HStack>
