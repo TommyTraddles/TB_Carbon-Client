@@ -2,29 +2,44 @@
 ## To-do
 
 #### Forms
-- Register: definir campos
+- Register
+  - 👉 definir campos
+  - 👉 Validation: RegEx
+  - 👉 Email factory
 - Login
+  - 👉 Login with Facebook / Google
 - Forgot pass
+  - 👉 Email factory
 - Reset pass
-- Login with Facebook / Google
-- User update
-=>
-- Validation: RegEx
-- Email factory
+  - 👉 Validation: RegEx
+- Preferences
+  - 👉 fields
+
 
 #### Components
-- Onboarding: Carrusel
-- Home: Short Time / Dashboard / See full
-- Home: Short table / pagination [login]
-- Calculator: Form
-- History: Complete table [login]
-- Results: Complete Dashboard
-- Results: Suggested solutions 
-- Leaderboard: Complete table [login]
-- Subscription: Pricing table [login]
+- Onboarding: 
+  - 👉 Carrusel
+- Home: 
+  - 👉 Short Time / Dashboard / See full
+  - 👉 Short table / pagination [login]
+- Calculator: 
+  - 👉 Form
+- History: 
+  - 👉 Complete table [login]
+- Results: 
+  - 👉 Complete Dashboard
+  - 👉 Suggested solutions 
+- Leaderboard: 
+  - 👉 Complete table [login]
+- Subscription: 
+  - 👉 Pricing table [login]
 
 #### Integrations
-- Subscription: Stripe
+- Calculator:
+  - 👉 phone API
+  - 👉 websocket Chatbot
+- Subscription: 
+  - 👉 Stripe
 
 ### States
 - Skeleton - loading
