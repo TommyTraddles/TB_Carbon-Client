@@ -15,9 +15,9 @@ export const Onboarding = () => {
       <Heading> Onboarding </Heading>
 
       <HStack my={2}>
-        <Card> 1 </Card>
-        <Card> 2 </Card>
-        <Card> 3 </Card>
+        <Card bg='red.100' > 1 </Card>
+        <Card bg='red.100' > 2 </Card>
+        <Card bg='red.100' > 3 </Card>
       </HStack>
 
       <VStack>

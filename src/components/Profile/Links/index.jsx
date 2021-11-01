@@ -1,18 +1,17 @@
 import { HStack, IconButton, Text, Box } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export const UserLink = ({ icon, name, path }) => {
   return (
     <>
-    <Box w='full'>
-
-    <Link to={path}>
-      <HStack w="100%">
-        <IconButton icon={icon} variant="ghost" colorScheme="gray" />
-        <Text>{name}</Text>
-      </HStack>
-    </Link>
-    </Box>
+      <Box w="full">
+        <Link to={path}>
+          <HStack w="100%">
+            <IconButton icon={icon} variant="ghost" colorScheme="gray" />
+            <Text>{name}</Text>
+          </HStack>
+        </Link>
+      </Box>
     </>
   )
 }

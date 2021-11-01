@@ -15,17 +15,17 @@
     - ✅ handle form
     - ✅ ver contraseña
     - ✅ login button disabled
-    - recordar mis datos
+    - [] checkbox recordar datos
   - 👉 Enviar formulario
-    - Mensaje de error
-    - Loading
+    - [] Mensaje de error
+    - [] inline loading
   - 🔥 acceso con Google (Passport)
 
 - Forgot pass
   - ERROR=BOOL
   - 👉 Formulario
     - ✅ handle form
-    - Envío email
+    - [] Envío email
 
 - Reset pass
   - ERROR=BOOL
@@ -39,13 +39,13 @@
     - ✅ handle form
     - 🔥 RegEx contraseña
   - 👉 Enviar formulario
-    - Mensaje de error
-    - Envío email
+    - [] Mensaje de error
+    - [] Envío email
 
 - Home
   - 🔥 Link 
-    - logged only
-    - comprar subscripción
+    - [] logged only
+    - [] comprar subscripción
   - 🔥 Dashboard
     - filtrado por fechas
     - carrusel días seleccionable
@@ -65,7 +65,7 @@
 
 - History
   - 👉 Misma tabla de entradas
-    - 🔥 Inhabilitado si no está logueado
+    - Logged in
     - Scroll, no paginación
 
 - [ resultados ]
@@ -75,7 +75,7 @@
     - tarjeta con acciones sugeridas
 
 - Ranking
-  - 👉 Tabla
+  - 🔥 Tabla
     - Inhabilitado si no está logeado
     - Filtrado por fechas
     - Filtrado por localización
@@ -85,14 +85,15 @@
 - Profile
   - LOGGED=BOOL
   - 👉 tarjeta de usuario
-    - mostrar si es PRO
+    - [] mostrar si es PRO
   - 👉 Modal
-    - 🔥 Login
-    - 🔥 Registro
+    - ✅ Login
+    - ✅ Registro
   - 👉 Suscripción
 
 - Preferencias
-  - 👉 modificar datos 
+  - 👉 modificar datos
+    - Eliminar cuenta
 
 - Suscripción
   - 🔥 Modelo de pago

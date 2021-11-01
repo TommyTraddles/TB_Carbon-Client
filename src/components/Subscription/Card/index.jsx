@@ -4,7 +4,7 @@ import { Card } from 'components/ui/Card'
 export const PriceCard = () => {
   return(
     <>
-    <Card>
+    <Card bg='red.100'>
       <Text> Price card </Text> 
     </Card>
     </>

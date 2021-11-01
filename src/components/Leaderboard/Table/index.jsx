@@ -4,7 +4,7 @@ import { Heading } from "@chakra-ui/react"
 export const LeaderboardTable = () => {
   return(
     <>
-    <Card>
+    <Card bg='red.100'>
     <Heading size='md'> Table </Heading>
     </Card>
     </>
