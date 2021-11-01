@@ -1,15 +1,18 @@
+// components
+import { NavbarButton } from 'components/Button/NavbarButton'
 import { HStack } from '@chakra-ui/react'
 import { Card } from 'components/Card'
-
+// routes
 import { navlinks } from 'services/routes'
-
-import { NavbarButton } from 'components/Button/NavbarButton'
+// hooks
+import { useColorModeValue } from '@chakra-ui/color-mode'
 
 export const Navbar = () => {
+  const bg = useColorModeValue('gray.50', 'gray.700')
   return (
     <>
       <Card
-        bg="gray.700"
+        bg={bg}
         position="fixed"
         bottom={3}
         left={0}
