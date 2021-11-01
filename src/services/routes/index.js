@@ -14,6 +14,14 @@ import { Leaderboard } from 'pages/App/Leaderboard'
 import { Profile } from 'pages/User/Profile'
 import { Preferences } from 'pages/User/Preferences'
 import { Subscription } from 'pages/User/Subscription'
+// icons
+import {
+  AiOutlineCalculator,
+  AiOutlineHistory,
+  AiOutlineTrophy,
+  AiOutlineUser,
+} from 'react-icons/ai'
+import { BiHomeSmile } from 'react-icons/bi'
 
 export const paths = {
   onboarding: '/auth/welcome',
@@ -30,6 +38,34 @@ export const paths = {
   preferences: '/user/preferences',
   subscription: '/pricing',
 }
+
+export const navlinks = [
+  {
+    path: paths.home,
+    icon: <BiHomeSmile />,
+    name: 'home',
+  },
+  {
+    path: paths.history,
+    icon: <AiOutlineHistory />,
+    name: 'history',
+  },
+  {
+    path: paths.calculator,
+    icon: <AiOutlineCalculator />,
+    name: 'calcule',
+  },
+  {
+    path: paths.leaderboard,
+    icon: <AiOutlineTrophy />,
+    name: 'ranking',
+  },
+  {
+    path: paths.profile,
+    icon: <AiOutlineUser />,
+    name: 'me',
+  },
+]
 
 export const routes = [
   {

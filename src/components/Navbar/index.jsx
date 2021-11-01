@@ -1,51 +1,33 @@
-import { HStack, VStack, IconButton } from '@chakra-ui/react'
+import { HStack } from '@chakra-ui/react'
 import { Card } from 'components/Card'
-import { NavLink } from 'react-router-dom'
-import { paths } from 'services/routes'
 
-import {
-  AiOutlineCalculator,
-  AiOutlineHistory,
-  AiOutlineTrophy,
-  AiOutlineUser,
-} from 'react-icons/ai'
-import { BiHomeSmile } from 'react-icons/bi'
+import { navlinks } from 'services/routes'
+
+import { NavbarButton } from 'components/Button/NavbarButton'
 
 export const Navbar = () => {
   return (
     <>
       <Card
-        position="fixed"
-        maxW="sm"
-        w="100%"
-        h={16}
-        bottom={1}
         bg="gray.700"
-        py={3}
-        px={8}
+        position="fixed"
+        bottom={3}
+        left={0}
+        right={0}
+        maxW="sm"
+        h={16}
+        py={2}
+        m='auto'
       >
-        <HStack w="full" justifyContent="space-between">
-          <VStack h={10}>
-            <NavLink to={paths.home}>
-              <IconButton variant="ghost" icon={<BiHomeSmile />} />
-            </NavLink>
-          </VStack>
-
-          <NavLink to={paths.history}>
-            <IconButton variant="ghost" icon={<AiOutlineHistory />} />
-          </NavLink>
-
-          <NavLink to={paths.calculator}>
-            <IconButton variant="ghost" icon={<AiOutlineCalculator />} />
-          </NavLink>
-
-          <NavLink to={paths.leaderboard}>
-            <IconButton variant="ghost" icon={<AiOutlineTrophy />} />
-          </NavLink>
-
-          <NavLink to={paths.profile}>
-            <IconButton variant="ghost" icon={<AiOutlineUser />} />
-          </NavLink>
+        <HStack justifyContent="space-between" w='full'>
+          {navlinks.map((e) => (
+            <NavbarButton
+              key={e.name}
+              name={e.name}
+              icon={e.icon}
+              path={e.path}
+            />
+          ))}
         </HStack>
       </Card>
     </>
