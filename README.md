@@ -43,7 +43,8 @@
     - Envío email
 
 - Home
-  - 👉 Link 
+  - 🔥 Link 
+    - logged only
     - comprar subscripción
   - 🔥 Dashboard
     - filtrado por fechas
@@ -53,7 +54,7 @@
   - 👉 Nuevo
     - Botton nueva entrada 
   - 🔥 History
-    - Inhabilitado si no está logeado
+    - Logged only
     - Tabla con entradas
     - ver detalles 
     - paginación
