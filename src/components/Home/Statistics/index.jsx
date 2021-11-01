@@ -1,4 +1,4 @@
-import { Card } from "components/Card"
+import { Card } from "components/ui/Card"
 import { Heading } from "@chakra-ui/react"
 
 export const ResumeStatistics = () => {

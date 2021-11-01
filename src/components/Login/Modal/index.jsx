@@ -6,8 +6,8 @@ import {
   Button,
   Text,
 } from '@chakra-ui/react'
-import { InputPass } from 'components/Input/Password'
-import { InputEmail } from 'components/Input/Email'
+import { InputPass } from 'components/ui/Input/Password'
+import { InputEmail } from 'components/ui/Input/Email'
 import { SubmitBtn } from 'components/ui/Button/Submit'
 // data
 import { Link } from 'react-router-dom'
@@ -20,7 +20,10 @@ export const LoginModal = () => {
   const form = { email: '', password: '' }
   const [info, setinfo] = useState(form)
   const handleInput = (e) => setinfo((curr) => ({ ...curr, [e.target.name]: e.target.value }))
-  const handleSubmit = (e) => e.preventDefault() // enviar info
+  const handleSubmit = (e) => {
+    e.preventDefault() 
+    // enviar info
+  }
   // state
   const isValid = info.email !== '' && info.address !== '' && info.password !== ''
   const error = false

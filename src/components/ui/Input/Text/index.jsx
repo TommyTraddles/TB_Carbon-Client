@@ -1,16 +1,16 @@
 import { FormControl, FormLabel, Input, FormHelperText } from "@chakra-ui/react"
 
-export const InputEmail = ({ handleInput, info, error }) => {
+export const InputText = ({ type, name, handleInput, info, error }) => {
   return (
     <>
       <FormControl my={2}>
-        <FormLabel> Email </FormLabel>
+        <FormLabel> {name} </FormLabel>
         <Input
-          name='email'
-          type='email'
-          placeholder='email'
+          name={name}
+          type={type}
+          placeholder={name}
           onChange={handleInput}
-          value={info.email}
+          value={info[name]}
         />
          { error ? <FormHelperText color='red.400'> Helper text </FormHelperText> : ''}
       </FormControl>

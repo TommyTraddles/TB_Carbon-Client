@@ -1,5 +1,5 @@
 import { Wrap, Button } from '@chakra-ui/react'
-import { Card } from 'components/Card'
+import { Card } from 'components/ui/Card'
 import { NavLink } from 'react-router-dom'
 
 import { routes } from 'services/routes'
