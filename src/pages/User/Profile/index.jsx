@@ -1,10 +1,10 @@
 // components
 import { Heading, Divider, VStack } from '@chakra-ui/react'
 import { Modal } from 'components/ui/Modal'
-import { LoginModal } from 'components/Login/Modal'
-import { RegisterModal } from 'components/Register/Modal'
-import { ProfileCard } from 'components/Profile/Avatar'
-import { UserLink, UserModal } from 'components/Profile/Links'
+import { LoginModal } from 'components/Auth/Login/Modal'
+import { RegisterModal } from 'components/Auth/Register/Modal'
+import { ProfileCard } from 'components/User/Profile/Avatar'
+import { UserLink, UserModal } from 'components/User/Profile/Links'
 // data
 import { paths } from 'services/routes'
 // icons
@@ -62,7 +62,11 @@ export const Profile = () => {
         {logged && (
           <>
             <Divider />
-            <UserLink path={paths.onboarding} icon={<FiLogOut />} name="Logout" />
+            <UserLink
+              path={paths.onboarding}
+              icon={<FiLogOut />}
+              name="Logout"
+            />
           </>
         )}
       </VStack>

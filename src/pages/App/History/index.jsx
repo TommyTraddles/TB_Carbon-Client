@@ -1,8 +1,10 @@
+// components
 import { Heading, Button } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
 import { HistoryTable } from 'components/App/History/Table'
-import { paths } from 'services/routes'
 import { BackButton } from 'components/ui/Button/Back'
+// data
+import { Link } from 'react-router-dom'
+import { paths } from 'services/routes'
 
 export const History = () => {
   return (

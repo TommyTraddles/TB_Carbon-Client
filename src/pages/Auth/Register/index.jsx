@@ -1,5 +1,6 @@
+// components
 import { VStack, HStack, Text, Button } from '@chakra-ui/react'
-import { RegisterModal } from 'components/Register/Modal'
+import { RegisterModal } from 'components/Auth/Register/Modal'
 // data
 import { Link } from 'react-router-dom'
 import { paths } from 'services/routes'

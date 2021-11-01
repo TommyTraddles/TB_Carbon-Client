@@ -1,3 +1,4 @@
+// components
 import { Heading, Button } from '@chakra-ui/react'
 import { ResumeStatistics } from 'components/App/Home/Statistics'
 import { HistoryTable } from 'components/App/History/Table'   

@@ -1,6 +1,8 @@
+// components
 import { Heading, Button, HStack, VStack } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
 import { Card } from 'components/ui/Card'
+// data
+import { Link } from 'react-router-dom'
 import { paths } from 'services/routes'
 // hooks
 import { useEffect } from 'react'

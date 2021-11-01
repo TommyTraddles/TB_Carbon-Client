@@ -1,7 +1,9 @@
+// components
 import { Heading } from '@chakra-ui/react'
-import { paths } from 'services/routes'
-
 import { BackButton } from 'components/ui/Button/Back'
+import { UserLink } from 'components/User/Profile/Links'
+// data
+import { paths } from 'services/routes'
 
 export const Preferences = () => {
   return (
@@ -9,6 +11,7 @@ export const Preferences = () => {
       <Heading> Preferences </Heading>
       <BackButton to={paths.profile} />
 
+      <UserLink />
       <Heading size="md"> image </Heading>
       <Heading size="md"> username </Heading>
       <Heading size="md"> email </Heading>

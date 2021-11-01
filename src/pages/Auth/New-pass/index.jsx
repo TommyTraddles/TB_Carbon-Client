@@ -1,4 +1,5 @@
-import { ResetModal } from 'components/New-pass/Modal'
+// components
+import { ResetModal } from 'components/Auth/New-pass/Modal'
 
 export const Reset = () => {
   return (

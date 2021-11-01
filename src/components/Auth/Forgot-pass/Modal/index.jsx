@@ -1,3 +1,4 @@
+// components
 import { Heading, Box } from '@chakra-ui/react'
 import { BackButton } from 'components/ui/Button/Back'
 import { InputEmail } from 'components/ui/Input/Email'
