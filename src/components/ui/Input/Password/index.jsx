@@ -11,21 +11,22 @@ import {
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import { useState } from 'react'
 
-export const InputPass = ({ handleInput, info, error }) => {
-  // pass
+export const InputPass = ({ name, value, handleInput, info, error }) => {
+  // show
   const [show, setshow] = useState(false)
   const handleShow = () => setshow(!show)
+
   return (
     <>
       <FormControl my={2}>
-        <FormLabel> Password </FormLabel>
+        <FormLabel> {name ? name : "Password"} </FormLabel>
         <InputGroup>
           <Input
-            name="password"
-            placeholder="password"
+            name={value ? value : "password"}
+            placeholder='password'
             type={show ? 'text' : 'password'}
             onChange={handleInput}
-            value={info.password}
+            value={info[value]}
           />
           <InputRightElement>
             <IconButton
