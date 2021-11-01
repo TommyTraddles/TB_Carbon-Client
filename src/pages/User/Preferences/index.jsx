@@ -1,7 +1,7 @@
 import { Heading } from '@chakra-ui/react'
 import { paths } from 'services/routes'
 
-import { BackButton } from 'components/Button/BackBtn'
+import { BackButton } from 'components/ui/Button/Back'
 
 export const Preferences = () => {
   return (

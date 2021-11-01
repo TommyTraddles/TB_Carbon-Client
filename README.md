@@ -11,12 +11,13 @@
 
 - Login
   - 👉 Formulario
-    - Entradsa
+    - Entradas
       - ✅ ver contraseña
       - ✅ login button disabled
       - recordar mis datos
     - Enviar formulario
       - Mensaje de error
+      - Loading
     - 🎁 acceso con Google (Passport)
 
 - Forgot pass
@@ -28,8 +29,9 @@
 
 - Register
   - 👉 Formulario
-    - Mensaje de error
     - 🎁 RegEx contraseña
+  - 👉 Enviar formulario
+    - Mensaje de error
 
 - Home
   - 👉 Modal 

@@ -2,7 +2,7 @@
 import { Heading } from '@chakra-ui/react'
 import { Solutions } from 'components/Results/Solutions'
 import { Statistics } from 'components/Results/Statistics'
-import { BackButton } from 'components/Button/BackBtn'
+import { BackButton } from 'components/ui/Button/Back'
 // data
 import { paths } from 'services/routes'
 

@@ -74,6 +74,11 @@ export const routes = [
     layout: 'public',
   },
   {
+    component: Register,
+    path: paths.register,
+    layout: 'public',
+  },
+  {
     component: Login,
     path: paths.login,
     layout: 'public',
@@ -86,11 +91,6 @@ export const routes = [
   {
     component: Reset,
     path: paths.reset,
-    layout: 'public',
-  },
-  {
-    component: Register,
-    path: paths.register,
     layout: 'public',
   },
   {

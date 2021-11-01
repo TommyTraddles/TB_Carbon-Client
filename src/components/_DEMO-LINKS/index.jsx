@@ -7,7 +7,7 @@ import { routes } from 'services/routes'
 export const DEMO_LINKS = () => {
   return (
     <>
-      <Card bg="red.800" mb={8}>
+      <Card bg="blue.800" mb={8}>
         <Wrap spacing={4}>
           {routes.map((e, i) => (
             <Button key={i} variant="outline" size='xs'>

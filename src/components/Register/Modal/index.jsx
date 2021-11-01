@@ -1,5 +1,6 @@
 import { Heading, Button, Input } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
+// data
 import { paths } from 'services/routes'
 
 export const RegisterModal = () => {

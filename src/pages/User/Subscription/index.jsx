@@ -1,6 +1,6 @@
 import { Heading, Button } from '@chakra-ui/react'
 import { PriceCard } from 'components/Subscription/Card'
-import { BackButton } from 'components/Button/BackBtn'
+import { BackButton } from 'components/ui/Button/Back'
 // import { Success } from 'components/Subscription/Success'
 // import { Error } from 'components/Subscription/Error'
 // data

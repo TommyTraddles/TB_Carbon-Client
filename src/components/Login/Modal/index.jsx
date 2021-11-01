@@ -1,44 +1,29 @@
 import {
-  FormControl,
-  FormLabel,
-  // FormHelperText,
   Box,
   VStack,
   HStack,
-  InputGroup,
-  InputRightElement,
   Heading,
   Button,
-  IconButton,
-  Input,
   Text,
 } from '@chakra-ui/react'
+import { InputPass } from 'components/Input/Password'
+import { InputEmail } from 'components/Input/Email'
+import { SubmitBtn } from 'components/ui/Button/Submit'
+// data
 import { Link } from 'react-router-dom'
 import { paths } from 'services/routes'
-// icons
-import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
-
 // hooks
 import { useState } from 'react'
 
 export const LoginModal = () => {
-  // 👁 DUMMY FOR TESTING
-  // obj
-  const form = { email: '', password: '' }
   // inputs
+  const form = { email: '', password: '' }
   const [info, setinfo] = useState(form)
-  const handleInput = (e) =>
-    setinfo((curr) => ({ ...curr, [e.target.name]: e.target.value }))
-  // pass
-  const [show, setshow] = useState(false)
-  const handleShow = () => setshow(!show)
-  // form
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.info('hello')
-  }
-  const isValid =
-    info.email !== '' && info.address !== '' && info.password !== ''
+  const handleInput = (e) => setinfo((curr) => ({ ...curr, [e.target.name]: e.target.value }))
+  const handleSubmit = (e) => e.preventDefault() // enviar info
+  // state
+  const isValid = info.email !== '' && info.address !== '' && info.password !== ''
+  const error = false
 
   return (
     <>
@@ -46,54 +31,15 @@ export const LoginModal = () => {
 
       <Box my={4}>
         <form form method="POST" onSubmit={handleSubmit}>
-          <FormControl my={2}>
-            <FormLabel> Email </FormLabel>
-            <Input
-              name="email"
-              type="email"
-              placeholder="email"
-              onChange={handleInput}
-              value={info.email}
-            />
-            {/* <FormHelperText> Helper text </FormHelperText> */}
-          </FormControl>
-
-          <FormControl my={2}>
-            <FormLabel> Password </FormLabel>
-            <InputGroup>
-              <Input
-                name="password"
-                placeholder="password"
-                type={show ? 'text' : 'password'}
-                onChange={handleInput}
-                value={info.password}
-              />
-              <InputRightElement>
-                <IconButton
-                  variant="ghost"
-                  onClick={handleShow}
-                  icon={show ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
-                />
-              </InputRightElement>
-            </InputGroup>
-            {/* <FormHelperText> Helper text </FormHelperText> */}
-          </FormControl>
-
-          <Button
-            my={2}
-            w="full"
-            type="submit"
-            isDisabled={isValid ? false : true}
-          >
-            {' '}
-            Login
-          </Button>
+          <InputEmail handleInput={handleInput} info={info} error={error} name='email' type='email'/>
+          <InputPass handleInput={handleInput} info={info} error={error}/>
+          <SubmitBtn isValid={isValid} name='Login'/>
         </form>
       </Box>
 
       <VStack my={2}>
-        <Text> - OR -</Text>
-        <Button colorScheme="secondary">Signup with Google</Button>
+        <Text> OR </Text>
+        <Button colorScheme="facebook">Signup with Facebook</Button>
       </VStack>
 
       <VStack my={2}>

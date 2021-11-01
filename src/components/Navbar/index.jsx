@@ -1,5 +1,5 @@
 // components
-import { NavbarButton } from 'components/Button/NavbarButton'
+import { NavbarButton } from 'components/ui/Button/Navbar'
 import { HStack } from '@chakra-ui/react'
 import { Card } from 'components/Card'
 // routes
