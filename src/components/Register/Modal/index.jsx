@@ -27,7 +27,7 @@ export const RegisterModal = () => {
       <Heading> Register </Heading>
 
       <Box my={4}>
-        <form form method="POST" onSubmit={handleSubmit}>
+        <form method="POST" onSubmit={handleSubmit}>
           <InputEmail handleInput={handleInput} info={info} error={error}/>
           <InputText handleInput={handleInput} info={info} error={error} name='username' type='text'/>
           <InputPass handleInput={handleInput} info={info} error={error} />

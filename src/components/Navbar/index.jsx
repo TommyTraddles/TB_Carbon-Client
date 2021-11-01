@@ -7,7 +7,7 @@ import { navlinks } from 'services/routes'
 import { useColorModeValue } from '@chakra-ui/color-mode'
 
 export const Navbar = () => {
-  const bg = useColorModeValue('gray.50', 'gray.700')
+  const bg = useColorModeValue('gray.100', 'gray.700')
   return (
     <>
       <Card

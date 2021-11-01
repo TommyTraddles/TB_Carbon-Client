@@ -3,56 +3,56 @@
 #### Pages
 
 - Layout
-  - 👉 Bottom Navbar
-    - Iconos grandes, interacción final
+  - Bottom Navbar:
+    - 👉 Iconos grandes, interacción final
 
 - Onboarding
-  - 🔥 🔥 carrusel, indicadores inferiores, flechas laterales
+  - 🔥 carrusel, indicadores inferiores, flechas laterales
 
 - Login
   - ERROR=BOOL
-  - 👉 Formulario
-    - Entradas
-      - ✅ handle form
-      - ✅ ver contraseña
-      - ✅ login button disabled
-      - recordar mis datos
-    - Enviar formulario
-      - Mensaje de error
-      - Loading
-    - 🎁 acceso con Google (Passport)
+  - 👉 Formulario:
+    - ✅ handle form
+    - ✅ ver contraseña
+    - ✅ login button disabled
+    - recordar mis datos
+  - 👉 Enviar formulario
+    - Mensaje de error
+    - Loading
+  - 🔥 acceso con Google (Passport)
 
 - Forgot pass
   - ERROR=BOOL
   - 👉 Formulario
     - ✅ handle form
-    - 🎁 Envío email MailJet
+    - Envío email
 
 - Reset pass
   - ERROR=BOOL
+  - 👉 Formulario
     - ✅ handle form
-    - 🎁 RegEx contraseña
-    - 🎁 Envío email MailJet
+    - 🔥 RegEx contraseña
 
 - Register
   - ERROR=BOOL
   - 👉 Formulario
     - ✅ handle form
-    - 🎁 RegEx contraseña
+    - 🔥 RegEx contraseña
   - 👉 Enviar formulario
     - Mensaje de error
+    - Envío email
 
 - Home
   - 👉 Link 
     - comprar subscripción
-  - 🔥 🔥 Dashboard
+  - 🔥 Dashboard
     - filtrado por fechas
     - carrusel días seleccionable
     - resumen de estadísticas
     - ver detalles
   - 👉 Nuevo
     - Botton nueva entrada 
-  - 🔥 🔥 History
+  - 🔥 History
     - Inhabilitado si no está logeado
     - Tabla con entradas
     - ver detalles 
@@ -64,13 +64,13 @@
 
 - History
   - 👉 Misma tabla de entradas
-    - 🎁 Inhabilitado si no está logueado
+    - 🔥 Inhabilitado si no está logueado
     - Scroll, no paginación
 
 - [ resultados ]
-  - 🔥 🔥 Dashboard
+  - 🔥 Dashboard
     - completo con toda la información
-  - 🔥 🔥 Acciones
+  - 🔥 Acciones
     - tarjeta con acciones sugeridas
 
 - Ranking
@@ -86,15 +86,15 @@
   - 👉 tarjeta de usuario
     - mostrar si es PRO
   - 👉 Modal
-    - 🎁 Login
-    - 🎁 Registro
+    - 🔥 Login
+    - 🔥 Registro
   - 👉 Suscripción
 
 - Preferencias
   - 👉 modificar datos 
 
 - Suscripción
-  - 🔥 🔥 Modelo de pago
+  - 🔥 Modelo de pago
     - Gratis, PRO
     - integrar con Stripe
 
