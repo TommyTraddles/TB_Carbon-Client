@@ -1,18 +1,17 @@
 import { Heading, Box } from '@chakra-ui/react'
-import { BackButton } from 'components/ui/Button/Back'
 import { InputPass } from 'components/ui/Input/Password'
 import { SubmitBtn } from 'components/ui/Button/Submit'
-// data
-import { paths } from 'services/routes'
 // hooks
 import { useState } from 'react'
 
 export const ResetModal = () => {
+  // inputs
   const form = { oldpass: '', newpass:''}
   const [info, setinfo] = useState(form)
   const handleInput = (e) => setinfo((curr) => ({ ...curr, [e.target.name]: e.target.value }))
   const handleSubmit = (e) => {
     e.preventDefault() 
+    console.info(info)
     // enviar info
   }
   const isValid = info.oldpass !== '' && info.newpass !== ''

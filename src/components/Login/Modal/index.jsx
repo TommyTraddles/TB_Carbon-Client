@@ -22,10 +22,11 @@ export const LoginModal = () => {
   const handleInput = (e) => setinfo((curr) => ({ ...curr, [e.target.name]: e.target.value }))
   const handleSubmit = (e) => {
     e.preventDefault() 
+    console.info(info)
     // enviar info
   }
   // state
-  const isValid = info.email !== '' && info.address !== '' && info.password !== ''
+  const isValid = info.email !== '' && info.username !== '' && info.password !== ''
   const error = false
 
   return (

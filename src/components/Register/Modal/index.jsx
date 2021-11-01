@@ -17,7 +17,8 @@ export const RegisterModal = () => {
   const [info, setinfo] = useState(form)
   const handleInput = (e) => setinfo((curr) => ({ ...curr, [e.target.name]: e.target.value }))
   const handleSubmit = (e) => {
-    e.preventDefault() 
+    e.preventDefault()
+    console.info(info)
     // enviar info
   }
   const isValid =

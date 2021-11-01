@@ -8,14 +8,16 @@ import { paths } from 'services/routes'
 import { useState } from 'react'
 
 export const ForgotModal = () => {
+  // inputs
   const form = { email: ''}
   const [info, setinfo] = useState(form)
   const handleInput = (e) => setinfo((curr) => ({ ...curr, [e.target.name]: e.target.value }))
   const handleSubmit = (e) => {
     e.preventDefault() 
+    console.info(info)
     // enviar info
   }
-  const isValid = info.email !== '' && info.address !== '' && info.password !== ''
+  const isValid = info.email !== ''
   const error = false
 
   return (

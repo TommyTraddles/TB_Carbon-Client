@@ -12,6 +12,7 @@
 - Login
   - 👉 Formulario
     - Entradas
+      - ✅ handle form
       - ✅ ver contraseña
       - ✅ login button disabled
       - recordar mis datos
@@ -22,13 +23,17 @@
 
 - Forgot pass
   - 👉 Formulario
+    - ✅ handle form
     - 🎁 Envío email MailJet
 
 - Reset pass
+    - ✅ handle form
+    - 🎁 RegEx contraseña
     - 🎁 Envío email MailJet
 
 - Register
   - 👉 Formulario
+    - ✅ handle form
     - 🎁 RegEx contraseña
   - 👉 Enviar formulario
     - Mensaje de error
