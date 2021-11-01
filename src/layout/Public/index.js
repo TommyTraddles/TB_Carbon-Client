@@ -6,7 +6,7 @@ import { Container } from '@chakra-ui/react'
 export const Public = () => {
   return (
     <>
-      <Container maxW="container.sm" p={2}>
+      <Container maxW="container.sm" px={4} h='100vh'>
         <Switch>
           {routes.map((e, i) => {
             if (e.layout === 'public') return <Route key={i} {...e} exact />

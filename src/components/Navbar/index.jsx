@@ -1,34 +1,51 @@
-import { HStack, Button } from '@chakra-ui/react'
+import { HStack, VStack, IconButton } from '@chakra-ui/react'
 import { Card } from 'components/Card'
 import { NavLink } from 'react-router-dom'
 import { paths } from 'services/routes'
+
+import {
+  AiOutlineCalculator,
+  AiOutlineHistory,
+  AiOutlineTrophy,
+  AiOutlineUser,
+} from 'react-icons/ai'
+import { BiHomeSmile } from 'react-icons/bi'
 
 export const Navbar = () => {
   return (
     <>
       <Card
-      // position="fixed" maxW="sm" w="100%" h={20} bottom={1} bg="red.900"
+        position="fixed"
+        maxW="sm"
+        w="100%"
+        h={16}
+        bottom={1}
+        bg="gray.700"
+        py={3}
+        px={8}
       >
-        <HStack>
-          <Button variant="ghost">
-            <NavLink to={paths.home}> home </NavLink>
-          </Button>
+        <HStack w="full" justifyContent="space-between">
+          <VStack h={10}>
+            <NavLink to={paths.home}>
+              <IconButton variant="ghost" icon={<BiHomeSmile />} />
+            </NavLink>
+          </VStack>
 
-          <Button variant="ghost">
-            <NavLink to={paths.calculator}> new </NavLink>
-          </Button>
+          <NavLink to={paths.history}>
+            <IconButton variant="ghost" icon={<AiOutlineHistory />} />
+          </NavLink>
 
-          <Button variant="ghost">
-            <NavLink to={paths.history}> history </NavLink>
-          </Button>
+          <NavLink to={paths.calculator}>
+            <IconButton variant="ghost" icon={<AiOutlineCalculator />} />
+          </NavLink>
 
-          <Button variant="ghost">
-            <NavLink to={paths.leaderboard}> leaderboard </NavLink>
-          </Button>
+          <NavLink to={paths.leaderboard}>
+            <IconButton variant="ghost" icon={<AiOutlineTrophy />} />
+          </NavLink>
 
-          <Button variant="ghost">
-            <NavLink to={paths.profile}> me </NavLink>
-          </Button>
+          <NavLink to={paths.profile}>
+            <IconButton variant="ghost" icon={<AiOutlineUser />} />
+          </NavLink>
         </HStack>
       </Card>
     </>

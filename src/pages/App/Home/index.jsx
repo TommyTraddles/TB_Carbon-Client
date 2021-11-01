@@ -24,6 +24,17 @@ export const Home = () => {
       <Button>
         <Link to={paths.history}> History</Link>
       </Button>
+      
+      <br />
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quo porro alias accusamus autem dicta quas minima ipsum ab at eaque error, asperiores amet consectetur optio itaque delectus. Repellat, ut.</p>
+      <br />
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quo porro alias accusamus autem dicta quas minima ipsum ab at eaque error, asperiores amet consectetur optio itaque delectus. Repellat, ut.</p>
+      <br />
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quo porro alias accusamus autem dicta quas minima ipsum ab at eaque error, asperiores amet consectetur optio itaque delectus. Repellat, ut.</p>
+      <br />
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quo porro alias accusamus autem dicta quas minima ipsum ab at eaque error, asperiores amet consectetur optio itaque delectus. Repellat, ut.</p>
+      <br />
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quo porro alias accusamus autem dicta quas minima ipsum ab at eaque error, asperiores amet consectetur optio itaque delectus. Repellat, ut.</p>
     </>
   )
 }
