@@ -26,7 +26,7 @@ export const ForgotModal = () => {
       <Heading> Forgot password </Heading>
 
       <Box my={4}>
-        <form form method="POST" onSubmit={handleSubmit}>
+        <form method="POST" onSubmit={handleSubmit}>
           <InputEmail handleInput={handleInput} info={info} error={error} />
           <SubmitBtn isValid={isValid} name='Send email'/>
         </form>

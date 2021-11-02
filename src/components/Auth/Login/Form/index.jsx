@@ -26,7 +26,7 @@ export const LoginModal = () => {
     // enviar info
   }
   // state
-  const isValid = info.email !== '' && info.username !== '' && info.password !== ''
+  const isValid = info.email !== '' && info.password !== ''
   const error = false
 
   return (

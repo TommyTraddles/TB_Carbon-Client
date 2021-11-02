@@ -36,7 +36,7 @@ export const InputPass = ({ name, value, handleInput, info, error }) => {
             />
           </InputRightElement>
         </InputGroup>
-        { error ? <FormHelperText color='red.400'> Helper text </FormHelperText> : ''}
+        { error && <FormHelperText color='red.400'> Helper text </FormHelperText>}
       </FormControl>
     </>
   )
