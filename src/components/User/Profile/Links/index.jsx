@@ -7,8 +7,8 @@ export const UserLink = ({ icon, name, path }) => {
       <Box w="full">
         <Link to={path}>
           <HStack w="100%">
-            <IconButton icon={icon} variant="ghost" colorScheme="gray" />
-            <Text>{name}</Text>
+            <IconButton icon={icon} variant="ghost" colorScheme="gray" size='sm'/>
+            <Text fontSize='sm'>{name}</Text>
           </HStack>
         </Link>
       </Box>
@@ -20,8 +20,8 @@ export const UserModal = ({ icon, name, onClick }) => {
   return (
     <>
       <HStack w="100%" onClick={onClick} cursor='pointer'>
-        <IconButton icon={icon} variant="ghost" colorScheme="gray" />
-        <Text>{name}</Text>
+        <IconButton icon={icon} variant="ghost" colorScheme="gray" size='sm'/>
+        <Text fontSize='sm'>{name}</Text>
       </HStack>
     </>
   )
