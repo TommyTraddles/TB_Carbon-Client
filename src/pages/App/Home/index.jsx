@@ -1,8 +1,8 @@
 // components
 import { Heading, Button } from '@chakra-ui/react'
 import { ResumeStatistics } from 'components/App/Results/Statistics-short'
-import { ResumeHistoryTable } from 'components/App/History/Table-short'
 import { ResumeSolutions } from 'components/App/Results/Solutions-short'
+// import { ResumeHistoryTable } from 'components/App/History/Table-short'
 // data
 import { Link } from 'react-router-dom'
 import { paths } from 'services/routes'
@@ -31,8 +31,8 @@ export const Home = () => {
         <Link to={paths.calculator}> New entry</Link>
       </Button>
 
-      <Heading my={4} size="md"> History </Heading>
-      <ResumeHistoryTable />
+      {/* <Heading my={4} size="md"> History </Heading>
+      <ResumeHistoryTable /> */}
     </>
   )
 }
