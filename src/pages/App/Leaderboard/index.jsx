@@ -1,25 +1,11 @@
 // components
-import { Heading, Button } from '@chakra-ui/react'
-import { LeaderboardTable } from 'components/App/Leaderboard/Table'
-// data
-// import { Link } from 'react-router-dom'
+import { Heading } from '@chakra-ui/react'
+import { LeaderboardTable } from 'components/App/Leaderboard/Table-complete'
 
 export const Leaderboard = () => {
   return (
     <>
       <Heading> Leaderboard </Heading>
-
-      {/* <Heading> POP-OVER </Heading>
-      <Button>
-        <Link to="login"> login</Link>
-      </Button>
-      <Button>
-        <Link to="login"> register</Link>
-      </Button> */}
-
-      <br />
-
-      <Button colorScheme="secondary">Filter date</Button>
       <LeaderboardTable />
     </>
   )

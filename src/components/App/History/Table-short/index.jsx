@@ -5,7 +5,7 @@ import { Heading, Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { paths } from 'services/routes'
 
-export const HistoryTable = () => {
+export const HistoryTableShort = () => {
   return (
     <>
       <Card bg="red.100">

@@ -1,7 +1,7 @@
 // components
 import { Heading, Divider, VStack } from '@chakra-ui/react'
 import { BackButton } from 'components/ui/Button/Back'
-import { UserModal } from 'components/User/Profile/Links'
+import { UserModal } from 'components/User/Profile/Links/Modal'
 import { Modal } from 'components/ui/Modal'
 import { UpdateUser } from 'components/User/Preferences/Update'
 import { ManageSubs } from 'components/User/Preferences/Manage'

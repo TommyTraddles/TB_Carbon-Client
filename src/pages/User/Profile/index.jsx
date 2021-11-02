@@ -6,13 +6,14 @@ import { RegisterModal } from 'components/Auth/Register/Modal'
 import { ProfileCard } from 'components/User/Profile/Avatar'
 import { Feedback } from 'components/User/Profile/Feedback'
 import { FAQs } from 'components/User/Profile/FAQs'
-import { UserLink, UserModal } from 'components/User/Profile/Links'
+import { UserLink } from 'components/User/Profile/Links/Links'
+import { UserModal } from 'components/User/Profile/Links/Modal'
 // data
 import { paths } from 'services/routes'
 // icons
 import { FiSettings, FiMoon, FiLogOut, FiUser, FiSun } from 'react-icons/fi'
 import { RiStarSmileLine, RiChatSmile2Line } from 'react-icons/ri'
-import { AiOutlineCalculator, AiOutlineHistory, AiOutlineTrophy, AiOutlineInfoCircle } from 'react-icons/ai'
+import { AiOutlineInfoCircle } from 'react-icons/ai'
 // hooks
 import { useColorMode } from '@chakra-ui/color-mode'
 import { useDisclosure } from '@chakra-ui/hooks'
@@ -52,13 +53,6 @@ export const Profile = () => {
             <Divider />
           </>
         )}
-
-        <UserLink path={paths.history} icon={<AiOutlineHistory />} name="History"/>
-        <UserLink path={paths.calculator} icon={<AiOutlineCalculator />} name="Calcule"/>
-        <UserLink path={paths.leaderboard} icon={<AiOutlineTrophy />} name="Ranking"/>
-        <Divider />
-
-
 
         <UserModal
           onClick={toggleColorMode}
