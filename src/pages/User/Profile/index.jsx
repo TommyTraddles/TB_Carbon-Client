@@ -1,15 +1,17 @@
 // components
-import { Heading, Divider, VStack } from '@chakra-ui/react'
+import { Heading, Divider, VStack, Box } from '@chakra-ui/react'
 import { Modal } from 'components/ui/Modal'
 import { LoginModal } from 'components/Auth/Login/Modal'
 import { RegisterModal } from 'components/Auth/Register/Modal'
 import { ProfileCard } from 'components/User/Profile/Avatar'
+import { Feedback } from 'components/User/Profile/Feedback'
 import { UserLink, UserModal } from 'components/User/Profile/Links'
 // data
 import { paths } from 'services/routes'
 // icons
 import { FiSettings, FiMoon, FiLogOut, FiUser, FiSun } from 'react-icons/fi'
-import { RiStarSmileLine } from 'react-icons/ri'
+import { RiStarSmileLine, RiChatSmile2Line } from 'react-icons/ri'
+
 // hooks
 import { useColorMode } from '@chakra-ui/color-mode'
 import { useDisclosure } from '@chakra-ui/hooks'
@@ -19,6 +21,7 @@ export const Profile = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   const { isOpen: LiO, onOpen: LoO, onClose: LoC } = useDisclosure()
   const { isOpen: RiO, onOpen: RoO, onClose: RoC } = useDisclosure()
+  const { isOpen: FiO, onOpen: FoO, onClose: FoC } = useDisclosure()
   // loging
   const logged = true
 
@@ -29,26 +32,22 @@ export const Profile = () => {
       <VStack alignItems="flex-start" w="full" py={4}>
         {!logged ? (
           <>
+          <Box bg="red.100" w='full'>
             <UserModal onClick={LoO} icon={<FiUser />} name="Login" />
             <Modal isOpen={LiO} onClose={LoC} content={<LoginModal />} />
             <UserModal onClick={RoO} icon={<FiUser />} name="Register" />
             <Modal isOpen={RiO} onClose={RoC} content={<RegisterModal />} />
+          </Box>
             <Divider />
           </>
         ) : (
           <>
             <ProfileCard />
             <Divider />
-            <UserLink
-              path={paths.preferences}
-              icon={<FiSettings />}
-              name="Preferences"
+            <UserLink path={paths.preferences} icon={<FiSettings />} name="Preferences"
             />
             <Divider />
-            <UserLink
-              path={paths.subscription}
-              icon={<RiStarSmileLine />}
-              name="Take action"
+            <UserLink path={paths.subscription} icon={<RiStarSmileLine />} name="Take action"
             />
           </>
         )}
@@ -56,20 +55,18 @@ export const Profile = () => {
         <UserModal
           onClick={toggleColorMode}
           icon={colorMode === 'light' ? <FiMoon /> : <FiSun />}
-          name={colorMode === 'light' ? 'Dark mode' : 'Ligth mode'}
+          name={colorMode === 'light' ? 'Dark mode' : 'Light mode'}
         />
 
-        {/* <UserModal onClick={LoO} icon={<FiUser />} name="Send feedback" /> */}
-        {/* <Modal isOpen={LiO} onClose={LoC} content={<LoginModal />} /> */}
+        <Box bg="red.100" w='full'>
+          <UserModal onClick={FoO} icon={<RiChatSmile2Line />} name="Send feedback" />
+          <Modal isOpen={FiO} onClose={FoC} content={<Feedback />} />
+        </Box>
 
         {logged && (
           <>
             <Divider />
-            <UserLink
-              path={paths.onboarding}
-              icon={<FiLogOut />}
-              name="Logout"
-            />
+            <UserLink path={paths.onboarding} icon={<FiLogOut />} name="Logout" />
           </>
         )}
       </VStack>
