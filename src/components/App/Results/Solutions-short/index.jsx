@@ -5,7 +5,7 @@ export const ResumeSolutions = () => {
   return(
     <>
     <Card bg='red.100'>
-    <Heading size='md'> Solution </Heading>
+    <Heading size='md'> Short Solution </Heading>
     </Card>
     </>
   )

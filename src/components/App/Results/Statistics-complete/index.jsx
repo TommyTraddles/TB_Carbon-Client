@@ -5,7 +5,7 @@ export const Statistics = () => {
   return(
     <>
     <Card bg='red.100'>
-    <Heading size='md'> Statistics </Heading>
+    <Heading size='md'> Complete Statistics </Heading>
     </Card>
     </>
   )

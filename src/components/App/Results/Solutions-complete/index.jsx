@@ -5,7 +5,7 @@ export const Solutions = () => {
   return(
     <>
     <Card bg='red.100'>
-    <Heading size='md'> Solution </Heading>
+    <Heading size='md'> Complete Solution </Heading>
     </Card>
     </>
   )

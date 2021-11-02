@@ -5,7 +5,7 @@ export const LeaderboardTable = () => {
   return (
     <>
       <Card bg="red.100">
-        <Heading size="md"> Table </Heading>
+        <Heading size="md"> Complete Table </Heading>
         <Button colorScheme="secondary">Filter date</Button>
       </Card>
     </>

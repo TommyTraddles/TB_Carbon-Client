@@ -9,7 +9,7 @@ export const Form = () => {
   return (
     <>
       <Card bg="red.100">
-        <Heading size="md"> Form </Heading>
+        <Heading size="md"> Complete form </Heading>
         <Button>
           <Link to={paths.results}> see results</Link>
         </Button>

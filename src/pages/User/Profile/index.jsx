@@ -1,8 +1,8 @@
 // components
 import { Heading, Divider, VStack, Box } from '@chakra-ui/react'
 import { Modal } from 'components/ui/Modal'
-import { LoginModal } from 'components/Auth/Login/Modal'
-import { RegisterModal } from 'components/Auth/Register/Modal'
+import { LoginModal } from 'components/Auth/Login/Form'
+import { RegisterModal } from 'components/Auth/Register/Form'
 import { ProfileCard } from 'components/User/Profile/Avatar'
 import { Feedback } from 'components/User/Profile/Feedback'
 import { FAQs } from 'components/User/Profile/FAQs'

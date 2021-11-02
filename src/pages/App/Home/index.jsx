@@ -1,7 +1,7 @@
 // components
 import { Heading, Button } from '@chakra-ui/react'
 import { ResumeStatistics } from 'components/App/Results/Statistics-short'
-import { HistoryTableShort } from 'components/App/History/Table-short'
+import { ResumeHistoryTable } from 'components/App/History/Table-short'
 import { ResumeSolutions } from 'components/App/Results/Solutions-short'
 // data
 import { Link } from 'react-router-dom'
@@ -20,7 +20,7 @@ export const Home = () => {
         <Link to={paths.subscription}> Take action </Link>
       </Button>
 
-      <Heading my={4} size="md"> Strike </Heading>
+      <Heading my={4} size="md"> Daily Dashboard </Heading>
       <ResumeStatistics />
 
       <Heading my={4} size="md"> Solutions </Heading>
@@ -32,7 +32,7 @@ export const Home = () => {
       </Button>
 
       <Heading my={4} size="md"> History </Heading>
-      <HistoryTableShort />
+      <ResumeHistoryTable />
     </>
   )
 }
