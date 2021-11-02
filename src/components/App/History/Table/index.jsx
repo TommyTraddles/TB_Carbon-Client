@@ -1,12 +1,19 @@
-import { Card } from "components/ui/Card"
-import { Heading } from "@chakra-ui/react"
+// components
+import { Card } from 'components/ui/Card'
+import { Heading, Button } from '@chakra-ui/react'
+// data
+import { Link } from 'react-router-dom'
+import { paths } from 'services/routes'
 
 export const HistoryTable = () => {
-  return(
+  return (
     <>
-    <Card bg='red.100'>
-    <Heading size='md'> Table </Heading>
-    </Card>
+      <Card bg="red.100">
+        <Heading size="md"> Table </Heading>
+        <Button>
+          <Link to={paths.history}> History</Link>
+        </Button>
+      </Card>
     </>
   )
 }

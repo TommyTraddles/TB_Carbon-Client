@@ -3,8 +3,6 @@ import { Heading, Box } from '@chakra-ui/react'
 import { BackButton } from 'components/ui/Button/Back'
 import { InputEmail } from 'components/ui/Input/Email'
 import { SubmitBtn } from 'components/ui/Button/Submit'
-// data
-import { paths } from 'services/routes'
 // hooks
 import { useState } from 'react'
 
@@ -23,7 +21,7 @@ export const ForgotModal = () => {
 
   return (
     <>
-      <BackButton to={paths.login} />
+      <BackButton/>
 
       <Heading> Forgot password </Heading>
 

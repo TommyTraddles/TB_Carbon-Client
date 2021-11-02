@@ -1,13 +1,11 @@
 // components
-import { Heading, Divider, Text, VStack } from '@chakra-ui/react'
+import { Heading, Divider, VStack } from '@chakra-ui/react'
 import { BackButton } from 'components/ui/Button/Back'
 import { UserModal } from 'components/User/Profile/Links'
 import { Modal } from 'components/ui/Modal'
 import { UpdateUser } from 'components/User/Preferences/Update'
 import { ManageSubs } from 'components/User/Preferences/Manage'
 import { DeleteAccount } from 'components/User/Preferences/Delete'
-// data
-import { paths } from 'services/routes'
 // icon
 import { BsPencil } from 'react-icons/bs'
 import { MdOutlinePayments } from 'react-icons/md'
@@ -25,7 +23,7 @@ export const Preferences = () => {
   return (
     <>
       <Heading> Preferences </Heading>
-      <BackButton to={paths.profile} />
+      <BackButton/>
 
       <VStack alignItems="flex-start" w="full" py={4} bg='red.100'>
         <UserModal onClick={UIoO} icon={<BsPencil />} name="Update info" />

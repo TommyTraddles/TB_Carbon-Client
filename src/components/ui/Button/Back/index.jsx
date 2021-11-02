@@ -1,13 +1,17 @@
+// components
 import { IconButton } from '@chakra-ui/react'
+// icons
 import { IoMdArrowBack } from 'react-icons/io'
-import { Link } from 'react-router-dom'
+// hooks
+import { useHistory } from 'react-router-dom'
 
-export const BackButton = ({ to }) => {
+export const BackButton = () => {
+  const history = useHistory()
+  const goBack = () => history.goBack()
+
   return (
     <>
-      <Link to={to}>
-        <IconButton variant="outline" icon={<IoMdArrowBack />} />
-      </Link>
+      <IconButton onClick={goBack} variant="outline" icon={<IoMdArrowBack />} />
     </>
   )
 }
