@@ -1,41 +1,44 @@
 // components
 import { Heading, Divider, Text, VStack } from '@chakra-ui/react'
 import { BackButton } from 'components/ui/Button/Back'
-// import { UserModal } from 'components/User/Profile/Links'
-// import { Modal } from 'components/ui/Modal'
+import { UserModal } from 'components/User/Profile/Links'
+import { Modal } from 'components/ui/Modal'
+import { UpdateUser } from 'components/User/Preferences/Update'
+import { ManageSubs } from 'components/User/Preferences/Manage'
+import { DeleteAccount } from 'components/User/Preferences/Delete'
 // data
 import { paths } from 'services/routes'
 // icon
-// import { FiUser } from 'react-icons/fi'
+import { BsPencil } from 'react-icons/bs'
+import { MdOutlinePayments } from 'react-icons/md'
+import { AiOutlineDelete } from 'react-icons/ai'
+
 // hooks
-// import { useDisclosure } from '@chakra-ui/hooks'
+import { useDisclosure } from '@chakra-ui/hooks'
 
 export const Preferences = () => {
-  // const { isOpen: LiO, onOpen: LoO, onClose: LoC } = useDisclosure()
+  // modals
+  const { isOpen: UIiO, onOpen: UIoO, onClose: UIoC } = useDisclosure()
+  const { isOpen: MSiO, onOpen: MSoO, onClose: MSoC } = useDisclosure()
+  const { isOpen: DAiO, onOpen: DAoO, onClose: DAoC } = useDisclosure()
+
   return (
     <>
       <Heading> Preferences </Heading>
       <BackButton to={paths.profile} />
 
-      {/* <UserModal onClick={LoO} icon={<FiUser />} name="Update info" />
-      <Modal isOpen={LiO} onClose={LoC} content="Image" /> */}
-
       <VStack alignItems="flex-start" w="full" py={4} bg='red.100'>
-        <Heading size="xs"> Update </Heading>
-        <Text> Image </Text>
-        <Text> Email </Text>
-        <Text> User </Text>
-        <Text> Pass </Text>
+        <UserModal onClick={UIoO} icon={<BsPencil />} name="Update info" />
+        <Modal isOpen={UIiO} onClose={UIoC} content={<UpdateUser />} />
 
         <Divider my={4} />
-        <Heading size="xs"> Manage subsription</Heading>
-        <Text> Planes </Text>
-        <Text> Payment - stripe </Text>
-        <Text> Billing - stripe </Text>
+        <UserModal onClick={MSoO} icon={<MdOutlinePayments />} name="Manage subscription" />
+        <Modal isOpen={MSiO} onClose={MSoC} content={<ManageSubs />} />
 
         <Divider my={4} />
-        <Heading size="xs"> Manage account</Heading>
-        <Text> Delete </Text>
+        <UserModal onClick={DAoO} icon={<AiOutlineDelete />} name="Delete account" />
+        <Modal isOpen={DAiO} onClose={DAoC} content={<DeleteAccount />} />
+
       </VStack>
     </>
   )

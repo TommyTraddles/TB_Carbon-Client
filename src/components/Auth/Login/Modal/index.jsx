@@ -43,11 +43,11 @@ export const LoginModal = () => {
 
       <VStack my={2}>
         <Text> OR </Text>
-        <Button colorScheme="facebook">Signup with Facebook</Button>
+        <Button colorScheme="facebook" w="full" variant='outline'> Continue with Facebook</Button>
       </VStack>
 
       <VStack my={2}>
-        <Button variant="link">
+        <Button variant="link" >
           <Link to={paths.forgot}> forgot password </Link>
         </Button>
       </VStack>

@@ -1,7 +1,13 @@
 
 ## To-do
 
-#### Forms
+#### Tech decisions
+- Mongo vs SQL
+- JWT vs Cookie
+- Passport vs Custom
+
+
+#### Forms Auth
 - Register
   - 👉 definir campos
   - 👉 Validation: RegEx
@@ -12,10 +18,15 @@
   - 👉 Email factory
 - Reset pass
   - 👉 Validation: RegEx
+
+#### Forms User
 - Profile
   - 👉 send feedback
 - Preferences
-  - 👉 fields
+  - 👉 update info
+  - 👉 manage subscription
+  - 👉 delete account
+
 
 #### Components
 - Onboarding: 
@@ -29,11 +40,19 @@
   - 👉 Complete table [login]
 - Results: 
   - 👉 👉 Complete Dashboard
-  - 👉 Suggested solutions 
+  - 👉 Suggested solutions
+    - cards
 - Leaderboard: 
   - 👉 Complete table [login]
+    - filters, pagination
 - Subscription: 
   - 👉 👉 Pricing table [login]
+    - free, one donation, montyly subscription
+
+- Help
+  - 👉 FAQS about Carbon
+  - 👉 Write feedback
+
 
 #### Integrations
 - Calculator:
