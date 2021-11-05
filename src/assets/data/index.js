@@ -14,7 +14,7 @@ export const user = {
   name: 'Tommy Traddles',
   user: 'ConcernedCitizen',
   plan: 'monthly',
-  logged: false,
+  logged: true,
 }
 
 // FAQS
