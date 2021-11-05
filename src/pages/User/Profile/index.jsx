@@ -59,14 +59,13 @@ export const Profile = () => {
           name={colorMode === 'light' ? 'Dark mode' : 'Light mode'}
         />
 
-        <UserModal onClick={FoO} icon={<RiChatSmile2Line />} name="Feedback" />
-        <Modal isOpen={FiO} onClose={FoC} content={<Feedback />} />
-
         <UserModal onClick={FAQoO} icon={<AiOutlineInfoCircle />} name="FAQs" />
         <Modal isOpen={FAQiO} onClose={FAQoC} content={<FAQs />} />
 
         {user.logged && (
           <>
+            <UserModal onClick={FoO} icon={<RiChatSmile2Line />} name="Feedback" />
+            <Modal isOpen={FiO} onClose={FoC} content={<Feedback />} />
             <Divider />
             <UserLink path={paths.onboarding} icon={<FiLogOut />} name="Logout" />
           </>

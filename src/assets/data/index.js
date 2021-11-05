@@ -1,3 +1,20 @@
+// 🔥🔥🔥 USER
+
+// USER
+export const user = {
+  name: 'Tommy Traddles',
+  user: 'ConcernedCitizen',
+  plan: 'monthly',
+  logged: true,
+  billing_link: "https://support.stripe.com/questions/how-to-accept-donations-through-stripe"
+}
+
+
+
+
+
+// 🔥🔥🔥 COMPANY
+
 // SUPPORT
 export const support = {
   email: 'test@test.com',
@@ -9,15 +26,6 @@ export const subsOptions = [
   { value: 'one-time payment', desc: 'Lorem ipsum 2' },
   { value: 'monthly', desc: 'Lorem ipsum 3' },
 ]
-// USER
-export const user = {
-  name: 'Tommy Traddles',
-  user: 'ConcernedCitizen',
-  plan: 'monthly',
-  logged: true,
-  billing_link: "https://support.stripe.com/questions/how-to-accept-donations-through-stripe"
-}
-
 // FAQS
 export const faqOptions = [
   {
