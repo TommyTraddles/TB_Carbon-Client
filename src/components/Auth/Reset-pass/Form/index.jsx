@@ -13,7 +13,6 @@ export const ResetModal = () => {
   const handleSubmit = (e) => {
     e.preventDefault() 
     console.info(info)
-    // enviar info
   }
   const isValid = info.oldpass !== '' && info.newpass !== ''
   const error = false
@@ -23,7 +22,7 @@ export const ResetModal = () => {
       <Heading> Reset password </Heading>
 
       <Box my={4}>
-        <form form method="POST" onSubmit={handleSubmit}>
+        <form method="POST" onSubmit={handleSubmit}>
           <InputPass handleInput={handleInput} info={info} error={error} value='oldpass' name='New'/>
           <InputPass handleInput={handleInput} info={info} error={error} value='newpass' name='Repeat pass'/>
           <SubmitBtn isValid={isValid} name='Change password'/>

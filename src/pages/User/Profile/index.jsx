@@ -10,6 +10,7 @@ import { UserLink } from 'components/User/Profile/Links/Links'
 import { UserModal } from 'components/User/Profile/Links/Modal'
 // data
 import { paths } from 'services/routes'
+import { user } from 'assets/data'
 // icons
 import { FiSettings, FiMoon, FiLogOut, FiUser, FiSun } from 'react-icons/fi'
 import { RiStarSmileLine, RiChatSmile2Line } from 'react-icons/ri'
@@ -25,15 +26,13 @@ export const Profile = () => {
   const { isOpen: RiO, onOpen: RoO, onClose: RoC } = useDisclosure()
   const { isOpen: FiO, onOpen: FoO, onClose: FoC } = useDisclosure()
   const { isOpen: FAQiO, onOpen: FAQoO, onClose: FAQoC } = useDisclosure()
-  // loging
-  const logged = true
 
   return (
     <>
       <Heading> Profile </Heading>
 
       <VStack alignItems="flex-start" w="full" py={4}>
-        {!logged ? (
+        {!user.logged ? (
           <>
           <Box bg="red.100" w='full'>
             <UserModal onClick={LoO} icon={<FiUser />} name="Login" />
@@ -45,7 +44,7 @@ export const Profile = () => {
           </>
         ) : (
           <>
-            <ProfileCard />
+            <ProfileCard name={user.name} user={user.user} pro={user.pro} />
             <Divider />
             <UserLink path={paths.preferences} icon={<FiSettings />} name="Preferences"/>
             <Divider />
@@ -68,7 +67,7 @@ export const Profile = () => {
           <Modal isOpen={FAQiO} onClose={FAQoC} content={<FAQs />} />
         </Box>
 
-        {logged && (
+        {user.logged && (
           <>
             <Divider />
             <UserLink path={paths.onboarding} icon={<FiLogOut />} name="Logout" />

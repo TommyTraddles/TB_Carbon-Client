@@ -10,7 +10,6 @@ import { paths } from 'services/routes'
 import { RiStarSmileLine } from 'react-icons/ri'
 
 export const Home = () => {
-  // const logged = false
 
   return (
     <>
@@ -30,9 +29,6 @@ export const Home = () => {
       <Button>
         <Link to={paths.calculator}> New entry</Link>
       </Button>
-
-      {/* <Heading my={4} size="md"> History </Heading>
-      <ResumeHistoryTable /> */}
     </>
   )
 }
