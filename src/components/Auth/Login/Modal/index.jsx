@@ -1,9 +1,10 @@
 // components
 import { LoginForm, } from 'components/Auth/Login/Form'
-import { RegisterForm } from 'components/Auth/Register/Form'
-import { Modal, Button, Text } from '@chakra-ui/react'
+import { Button, Text } from '@chakra-ui/react'
+// import { RegisterForm } from 'components/Auth/Register/Form'
+// import { Modal } from '@chakra-ui/modal'
 // hooks
-import { useDisclosure } from '@chakra-ui/hooks'
+// import { useDisclosure } from '@chakra-ui/hooks'
 
 export const LoginModal = () => {
   // const { isOpen: RiO, onOpen: RoO, onClose: RoC } = useDisclosure()

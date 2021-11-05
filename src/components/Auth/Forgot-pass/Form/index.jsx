@@ -14,7 +14,6 @@ export const ForgotForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault() 
     console.info(info)
-    // enviar info
   }
   const isValid = info.email !== ''
   const error = false
