@@ -1,3 +1,8 @@
+// SUPPORT
+export const support = {
+  email: 'test@test.com'
+}
+
 // SUBSCRIPTION
 export const subsOptions = [
   { value: 'free', desc: 'Lorem ipsum 1' },
@@ -9,21 +14,21 @@ export const user = {
   name: 'Tommy Traddles',
   user: 'ConcernedCitizen',
   plan: 'monthly',
-  logged: false, 
+  logged: true, 
 }
 
 // FAQS
 export const faqOptions = [
   {
-    title: 'hey 1',
+    title: 'Qué es CO2',
     content: 'Lorem ipsum dolor sit amet', 
   }, 
   {
-    title: 'hey 2',
+    title: 'Qué es esto',
     content: 'Lorem ipsum dolor sit amet', 
   }, 
   {
-    title: 'hey 3',
+    title: 'Qué es aquello',
     content: 'Lorem ipsum dolor sit amet', 
   }, 
 ]

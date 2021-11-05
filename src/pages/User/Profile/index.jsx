@@ -59,13 +59,11 @@ export const Profile = () => {
           name={colorMode === 'light' ? 'Dark mode' : 'Light mode'}
         />
 
-        <Box bg="red.100" w='full'>
-          <UserModal onClick={FoO} icon={<RiChatSmile2Line />} name="Feedback" />
-          <Modal isOpen={FiO} onClose={FoC} content={<Feedback />} />
+        <UserModal onClick={FoO} icon={<RiChatSmile2Line />} name="Feedback" />
+        <Modal isOpen={FiO} onClose={FoC} content={<Feedback />} />
 
-          <UserModal onClick={FAQoO} icon={<AiOutlineInfoCircle />} name="FAQs" />
-          <Modal isOpen={FAQiO} onClose={FAQoC} content={<FAQs />} />
-        </Box>
+        <UserModal onClick={FAQoO} icon={<AiOutlineInfoCircle />} name="FAQs" />
+        <Modal isOpen={FAQiO} onClose={FAQoC} content={<FAQs />} />
 
         {user.logged && (
           <>

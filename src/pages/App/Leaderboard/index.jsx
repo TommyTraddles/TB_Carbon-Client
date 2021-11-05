@@ -10,7 +10,7 @@ export const Leaderboard = () => {
     <>
       <Heading> Leaderboard </Heading>
       {!user.logged ? (
-        <Card>
+        <Card bg='red.100'>
           <Heading color="red.500"> Login to compare </Heading>
         </Card>
       ) : (

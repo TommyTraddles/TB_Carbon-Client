@@ -11,7 +11,7 @@ export const History = () => {
       <Heading> History </Heading>
 
       {!user.logged ? (
-        <Card>
+        <Card bg='red.100'>
           <Heading color="red.500"> Login to see history </Heading>
         </Card>
       ) : (
