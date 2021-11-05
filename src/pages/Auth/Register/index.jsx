@@ -1,6 +1,6 @@
 // components
 import { VStack, HStack, Text, Button } from '@chakra-ui/react'
-import { RegisterModal } from 'components/Auth/Register/Form'
+import { RegisterForm } from 'components/Auth/Register/Form'
 // data
 import { Link } from 'react-router-dom'
 import { paths } from 'services/routes'
@@ -8,7 +8,7 @@ import { paths } from 'services/routes'
 export const Register = () => {
   return (
     <>
-      <RegisterModal />
+      <RegisterForm />
       <VStack my={2}>
         <HStack>
           <Text> Have an account? </Text>

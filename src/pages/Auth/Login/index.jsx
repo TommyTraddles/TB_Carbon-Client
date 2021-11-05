@@ -1,6 +1,6 @@
 // components
 import { VStack, HStack, Text, Button } from '@chakra-ui/react'
-import { LoginModal } from 'components/Auth/Login/Form'
+import { LoginForm } from 'components/Auth/Login/Form'
 // data
 import { Link } from 'react-router-dom'
 import { paths } from 'services/routes'
@@ -8,7 +8,7 @@ import { paths } from 'services/routes'
 export const Login = () => {
   return (
     <>
-      <LoginModal />
+      <LoginForm />
       <VStack my={2}>
         <HStack>
           <Text> Don't have an account? </Text>

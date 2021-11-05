@@ -7,7 +7,7 @@ import { SubmitBtn } from 'components/ui/Button/Submit'
 // hooks
 import { useState } from 'react'
 
-export const RegisterModal = () => {
+export const RegisterForm = () => {
   // inputs
   const form = { username: '', email: '', password: '' }
   const [info, setinfo] = useState(form)

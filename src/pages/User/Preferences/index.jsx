@@ -34,7 +34,8 @@ export const Preferences = () => {
       <Heading> Preferences </Heading>
       <BackButton/>
 
-      <VStack alignItems="flex-start" w="full" py={4} bg='red.100'>
+      <VStack bg='red.100' alignItems="flex-start" w="full" py={4}>
+
         <UserModal onClick={UIoO} icon={<BsPencil />} name="Update info" />
         <Modal isOpen={UIiO} onClose={UIoC} content={<UpdateUser />} />
 

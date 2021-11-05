@@ -1,6 +1,6 @@
 // SUPPORT
 export const support = {
-  email: 'test@test.com'
+  email: 'test@test.com',
 }
 
 // SUBSCRIPTION
@@ -14,21 +14,21 @@ export const user = {
   name: 'Tommy Traddles',
   user: 'ConcernedCitizen',
   plan: 'monthly',
-  logged: true, 
+  logged: false,
 }
 
 // FAQS
 export const faqOptions = [
   {
     title: 'Qué es CO2',
-    content: 'Lorem ipsum dolor sit amet', 
-  }, 
+    content: 'Lorem ipsum dolor sit amet',
+  },
   {
     title: 'Qué es esto',
-    content: 'Lorem ipsum dolor sit amet', 
-  }, 
+    content: 'Lorem ipsum dolor sit amet',
+  },
   {
     title: 'Qué es aquello',
-    content: 'Lorem ipsum dolor sit amet', 
-  }, 
+    content: 'Lorem ipsum dolor sit amet',
+  },
 ]

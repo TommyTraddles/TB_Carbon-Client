@@ -6,7 +6,7 @@ import { SubmitBtn } from 'components/ui/Button/Submit'
 // hooks
 import { useState } from 'react'
 
-export const ForgotModal = () => {
+export const ForgotForm = () => {
   // inputs
   const form = { email: ''}
   const [info, setinfo] = useState(form)

@@ -15,7 +15,7 @@ import { paths } from 'services/routes'
 // hooks
 import { useState } from 'react'
 
-export const LoginModal = () => {
+export const LoginForm = () => {
   // inputs
   const form = { email: '', password: '' }
   const [info, setinfo] = useState(form)

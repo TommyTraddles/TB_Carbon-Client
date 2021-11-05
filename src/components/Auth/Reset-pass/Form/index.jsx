@@ -5,7 +5,7 @@ import { SubmitBtn } from 'components/ui/Button/Submit'
 // hooks
 import { useState } from 'react'
 
-export const ResetModal = () => {
+export const ResetForm = () => {
   // inputs
   const form = { oldpass: '', newpass:''}
   const [info, setinfo] = useState(form)
