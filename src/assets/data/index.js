@@ -9,7 +9,7 @@ export const user = {
   name: 'Tommy Traddles',
   user: 'ConcernedCitizen',
   plan: 'monthly',
-  logged: true, 
+  logged: false, 
 }
 
 // FAQS
