@@ -11,7 +11,7 @@ import { Button } from 'theme/components/button'
 import { Card } from 'theme/components/card'
 import { Checkbox } from 'theme/components/checkbox'
 import { Input } from 'theme/components/input'
-import { Radiocard } from './components/radiocard'
+// import { Radiocard } from './components/radiocard'
 
 export const theme = extendTheme(
   {
@@ -23,7 +23,7 @@ export const theme = extendTheme(
       Card,
       Checkbox,
       Input,
-      Radiocard,
+      // Radiocard,
     }
   },
   withDefaultColorScheme(colorScheme),

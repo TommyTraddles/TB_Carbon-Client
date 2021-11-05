@@ -2,6 +2,7 @@ import { Heading, Stack, VStack } from '@chakra-ui/react'
 import { BackButton } from 'components/ui/Button/Back'
 import { RadioCard } from 'components/ui/Radio'
 import { SubmitBtn } from 'components/ui/Button/Submit'
+import { Card } from 'components/ui/Card'
 // import { Success } from 'components/Subscription/Success'
 // import { Error } from 'components/Subscription/Error'
 // hooks
