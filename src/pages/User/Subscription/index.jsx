@@ -7,14 +7,18 @@ import { SubmitBtn } from 'components/ui/Button/Submit'
 // hooks
 import { useRadioGroup } from '@chakra-ui/radio'
 import { useState } from 'react'
+// data
+import { subsOptions } from 'assets/data'
 
-export const Subscription = () => {
-  // card
-  const options = ['free', 'one-time payment', 'monthly']
+export const Subscription = () => {  
+  const options = Object.keys(subsOptions).map(e => subsOptions[e].value)
+  // 🔥 se obtiene de usuario
   const [plan, setplan] = useState(options[0])
   const handleChange = (e) => setplan(e)
   const { getRootProps, getRadioProps } = useRadioGroup({
-    name: 'subscription', defaultValue: plan, onChange: handleChange,
+    name: 'subscription',
+    defaultValue: plan,
+    onChange: handleChange,
   })
   const group = getRootProps()
   // submit
@@ -30,11 +34,11 @@ export const Subscription = () => {
       <Heading> Subscription </Heading>
 
       <Stack>
-        <VStack {...group} >
+        <VStack {...group}>
           {options.map((value) => {
             const radio = getRadioProps({ value })
             return (
-              <RadioCard key={value} {...radio}> 
+              <RadioCard key={value} {...radio}>
                 {value}
               </RadioCard>
             )

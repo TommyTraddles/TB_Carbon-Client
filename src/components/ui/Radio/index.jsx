@@ -1,12 +1,14 @@
 // components
-import { Box } from '@chakra-ui/react'
+import { Box, Text } from '@chakra-ui/react'
 // hooks
 import { useStyleConfig } from '@chakra-ui/react'
 import { useColorModeValue } from '@chakra-ui/color-mode'
 import { useRadio } from '@chakra-ui/radio'
+// data
+import { subsOptions } from 'assets/data'
 
-// 🔥 DOING
 export function RadioCard(props) {
+
   // styling
   const styles = useStyleConfig('Radiocard', { props })
   const bg = useColorModeValue('gray.50', 'whiteAlpha.50')
@@ -19,7 +21,8 @@ export function RadioCard(props) {
     <Box as="label" w="full">
       <input {...input} />
       <Box {...checkbox} __css={styles} bg={bg}>
-        {props.children}
+        <Text size="sm"> {props.children} </Text>
+        <Text>{subsOptions.filter((o) => o.value === props.children)[0].desc}</Text>
       </Box>
     </Box>
   )
