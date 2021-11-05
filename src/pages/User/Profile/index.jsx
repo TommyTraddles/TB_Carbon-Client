@@ -1,7 +1,7 @@
 // components
 import { Heading, Divider, VStack, Box } from '@chakra-ui/react'
 import { Modal } from 'components/ui/Modal'
-import { LoginForm } from 'components/Auth/Login/Form'
+import { LoginModal } from 'components/Auth/Login/Modal'
 import { RegisterForm } from 'components/Auth/Register/Form'
 import { ProfileCard } from 'components/User/Profile/Avatar'
 import { Feedback } from 'components/User/Profile/Feedback'
@@ -36,7 +36,7 @@ export const Profile = () => {
           <>
           <Box bg="red.100" w='full'>
             <UserModal onClick={LoO} icon={<FiUser />} name="Login" />
-            <Modal isOpen={LiO} onClose={LoC} content={<LoginForm />} />
+            <Modal isOpen={LiO} onClose={LoC} content={<LoginModal />} />
             <UserModal onClick={RoO} icon={<FiUser />} name="Register" />
             <Modal isOpen={RiO} onClose={RoC} content={<RegisterForm />} />
           </Box>
