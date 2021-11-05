@@ -23,10 +23,7 @@ export const DeleteAccount = () => {
   return (
     <>
       <Heading size="xs"> Delete Account </Heading>
-      <Text>
-        {' '}
-        Please type <b>{user.user}</b> to confirm.{' '}
-      </Text>
+      <Text> Please type <b>{user.user}</b> to confirm. </Text>
 
       <form method="POST" onSubmit={handleSubmit}>
         <Input onChange={handleInput} value={info.typed} name="typed" />

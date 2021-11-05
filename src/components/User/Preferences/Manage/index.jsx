@@ -1,12 +1,22 @@
-import { Heading, Text } from '@chakra-ui/react'
+// components
+import { Heading, Divider } from '@chakra-ui/react'
+import { UserLink } from 'components/User/Profile/Links/Links'
+import { UserExternalLink } from 'components/User/Profile/Links/ExternalLink'
+// data
+import { paths } from 'services/routes'
+import { user } from 'assets/data'
+// icons
+import { RiStarSmileLine } from 'react-icons/ri'
+import { AiOutlineEuro } from 'react-icons/ai'
 
 export const ManageSubs = () => {
   return (
     <>
-      <Heading size="xs"> Manage subsription</Heading>
-      <Text> Planes </Text>
-      <Text> Payment - stripe </Text>
-      <Text> Billing - stripe </Text>
+      <Heading> Manage subscription</Heading>
+
+      <UserLink path={paths.subscription} icon={<RiStarSmileLine />} name="Change your current plan"/>
+      <Divider />
+      <UserExternalLink icon={<AiOutlineEuro/>}  link={user.billing_link} name='Billing'/>
     </>
   )
 }
