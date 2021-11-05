@@ -1,32 +1,28 @@
 export const Radiocard = {
   baseStyle: {
+    // radio
+    _checked:{
+      bg: 'primary.700',
+      color: 'white',
+    },
+    // card
     w: 'full',
     display: "flex",
     flexDirection: "column",
     background: "white",
-    // alignItems: "center",
-    gap: 6,
-    // cursor: "pointer",
-    // borderWidth:"1px",
-    // borderRadius:"md",
-    // boxShadow:"md",
-    _checked:{
-      bg: 'teal.500',
-      color: 'white',
-    },
-    mx: 'auto',
-    // px: 5,
-    // py: 3,
+    gap: 2,
   },
   // Two variants: rounded and smooth
   variants: {
     rounded: {
-      padding: 8,
+      px: 8,
+      py: 4,
       borderRadius: "xl",
       boxShadow: "xl",
     },
     smooth: {
-      padding: 6,
+      px: 6,
+      py: 4,
       borderRadius: "base",
       boxShadow: "md",
     },

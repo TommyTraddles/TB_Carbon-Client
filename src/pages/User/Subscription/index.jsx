@@ -2,7 +2,6 @@ import { Heading, Stack, VStack } from '@chakra-ui/react'
 import { BackButton } from 'components/ui/Button/Back'
 import { RadioCard } from 'components/ui/Radio'
 import { SubmitBtn } from 'components/ui/Button/Submit'
-import { Card } from 'components/ui/Card'
 // import { Success } from 'components/Subscription/Success'
 // import { Error } from 'components/Subscription/Error'
 // hooks
@@ -35,7 +34,7 @@ export const Subscription = () => {
           {options.map((value) => {
             const radio = getRadioProps({ value })
             return (
-              <RadioCard key={value} {...radio}>
+              <RadioCard key={value} {...radio}> 
                 {value}
               </RadioCard>
             )
