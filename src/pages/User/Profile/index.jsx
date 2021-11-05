@@ -44,7 +44,7 @@ export const Profile = () => {
           </>
         ) : (
           <>
-            <ProfileCard name={user.name} user={user.user} pro={user.pro} />
+            <ProfileCard name={user.name} user={user.user} plan={user.plan} />
             <Divider />
             <UserLink path={paths.preferences} icon={<FiSettings />} name="Preferences"/>
             <Divider />

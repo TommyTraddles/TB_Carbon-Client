@@ -1,5 +1,5 @@
 // components
-import { Heading, Text } from '@chakra-ui/react'
+import { Heading } from '@chakra-ui/react'
 import { Accordion } from '@chakra-ui/accordion'
 import { Acc } from 'components/ui/Accordion'
 // data

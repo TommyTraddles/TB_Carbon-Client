@@ -8,7 +8,7 @@ export const subsOptions = [
 export const user = {
   name: 'Tommy Traddles',
   user: 'ConcernedCitizen',
-  pro: true,
+  plan: 'monthly',
   logged: true, 
 }
 

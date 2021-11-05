@@ -1,6 +1,6 @@
 import { Heading, Stack, VStack } from '@chakra-ui/react'
 import { BackButton } from 'components/ui/Button/Back'
-import { RadioCard } from 'components/ui/Radio'
+import { RadioCard } from 'components/User/Subscription/Card'
 import { SubmitBtn } from 'components/ui/Button/Submit'
 // import { Success } from 'components/Subscription/Success'
 // import { Error } from 'components/Subscription/Error'
@@ -9,11 +9,12 @@ import { useRadioGroup } from '@chakra-ui/radio'
 import { useState } from 'react'
 // data
 import { subsOptions } from 'assets/data'
+import { user } from 'assets/data'
 
 export const Subscription = () => {  
   const options = Object.keys(subsOptions).map(e => subsOptions[e].value)
   // 🔥 se obtiene de usuario
-  const [plan, setplan] = useState(options[0])
+  const [plan, setplan] = useState(user.plan)
   const handleChange = (e) => setplan(e)
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: 'subscription',

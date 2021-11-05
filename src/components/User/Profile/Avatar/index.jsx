@@ -1,12 +1,12 @@
 import { Text, Avatar, HStack, Badge } from '@chakra-ui/react'
 
-export const ProfileCard = ({ name, user, pro }) => {
+export const ProfileCard = ({ name, user, plan }) => {
   return(
     <>
     <HStack>
-      <Avatar name='Juan El Profesional' />
-      <Text fontWeight='bold'> @ConcernedCitizen </Text>
-      { pro && <Badge colorScheme='red'> PRO </Badge>}
+      <Avatar name={name} />
+      <Text fontWeight='bold'> @{user} </Text>
+      { plan !== 'free' && <Badge colorScheme='red'> PRO </Badge>}
     </HStack>
     </>
   )

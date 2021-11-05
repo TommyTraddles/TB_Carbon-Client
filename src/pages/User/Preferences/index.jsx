@@ -10,15 +10,24 @@ import { DeleteAccount } from 'components/User/Preferences/Delete'
 import { BsPencil } from 'react-icons/bs'
 import { MdOutlinePayments } from 'react-icons/md'
 import { AiOutlineDelete } from 'react-icons/ai'
-
 // hooks
 import { useDisclosure } from '@chakra-ui/hooks'
+// data
+import { Redirect } from 'react-router-dom'
+import { user } from 'assets/data'
+import { paths } from 'services/routes'
 
 export const Preferences = () => {
   // modals
   const { isOpen: UIiO, onOpen: UIoO, onClose: UIoC } = useDisclosure()
   const { isOpen: MSiO, onOpen: MSoO, onClose: MSoC } = useDisclosure()
   const { isOpen: DAiO, onOpen: DAoO, onClose: DAoC } = useDisclosure()
+
+  if(!user.logged){
+    return(
+      <Redirect to={paths.profile}/>
+    )
+  }
 
   return (
     <>
