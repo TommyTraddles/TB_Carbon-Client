@@ -1,20 +1,20 @@
 // components
 import { Heading } from '@chakra-ui/react'
-import { LeaderboardTable } from 'components/App/Leaderboard/Table-complete'
+import { RankingTable } from 'components/App/Ranking/Table-complete'
 import { Card } from 'components/ui/Card'
 // data
 import { user } from 'assets/data'
 
-export const Leaderboard = () => {
+export const Ranking = () => {
   return (
     <>
-      <Heading> Leaderboard </Heading>
+      <Heading> Ranking </Heading>
       {!user.logged ? (
         <Card bg='red.100'>
           <Heading color="red.500"> Login to compare </Heading>
         </Card>
       ) : (
-        <LeaderboardTable />
+        <RankingTable />
       )}
     </>
   )

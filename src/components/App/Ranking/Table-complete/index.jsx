@@ -1,7 +1,7 @@
 import { Card } from 'components/ui/Card'
 import { Heading, Button } from '@chakra-ui/react'
 
-export const LeaderboardTable = () => {
+export const RankingTable = () => {
   return (
     <>
       <Card bg="red.100">

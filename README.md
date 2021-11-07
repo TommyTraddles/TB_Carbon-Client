@@ -42,7 +42,7 @@
   - 👉 👉 Complete Dashboard
   - 👉 Suggested solutions
     - cards
-- Leaderboard: 
+- Ranking: 
   - 👉 Complete table [login]
     - filters, pagination
 - Subscription: 

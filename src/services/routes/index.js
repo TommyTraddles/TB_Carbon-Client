@@ -9,7 +9,7 @@ import { Home } from 'pages/App/Home'
 import { Calculator } from 'pages/App/Calculator'
 import { Results } from 'pages/App/[results]'
 import { History } from 'pages/App/History'
-import { Leaderboard } from 'pages/App/Leaderboard'
+import { Ranking } from 'pages/App/Ranking'
 // user
 import { Profile } from 'pages/User/Profile'
 import { Preferences } from 'pages/User/Preferences'
@@ -33,7 +33,7 @@ export const paths = {
   calculator: '/new',
   history: '/history',
   results: '/new/results',
-  leaderboard: '/leaderboard',
+  ranking: '/ranking',
   profile: '/user',
   preferences: '/user/preferences',
   subscription: '/pricing',
@@ -56,7 +56,7 @@ export const navlinks = [
     name: 'calcule',
   },
   {
-    path: paths.leaderboard,
+    path: paths.ranking,
     icon: <AiOutlineTrophy />,
     name: 'ranking',
   },
@@ -114,8 +114,8 @@ export const routes = [
     layout: 'private',
   },
   {
-    component: Leaderboard,
-    path: paths.leaderboard,
+    component: Ranking,
+    path: paths.ranking,
     layout: 'private',
   },
   {
