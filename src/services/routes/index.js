@@ -13,6 +13,7 @@ import { Ranking } from 'pages/App/Ranking'
 // user
 import { Perfil } from 'pages/User/Perfil'
 import { Preferences } from 'pages/User/Preferences'
+import { Iniciativas } from 'pages/User/Iniciativas'
 import { Subscription } from 'pages/User/Subscription'
 // icons
 import {
@@ -37,7 +38,8 @@ export const paths = {
   ranking: '/ranking',
   perfil: '/perfil',
   preferences: '/perfil/preferences',
-  subscription: '/pricing',
+  iniciativas: '/iniciativa',
+  planes: '/iniciativa/planes',
 }
 
 export const navlinks = [
@@ -49,7 +51,7 @@ export const navlinks = [
   {
     path: paths.logros,
     icon: <AiOutlineHistory />,
-    name: 'logros',
+    name: 'mis logros',
   },
   {
     path: paths.calculator,
@@ -135,8 +137,13 @@ export const routes = [
     layout: 'private',
   },
   {
+    component: Iniciativas,
+    path: paths.iniciativas,
+    layout: 'private',
+  },
+  {
     component: Subscription,
-    path: paths.subscription,
+    path: paths.planes,
     layout: 'private',
   },
 ]

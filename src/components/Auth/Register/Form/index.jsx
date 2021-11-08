@@ -24,14 +24,14 @@ export const RegisterForm = () => {
 
   return (
     <>
-      <Heading> Register </Heading>
+      <Heading> Registro </Heading>
 
       <Box my={4}>
         <form method="POST" onSubmit={handleSubmit}>
           <InputEmail handleInput={handleInput} info={info} error={error}/>
           <InputText handleInput={handleInput} info={info} error={error} name='username' type='text'/>
           <InputPass handleInput={handleInput} info={info} error={error} />
-          <SubmitBtn isValid={isValid} name="Register" />
+          <SubmitBtn isValid={isValid} name="Registro" />
         </form>
       </Box>
     </>

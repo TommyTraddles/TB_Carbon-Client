@@ -27,10 +27,10 @@ export const Onboarding = () => {
           <Link to={paths.login}> Login </Link>
         </Button>
         <Button variant="outline" w="full" >
-          <Link to={paths.register}> register</Link>
+          <Link to={paths.register}> Registro</Link>
         </Button>
         <Button variant="ghost">
-          <Link to={paths.home}> continue without login </Link>
+          <Link to={paths.home}> Continua sin iniciar sesión </Link>
         </Button>
       </VStack>
     </>

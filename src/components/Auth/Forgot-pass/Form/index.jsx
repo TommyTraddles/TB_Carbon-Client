@@ -22,7 +22,7 @@ export const ForgotForm = () => {
     <>
       <BackButton/>
 
-      <Heading> Forgot password </Heading>
+      <Heading> Olvidé mi contraseña </Heading>
 
       <Box my={4}>
         <form method="POST" onSubmit={handleSubmit}>

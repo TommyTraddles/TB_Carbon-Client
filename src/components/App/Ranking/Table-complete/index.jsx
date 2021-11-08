@@ -7,6 +7,7 @@ export const RankingTable = () => {
       <Card bg="red.100">
         <Heading size="md"> Complete Table </Heading>
         <Button colorScheme="secondary">Filter date</Button>
+        <Button colorScheme="secondary">Cambiar vista</Button>
       </Card>
     </>
   )

@@ -35,9 +35,9 @@ export const Perfil = () => {
         {!user.logged ? (
           <>
           <Box bg="red.100" w='full'>
-            <UserModal onClick={LoO} icon={<FiUser />} name="Login" />
+            <UserModal onClick={LoO} icon={<FiUser />} name="Log in" />
             <Modal isOpen={LiO} onClose={LoC} content={<LoginModal />} />
-            <UserModal onClick={RoO} icon={<FiUser />} name="Register" />
+            <UserModal onClick={RoO} icon={<FiUser />} name="Registro" />
             <Modal isOpen={RiO} onClose={RoC} content={<RegisterForm />} />
           </Box>
             <Divider />
@@ -46,9 +46,9 @@ export const Perfil = () => {
           <>
             <PerfilCard name={user.name} user={user.user} plan={user.plan} />
             <Divider />
-            <UserLink path={paths.preferences} icon={<FiSettings />} name="Preferences"/>
+            <UserLink path={paths.preferences} icon={<FiSettings />} name="Preferencias"/>
             <Divider />
-            <UserLink path={paths.subscription} icon={<RiStarSmileLine />} name="Iniciativas"/>
+            <UserLink path={paths.iniciativas} icon={<RiStarSmileLine />} name="Iniciativas"/>
             <Divider />
           </>
         )}
@@ -67,7 +67,7 @@ export const Perfil = () => {
             <UserModal onClick={FoO} icon={<RiChatSmile2Line />} name="Feedback" />
             <Modal isOpen={FiO} onClose={FoC} content={<Feedback />} />
             <Divider />
-            <UserLink path={paths.onboarding} icon={<FiLogOut />} name="Logout" />
+            <UserLink path={paths.onboarding} icon={<FiLogOut />} name="Log out" />
           </>
         )}
       </VStack>

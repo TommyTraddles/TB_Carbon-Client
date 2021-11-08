@@ -11,9 +11,9 @@ export const Login = () => {
       <LoginForm />
       <VStack my={2}>
         <HStack>
-          <Text> Don't have an account? </Text>
+          <Text> ¿No tienes cuenta? </Text>
           <Button variant="link">
-            <Link to={paths.register}> register </Link>
+            <Link to={paths.register}> Registro </Link>
           </Button>
         </HStack>
       </VStack>

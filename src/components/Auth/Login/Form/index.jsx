@@ -42,13 +42,13 @@ export const LoginForm = () => {
       </Box>
 
       <VStack my={2}>
-        <Text> OR </Text>
-        <Button colorScheme="facebook" w="full" variant='outline'> Continue with Facebook</Button>
+        <Text> ó </Text>
+        <Button colorScheme="facebook" w="full" variant='outline'> Continúa con Facebook</Button>
       </VStack>
 
       <VStack my={2}>
         <Button variant="link" >
-          <Link to={paths.forgot}> forgot password </Link>
+          <Link to={paths.forgot}> Olvidé mi contraseña </Link>
         </Button>
       </VStack>
     </>

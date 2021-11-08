@@ -19,7 +19,7 @@ export const ResetForm = () => {
 
   return (
     <>
-      <Heading> Reset password </Heading>
+      <Heading> Nueva contraseña </Heading>
 
       <Box my={4}>
         <form method="POST" onSubmit={handleSubmit}>

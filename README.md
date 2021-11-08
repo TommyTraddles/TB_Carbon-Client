@@ -8,7 +8,7 @@
 
 
 #### Forms Auth
-- Register
+- Registro
   - 👉 definir campos
   - 👉 Validation: RegEx
   - 👉 Email factory

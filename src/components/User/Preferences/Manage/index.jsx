@@ -12,11 +12,13 @@ import { AiOutlineEuro } from 'react-icons/ai'
 export const ManageSubs = () => {
   return (
     <>
-      <Heading> Gestionar iniciativas </Heading>
+      <Heading> Gestionar donaciones </Heading>
 
-      <UserLink path={paths.subscription} icon={<RiStarSmileLine />} name="Change your current plan"/>
+      <UserLink path={paths.iniciativas} icon={<RiStarSmileLine />} name="Ver mis iniciativas"/>
       <Divider />
-      <UserExternalLink icon={<AiOutlineEuro/>}  link={user.billing_link} name='Billing'/>
+      <UserLink path={paths.planes} icon={<RiStarSmileLine />} name="Ver mi plan acual"/>
+      <Divider />
+      <UserExternalLink icon={<AiOutlineEuro/>}  link={user.billing_link} name='Facturación'/>
     </>
   )
 }

@@ -15,7 +15,7 @@ export const Home = () => {
       <Heading> Home </Heading>
 
       <Button leftIcon={<RiStarSmileLine />}>
-        <Link to={paths.subscription}> Iniciativas  </Link>
+        <Link to={paths.iniciativas}> Iniciativas  </Link>
       </Button>
 
       <Heading my={4} size="md"> Daily Dashboard </Heading>
