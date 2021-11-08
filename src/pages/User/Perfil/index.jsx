@@ -1,8 +1,8 @@
 // components
-import { Heading, Divider, VStack, Box } from '@chakra-ui/react'
+import { Heading, Divider, VStack} from '@chakra-ui/react'
 import { Modal } from 'components/ui/Modal'
 import { LoginModal } from 'components/Auth/Login/Modal'
-import { RegisterForm } from 'components/Auth/Register/Form'
+import { RegisterModal } from 'components/Auth/Register/Modal'
 import { PerfilCard } from 'components/User/Perfil/Avatar'
 import { Feedback } from 'components/User/Perfil/Feedback'
 import { FAQs } from 'components/User/Perfil/FAQs'
@@ -37,12 +37,10 @@ export const Perfil = () => {
       <VStack alignItems="flex-start" w="full" py={4}>
         {!user.logged ? (
           <>
-          <Box bg="red.100" w='full'>
             <UserModal onClick={LoO} icon={<FiUser />} name="Log in" />
-            <Modal isOpen={LiO} onClose={LoC} content={<LoginModal />} />
+            <Modal isOpen={LiO} onClose={LoC} content={<LoginModal LoC={LoC} RoO={RoO}/>} />
             <UserModal onClick={RoO} icon={<FiUser />} name="Registro" />
-            <Modal isOpen={RiO} onClose={RoC} content={<RegisterForm />} />
-          </Box>
+            <Modal isOpen={RiO} onClose={RoC} content={<RegisterModal RoC={RoC} LoO={LoO}/>}/>
             <Divider />
           </>
         ) : (
@@ -54,7 +52,6 @@ export const Perfil = () => {
             <Divider />
           </>
         )}
-
 
         <UserModal
           onClick={toggleColorMode}

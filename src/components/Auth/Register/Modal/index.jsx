@@ -2,16 +2,16 @@
 import { LoginForm, } from 'components/Auth/Login/Form'
 import { Button, Text } from '@chakra-ui/react'
 
-export const LoginModal = ({LoC, RoO}) => {
+export const RegisterModal = ({RoC, LoO}) => {
   const handleClick = () => {
-    LoC()
-    RoO()
+    RoC()
+    LoO()
   }
 
   return (
     <>
       <LoginForm />
-      <Text> ¿No tienes cuenta? <Button variant='link' onClick={handleClick}> Registrar </Button> </Text>
+      <Text> ¿Ya tienes cuenta? <Button variant='link' onClick={handleClick}> login </Button> </Text>
     </>
   )
 }
