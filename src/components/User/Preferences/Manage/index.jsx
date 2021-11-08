@@ -8,6 +8,7 @@ import { user } from 'assets/data'
 // icons
 import { RiStarSmileLine } from 'react-icons/ri'
 import { AiOutlineEuro } from 'react-icons/ai'
+import { MdOutlinePayments } from 'react-icons/md'
 
 export const ManageSubs = () => {
   return (
@@ -16,9 +17,9 @@ export const ManageSubs = () => {
 
       <UserLink path={paths.iniciativas} icon={<RiStarSmileLine />} name="Ver mis iniciativas"/>
       <Divider />
-      <UserLink path={paths.planes} icon={<RiStarSmileLine />} name="Ver mi plan acual"/>
+      <UserLink path={paths.planes} icon={<MdOutlinePayments />} name="Ver mi plan acual"/>
       <Divider />
-      <UserExternalLink icon={<AiOutlineEuro/>}  link={user.billing_link} name='Facturación'/>
+      <UserExternalLink icon={<AiOutlineEuro/>}  link={user.billing_link} name='Ver mis facturas'/>
     </>
   )
 }

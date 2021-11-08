@@ -8,11 +8,12 @@ import { Feedback } from 'components/User/Perfil/Feedback'
 import { FAQs } from 'components/User/Perfil/FAQs'
 import { UserLink } from 'components/User/Perfil/Links/Links'
 import { UserModal } from 'components/User/Perfil/Links/Modal'
+import { ManageSubs } from 'components/User/Preferences/Manage'
 // data
 import { paths } from 'services/routes'
 import { user } from 'assets/data'
 // icons
-import { FiSettings, FiMoon, FiLogOut, FiUser, FiSun } from 'react-icons/fi'
+import { FiMoon, FiLogOut, FiUser, FiSun } from 'react-icons/fi'
 import { RiStarSmileLine, RiChatSmile2Line } from 'react-icons/ri'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 // hooks
@@ -26,6 +27,8 @@ export const Perfil = () => {
   const { isOpen: RiO, onOpen: RoO, onClose: RoC } = useDisclosure()
   const { isOpen: FiO, onOpen: FoO, onClose: FoC } = useDisclosure()
   const { isOpen: FAQiO, onOpen: FAQoO, onClose: FAQoC } = useDisclosure()
+  const { isOpen: MSiO, onOpen: MSoO, onClose: MSoC } = useDisclosure()
+
 
   return (
     <>
@@ -46,12 +49,12 @@ export const Perfil = () => {
           <>
             <PerfilCard name={user.name} user={user.user} plan={user.plan} />
             <Divider />
-            <UserLink path={paths.preferences} icon={<FiSettings />} name="Preferencias"/>
-            <Divider />
-            <UserLink path={paths.iniciativas} icon={<RiStarSmileLine />} name="Iniciativas"/>
+            <UserModal onClick={MSoO} icon={<RiStarSmileLine />} name="Mis iniciativas" />
+            <Modal isOpen={MSiO} onClose={MSoC} content={<ManageSubs />} />
             <Divider />
           </>
         )}
+
 
         <UserModal
           onClick={toggleColorMode}
