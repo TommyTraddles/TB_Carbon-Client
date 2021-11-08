@@ -1,7 +1,6 @@
 import {
   FormControl,
   FormLabel,
-  FormHelperText,
   InputGroup,
   InputRightElement,
   IconButton,
@@ -36,7 +35,6 @@ export const InputPass = ({ name, value, handleInput, info, error }) => {
             />
           </InputRightElement>
         </InputGroup>
-        { error && <FormHelperText color='red.400'> Helper text </FormHelperText>}
       </FormControl>
     </>
   )
