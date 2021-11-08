@@ -32,7 +32,7 @@ export const Subscription = () => {
   return (
     <>
       <BackButton />
-      <Heading> Subscription </Heading>
+      <Heading> Iniciativas </Heading>
 
       <Stack>
         <VStack {...group}>

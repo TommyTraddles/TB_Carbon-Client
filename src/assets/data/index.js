@@ -5,7 +5,7 @@ export const user = {
   name: 'Tommy Traddles',
   user: 'ConcernedCitizen',
   plan: 'monthly',
-  logged: false,
+  logged: true,
   billing_link: "https://support.stripe.com/questions/how-to-accept-donations-through-stripe"
 }
 
@@ -20,7 +20,7 @@ export const support = {
   email: 'test@test.com',
 }
 
-// SUBSCRIPTION
+// INICIATIVAS
 export const subsOptions = [
   { value: 'free', desc: 'Lorem ipsum 1' },
   { value: 'one-time payment', desc: 'Lorem ipsum 2' },

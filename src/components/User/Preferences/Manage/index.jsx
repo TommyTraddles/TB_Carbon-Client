@@ -1,7 +1,7 @@
 // components
 import { Heading, Divider } from '@chakra-ui/react'
-import { UserLink } from 'components/User/Profile/Links/Links'
-import { UserExternalLink } from 'components/User/Profile/Links/ExternalLink'
+import { UserLink } from 'components/User/Perfil/Links/Links'
+import { UserExternalLink } from 'components/User/Perfil/Links/ExternalLink'
 // data
 import { paths } from 'services/routes'
 import { user } from 'assets/data'
@@ -12,7 +12,7 @@ import { AiOutlineEuro } from 'react-icons/ai'
 export const ManageSubs = () => {
   return (
     <>
-      <Heading> Manage subscription</Heading>
+      <Heading> Gestionar iniciativas </Heading>
 
       <UserLink path={paths.subscription} icon={<RiStarSmileLine />} name="Change your current plan"/>
       <Divider />
