@@ -23,7 +23,6 @@ export const LoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault() 
     console.info(info)
-    // enviar info
   }
   // state
   const isValid = info.email !== '' && info.password !== ''

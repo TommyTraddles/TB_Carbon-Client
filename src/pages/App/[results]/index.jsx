@@ -7,9 +7,12 @@ import { BackButton } from 'components/ui/Button/Back'
 export const Results = () => {
   return (
     <>
-      <BackButton/>
       <Heading> Results </Heading>
+      <BackButton/>
       <Statistics />
+
+      <br/>
+
       <Solutions />
     </>
   )

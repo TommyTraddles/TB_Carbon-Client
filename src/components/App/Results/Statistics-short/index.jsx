@@ -9,10 +9,10 @@ export const ResumeStatistics = () => {
   return (
     <>
       <Card bg="red.100">
-        <Heading size="md"> Short Statistics </Heading>
-        <Button colorScheme="secondary">Filter date</Button>
+        <Heading size="md"> Dashboard (reducido) </Heading>
+        <Button colorScheme="secondary"> Filtrar por fecha </Button>
         <Button>
-          <Link to={paths.results}> See details</Link>
+          <Link to={paths.results}> Ver detalles </Link>
         </Button>
       </Card>
     </>

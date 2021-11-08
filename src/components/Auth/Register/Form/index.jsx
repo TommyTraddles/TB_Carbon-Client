@@ -15,7 +15,6 @@ export const RegisterForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.info(info)
-    // enviar info
   }
   const isValid =
     info.email !== '' && info.username !== '' && info.password !== ''

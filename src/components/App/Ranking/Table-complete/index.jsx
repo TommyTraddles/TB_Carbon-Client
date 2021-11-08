@@ -5,8 +5,8 @@ export const RankingTable = () => {
   return (
     <>
       <Card bg="red.100">
-        <Heading size="md"> Complete Table </Heading>
-        <Button colorScheme="secondary">Filter date</Button>
+        <Heading size="md"> Tabla completa de Ranking </Heading>
+        <Button colorScheme="secondary"> Filtrar por fecha </Button>
         <Button colorScheme="secondary">Cambiar vista</Button>
       </Card>
     </>

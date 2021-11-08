@@ -12,15 +12,15 @@ import { Logros } from 'pages/App/Logros'
 import { Ranking } from 'pages/App/Ranking'
 // user
 import { Perfil } from 'pages/User/Perfil'
-import { Preferences } from 'pages/User/Preferences'
 import { Iniciativas } from 'pages/User/Iniciativas'
 import { Subscription } from 'pages/User/Subscription'
+// import { Preferences } from 'pages/User/Preferences'
 // icons
 import {
-  // AiOutlineCalculator,
   AiOutlineHistory,
   AiOutlineTrophy,
   AiOutlineUser,
+  // AiOutlineCalculator,
 } from 'react-icons/ai'
 import { BiHomeSmile } from 'react-icons/bi'
 import { RiStarSmileLine } from 'react-icons/ri'
@@ -131,11 +131,11 @@ export const routes = [
     path: paths.perfil,
     layout: 'private',
   },
-  {
-    component: Preferences,
-    path: paths.preferences,
-    layout: 'private',
-  },
+  // {
+  //   component: Preferences,
+  //   path: paths.preferences,
+  //   layout: 'private',
+  // },
   {
     component: Iniciativas,
     path: paths.iniciativas,

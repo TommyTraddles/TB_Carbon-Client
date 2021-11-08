@@ -8,7 +8,7 @@ import { Feedback } from 'components/User/Perfil/Feedback'
 import { FAQs } from 'components/User/Perfil/FAQs'
 import { UserLink } from 'components/User/Perfil/Links/Links'
 import { UserModal } from 'components/User/Perfil/Links/Modal'
-import { ManageSubs } from 'components/User/Preferences/Manage'
+import { ManageSubs } from 'components/User/Perfil/Gestionar-iniciativas'
 // data
 import { paths } from 'services/routes'
 import { user } from 'assets/data'

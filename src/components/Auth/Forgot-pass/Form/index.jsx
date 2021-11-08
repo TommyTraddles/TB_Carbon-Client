@@ -8,11 +8,12 @@ import { useState } from 'react'
 
 export const ForgotForm = () => {
   // inputs
-  const form = { email: ''}
+  const form = { email: '' }
   const [info, setinfo] = useState(form)
-  const handleInput = (e) => setinfo((curr) => ({ ...curr, [e.target.name]: e.target.value }))
+  const handleInput = (e) =>
+    setinfo((curr) => ({ ...curr, [e.target.name]: e.target.value }))
   const handleSubmit = (e) => {
-    e.preventDefault() 
+    e.preventDefault()
     console.info(info)
   }
   const isValid = info.email !== ''
@@ -20,17 +21,15 @@ export const ForgotForm = () => {
 
   return (
     <>
-      <BackButton/>
-
       <Heading> Olvidé mi contraseña </Heading>
+      <BackButton />
 
       <Box my={4}>
         <form method="POST" onSubmit={handleSubmit}>
           <InputEmail handleInput={handleInput} info={info} error={error} />
-          <SubmitBtn isValid={isValid} name='Send email'/>
+          <SubmitBtn isValid={isValid} name="Enviar email" />
         </form>
       </Box>
-
     </>
   )
 }

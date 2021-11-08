@@ -9,9 +9,9 @@ export const Form = () => {
   return (
     <>
       <Card bg="red.100">
-        <Heading size="md"> Complete form </Heading>
+        <Heading size="md"> Formulario de CO2 </Heading>
         <Button>
-          <Link to={paths.results}> see results</Link>
+          <Link to={paths.results}> ver resultado </Link>
         </Button>
       </Card>
     </>

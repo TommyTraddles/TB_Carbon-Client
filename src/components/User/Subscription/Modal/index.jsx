@@ -2,8 +2,6 @@ import { Stack, VStack } from '@chakra-ui/react'
 import { BackButton } from 'components/ui/Button/Back'
 import { RadioCard } from 'components/User/Subscription/Card'
 import { SubmitBtn } from 'components/ui/Button/Submit'
-// import { Success } from 'components/Subscription/Success'
-// import { Error } from 'components/Subscription/Error'
 // hooks
 import { useRadioGroup } from '@chakra-ui/radio'
 import { useState } from 'react'

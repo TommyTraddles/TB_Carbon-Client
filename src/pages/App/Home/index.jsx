@@ -21,7 +21,8 @@ export const Home = () => {
       <Heading my={4} size="md"> Daily Dashboard </Heading>
       <ResumeStatistics />
 
-      <Heading my={4} size="md"> Solutions </Heading>
+      <br/>
+
       <ResumeSolutions/>
     </>
   )

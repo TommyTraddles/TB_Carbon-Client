@@ -19,11 +19,11 @@ export const InputPass = ({ name, value, handleInput, info, error }) => {
   return (
     <>
       <FormControl my={2}>
-        <FormLabel> {name ? name : "Password"} </FormLabel>
+        <FormLabel> {name ? name : "Contraseña"} </FormLabel>
         <InputGroup>
           <Input
             name={value ? value : "password"}
-            placeholder='password'
+            placeholder='contraseña'
             type={show ? 'text' : 'password'}
             onChange={handleInput}
             value={info[value]}

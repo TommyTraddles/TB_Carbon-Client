@@ -1,12 +1,12 @@
-import { Card } from "components/ui/Card"
-import { Heading } from "@chakra-ui/react"
+import { Card } from 'components/ui/Card'
+import { Heading } from '@chakra-ui/react'
 
 export const Statistics = () => {
-  return(
+  return (
     <>
-    <Card bg='red.100'>
-    <Heading size='md'> Complete Statistics </Heading>
-    </Card>
+      <Card bg="red.100">
+        <Heading size="md"> Dashboard completo </Heading>
+      </Card>
     </>
   )
 }

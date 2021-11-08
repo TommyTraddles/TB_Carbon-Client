@@ -23,9 +23,9 @@ export const ResetForm = () => {
 
       <Box my={4}>
         <form method="POST" onSubmit={handleSubmit}>
-          <InputPass handleInput={handleInput} info={info} error={error} value='oldpass' name='New'/>
-          <InputPass handleInput={handleInput} info={info} error={error} value='newpass' name='Repeat pass'/>
-          <SubmitBtn isValid={isValid} name='Change password'/>
+          <InputPass handleInput={handleInput} info={info} error={error} value='oldpass' name='Nueva contraseña'/>
+          <InputPass handleInput={handleInput} info={info} error={error} value='newpass' name='Repite contraseña'/>
+          <SubmitBtn isValid={isValid} name='Cambiar contraseña'/>
         </form>
       </Box>
 
