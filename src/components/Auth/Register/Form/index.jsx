@@ -28,7 +28,7 @@ export const RegisterForm = () => {
       <Box my={4}>
         <form method="POST" onSubmit={handleSubmit}>
           <InputEmail handleInput={handleInput} info={info} error={error}/>
-          <InputText handleInput={handleInput} info={info} error={error} name='username' type='text'/>
+          <InputText handleInput={handleInput} info={info} error={error}  placeholder='@usuario' title='Nombre de usuario' name='username' type='text'/>
           <InputPass handleInput={handleInput} info={info} error={error} />
           <SubmitBtn isValid={isValid} name="Registro" />
         </form>

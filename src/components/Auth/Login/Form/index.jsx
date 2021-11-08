@@ -1,11 +1,5 @@
 // components
-import {
-  Box,
-  VStack,
-  Heading,
-  Button,
-  Text,
-} from '@chakra-ui/react'
+import { Box, VStack, HStack, Heading, Button, Text } from '@chakra-ui/react'
 import { InputPass } from 'components/ui/Input/Password'
 import { InputEmail } from 'components/ui/Input/Email'
 import { SubmitBtn } from 'components/ui/Button/Submit'
@@ -19,9 +13,10 @@ export const LoginForm = () => {
   // inputs
   const form = { email: '', password: '' }
   const [info, setinfo] = useState(form)
-  const handleInput = (e) => setinfo((curr) => ({ ...curr, [e.target.name]: e.target.value }))
+  const handleInput = (e) =>
+    setinfo((curr) => ({ ...curr, [e.target.name]: e.target.value }))
   const handleSubmit = (e) => {
-    e.preventDefault() 
+    e.preventDefault()
     console.info(info)
   }
   // state
@@ -34,20 +29,21 @@ export const LoginForm = () => {
 
       <Box my={4}>
         <form method="POST" onSubmit={handleSubmit}>
-          <InputEmail handleInput={handleInput} info={info} error={error}/>
-          <InputPass handleInput={handleInput} info={info} error={error}/>
-          <SubmitBtn isValid={isValid} name='Login'/>
+          <InputEmail handleInput={handleInput} info={info} error={error} />
+          <InputPass handleInput={handleInput} info={info} error={error} />
+          <HStack justifyContent='flex-end' my={2}>
+            <Button variant="link">
+              <Link to={paths.forgot}> Olvidé mi contraseña </Link>
+            </Button>
+          </HStack>
+          <SubmitBtn isValid={isValid} name="Login" />
         </form>
       </Box>
 
       <VStack my={2}>
         <Text> ó </Text>
-        <Button colorScheme="facebook" w="full" variant='outline'> Continúa con Facebook</Button>
-      </VStack>
-
-      <VStack my={2}>
-        <Button variant="link" >
-          <Link to={paths.forgot}> Olvidé mi contraseña </Link>
+        <Button colorScheme="facebook" w="full" variant="outline">
+          Continúa con Facebook
         </Button>
       </VStack>
     </>

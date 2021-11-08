@@ -1,14 +1,14 @@
 import { FormControl, FormLabel, Input, FormHelperText } from "@chakra-ui/react"
 
-export const InputText = ({ type, name, handleInput, info, error }) => {
+export const InputText = ({ title, placeholder, type, name, handleInput, info, error }) => {
   return (
     <>
       <FormControl my={2}>
-        <FormLabel> {name} </FormLabel>
+        <FormLabel> {title ? title : name} </FormLabel>
         <Input
           name={name}
           type={type}
-          placeholder={name}
+          placeholder={placeholder ? placeholder : name}
           onChange={handleInput}
           value={info[name]}
         />
