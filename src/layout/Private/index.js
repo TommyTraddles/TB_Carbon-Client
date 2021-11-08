@@ -1,7 +1,7 @@
 // components
 import { Navbar } from 'components/ui/Navbar'
 import { Container, Box } from '@chakra-ui/react'
-
+import { FAB } from 'components/ui/Button/FAB'
 // routing
 import { Switch, Route } from 'react-router-dom'
 import { routes } from 'services/routes'
@@ -16,6 +16,7 @@ export const Private = () => {
             return ''
           })}
         </Switch>
+        <FAB />
         <Box h={24} />
         <Navbar />
       </Container>

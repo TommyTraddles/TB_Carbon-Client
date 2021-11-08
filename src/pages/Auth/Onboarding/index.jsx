@@ -30,7 +30,7 @@ export const Onboarding = () => {
           <Link to={paths.register}> Registro</Link>
         </Button>
         <Button variant="ghost">
-          <Link to={paths.home}> Continua sin iniciar sesión </Link>
+          <Link to={paths.calculator}> Continua sin iniciar sesión </Link>
         </Button>
       </VStack>
     </>

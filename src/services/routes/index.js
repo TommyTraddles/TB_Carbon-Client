@@ -17,13 +17,13 @@ import { Iniciativas } from 'pages/User/Iniciativas'
 import { Subscription } from 'pages/User/Subscription'
 // icons
 import {
-  AiOutlineCalculator,
+  // AiOutlineCalculator,
   AiOutlineHistory,
   AiOutlineTrophy,
   AiOutlineUser,
 } from 'react-icons/ai'
 import { BiHomeSmile } from 'react-icons/bi'
-// import { RiStarSmileLine } from 'react-icons/ri'
+import { RiStarSmileLine } from 'react-icons/ri'
 
 export const paths = {
   onboarding: '/auth/onboarding',
@@ -53,21 +53,21 @@ export const navlinks = [
     icon: <AiOutlineHistory />,
     name: 'mis logros',
   },
-  {
-    path: paths.calculator,
-    icon: <AiOutlineCalculator />,
-    name: 'calcule',
-  },
+  // {
+  //   path: paths.calculator,
+  //   icon: <AiOutlineCalculator />,
+  //   name: 'calcule',
+  // },
   {
     path: paths.ranking,
     icon: <AiOutlineTrophy />,
     name: 'ranking',
   },
-  // {
-  //   path: paths.subscription,
-  //   icon: <RiStarSmileLine />,
-  //   name: 'iniciativas',
-  // },
+  {
+    path: paths.iniciativas,
+    icon: <RiStarSmileLine />,
+    name: 'iniciativas',
+  },
   {
     path: paths.perfil,
     icon: <AiOutlineUser />,

@@ -23,11 +23,6 @@ export const Home = () => {
 
       <Heading my={4} size="md"> Solutions </Heading>
       <ResumeSolutions/>
-
-      <Heading my={4} size="md"> New </Heading>
-      <Button>
-        <Link to={paths.calculator}> New entry</Link>
-      </Button>
     </>
   )
 }

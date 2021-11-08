@@ -13,6 +13,7 @@ export const LogrosTable = () => {
         <Button colorScheme="secondary">Filter date</Button>
         <Button colorScheme="secondary">Pagination</Button>
         <Button colorScheme="secondary">Cambiar vista</Button>
+        <Button colorScheme="secondary">Badges</Button>
         <Button>
           <Link to={paths.results}> see result </Link>
         </Button>
