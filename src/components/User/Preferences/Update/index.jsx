@@ -22,7 +22,7 @@ export const UpdateUser = () => {
       <Heading size="xs"> Account settings </Heading>
 
       <form method="POST">
-        <Heading size="xs"> Profile pic </Heading>
+        <Heading size="xs"> Perfil pic </Heading>
         <Input type="file" />
       </form>
 

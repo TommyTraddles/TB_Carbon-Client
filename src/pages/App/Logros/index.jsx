@@ -1,21 +1,21 @@
 // components
 import { Heading } from '@chakra-ui/react'
-import { HistoryTable } from 'components/App/History/Table-complete'
+import { LogrosTable } from 'components/App/Logros/Table-complete'
 import { Card } from 'components/ui/Card'
 // data
 import { user } from 'assets/data'
 
-export const History = () => {
+export const Logros = () => {
   return (
     <>
-      <Heading> History </Heading>
+      <Heading> Logros </Heading>
 
       {!user.logged ? (
         <Card bg='red.100'>
-          <Heading color="red.500"> Login to see history </Heading>
+          <Heading color="red.500"> Login to see logros </Heading>
         </Card>
       ) : (
-        <HistoryTable />
+        <LogrosTable />
       )}
     </>
   )

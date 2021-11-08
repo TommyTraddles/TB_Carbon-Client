@@ -1,6 +1,6 @@
 import { Text, Avatar, HStack, Badge } from '@chakra-ui/react'
 
-export const ProfileCard = ({ name, user, plan }) => {
+export const PerfilCard = ({ name, user, plan }) => {
   return(
     <>
     <HStack>

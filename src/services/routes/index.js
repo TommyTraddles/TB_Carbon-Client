@@ -8,10 +8,10 @@ import { Onboarding } from 'pages/Auth/Onboarding'
 import { Home } from 'pages/App/Home'
 import { Calculator } from 'pages/App/Calculator'
 import { Results } from 'pages/App/[results]'
-import { History } from 'pages/App/History'
+import { Logros } from 'pages/App/Logros'
 import { Ranking } from 'pages/App/Ranking'
 // user
-import { Profile } from 'pages/User/Profile'
+import { Perfil } from 'pages/User/Perfil'
 import { Preferences } from 'pages/User/Preferences'
 import { Subscription } from 'pages/User/Subscription'
 // icons
@@ -31,11 +31,11 @@ export const paths = {
   register: '/auth/register',
   home: '/',
   calculator: '/new',
-  history: '/history',
+  logros: '/logros',
   results: '/new/results',
   ranking: '/ranking',
-  profile: '/user',
-  preferences: '/user/preferences',
+  perfil: '/perfil',
+  preferences: '/perfil/preferences',
   subscription: '/pricing',
 }
 
@@ -46,9 +46,9 @@ export const navlinks = [
     name: 'home',
   },
   {
-    path: paths.history,
+    path: paths.logros,
     icon: <AiOutlineHistory />,
-    name: 'history',
+    name: 'logros',
   },
   {
     path: paths.calculator,
@@ -61,9 +61,9 @@ export const navlinks = [
     name: 'ranking',
   },
   {
-    path: paths.profile,
+    path: paths.perfil,
     icon: <AiOutlineUser />,
-    name: 'me',
+    name: 'perfil',
   },
 ]
 
@@ -94,18 +94,18 @@ export const routes = [
     layout: 'public',
   },
   {
-    component: Home,
-    path: paths.home,
-    layout: 'private',
-  },
-  {
     component: Calculator,
     path: paths.calculator,
     layout: 'private',
   },
   {
-    component: History,
-    path: paths.history,
+    component: Home,
+    path: paths.home,
+    layout: 'private',
+  },
+  {
+    component: Logros,
+    path: paths.logros,
     layout: 'private',
   },
   {
@@ -119,8 +119,8 @@ export const routes = [
     layout: 'private',
   },
   {
-    component: Profile,
-    path: paths.profile,
+    component: Perfil,
+    path: paths.perfil,
     layout: 'private',
   },
   {

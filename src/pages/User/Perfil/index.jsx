@@ -3,11 +3,11 @@ import { Heading, Divider, VStack, Box } from '@chakra-ui/react'
 import { Modal } from 'components/ui/Modal'
 import { LoginModal } from 'components/Auth/Login/Modal'
 import { RegisterForm } from 'components/Auth/Register/Form'
-import { ProfileCard } from 'components/User/Profile/Avatar'
-import { Feedback } from 'components/User/Profile/Feedback'
-import { FAQs } from 'components/User/Profile/FAQs'
-import { UserLink } from 'components/User/Profile/Links/Links'
-import { UserModal } from 'components/User/Profile/Links/Modal'
+import { PerfilCard } from 'components/User/Perfil/Avatar'
+import { Feedback } from 'components/User/Perfil/Feedback'
+import { FAQs } from 'components/User/Perfil/FAQs'
+import { UserLink } from 'components/User/Perfil/Links/Links'
+import { UserModal } from 'components/User/Perfil/Links/Modal'
 // data
 import { paths } from 'services/routes'
 import { user } from 'assets/data'
@@ -19,7 +19,7 @@ import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { useColorMode } from '@chakra-ui/color-mode'
 import { useDisclosure } from '@chakra-ui/hooks'
 
-export const Profile = () => {
+export const Perfil = () => {
   // styling
   const { colorMode, toggleColorMode } = useColorMode()
   const { isOpen: LiO, onOpen: LoO, onClose: LoC } = useDisclosure()
@@ -29,7 +29,7 @@ export const Profile = () => {
 
   return (
     <>
-      <Heading> Profile </Heading>
+      <Heading> Perfil </Heading>
 
       <VStack alignItems="flex-start" w="full" py={4}>
         {!user.logged ? (
@@ -44,11 +44,11 @@ export const Profile = () => {
           </>
         ) : (
           <>
-            <ProfileCard name={user.name} user={user.user} plan={user.plan} />
+            <PerfilCard name={user.name} user={user.user} plan={user.plan} />
             <Divider />
             <UserLink path={paths.preferences} icon={<FiSettings />} name="Preferences"/>
             <Divider />
-            <UserLink path={paths.subscription} icon={<RiStarSmileLine />} name="Take action"/>
+            <UserLink path={paths.subscription} icon={<RiStarSmileLine />} name="Iniciativas"/>
             <Divider />
           </>
         )}

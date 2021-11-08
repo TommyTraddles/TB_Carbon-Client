@@ -20,11 +20,11 @@
   - 👉 Validation: RegEx
 
 #### Forms User
-- Profile
+- Perfil
   - 👉 send feedback
 - Preferences
   - 👉 update info
-  - 👉 manage subscription
+  - 👉 manage iniciativas
   - 👉 delete account
 
 
@@ -36,7 +36,7 @@
   - 👉 Short table / pagination [login]
 - Calculator: 
   - 👉 👉 Form
-- History: 
+- Logros: 
   - 👉 Complete table [login]
 - Results: 
   - 👉 👉 Complete Dashboard
