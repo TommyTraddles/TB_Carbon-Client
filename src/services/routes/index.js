@@ -22,9 +22,10 @@ import {
   AiOutlineUser,
 } from 'react-icons/ai'
 import { BiHomeSmile } from 'react-icons/bi'
+// import { RiStarSmileLine } from 'react-icons/ri'
 
 export const paths = {
-  onboarding: '/auth/welcome',
+  onboarding: '/auth/onboarding',
   login: '/auth/login',
   forgot: '/auth/forgot-pass',
   reset: '/auth/reset-pass',
@@ -60,6 +61,11 @@ export const navlinks = [
     icon: <AiOutlineTrophy />,
     name: 'ranking',
   },
+  // {
+  //   path: paths.subscription,
+  //   icon: <RiStarSmileLine />,
+  //   name: 'iniciativas',
+  // },
   {
     path: paths.perfil,
     icon: <AiOutlineUser />,
