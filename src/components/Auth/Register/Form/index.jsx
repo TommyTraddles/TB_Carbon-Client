@@ -1,7 +1,6 @@
 // components
 import { Heading, Box } from '@chakra-ui/react'
 import { InputEmail } from 'components/ui/Input/Email'
-import { InputText } from 'components/ui/Input/Text'
 import { InputPass } from 'components/ui/Input/Password'
 import { SubmitBtn } from 'components/ui/Button/Submit'
 // hooks
@@ -17,7 +16,7 @@ export const RegisterForm = () => {
     console.info(info)
   }
   const isValid =
-    info.email !== '' && info.username !== '' && info.password !== ''
+    info.email !== '' && info.password !== ''
   // state
   const error = false
 
@@ -28,7 +27,6 @@ export const RegisterForm = () => {
       <Box my={4}>
         <form method="POST" onSubmit={handleSubmit}>
           <InputEmail handleInput={handleInput} info={info} error={error}/>
-          <InputText handleInput={handleInput} info={info} error={error}  placeholder='@usuario' title='Nombre de usuario' name='username' type='text'/>
           <InputPass handleInput={handleInput} info={info} error={error} />
           <SubmitBtn isValid={isValid} name="Registro" />
         </form>

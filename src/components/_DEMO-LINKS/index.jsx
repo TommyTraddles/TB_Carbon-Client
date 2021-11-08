@@ -1,9 +1,8 @@
-import { Wrap, Button, Badge, Text } from '@chakra-ui/react'
+import { Wrap, Button } from '@chakra-ui/react'
 import { Card } from 'components/ui/Card'
 // data
 import { NavLink } from 'react-router-dom'
 import { routes } from 'services/routes'
-import { user } from 'assets/data'
 
 export const DEMO_LINKS = () => {
   return (
@@ -16,17 +15,6 @@ export const DEMO_LINKS = () => {
             </Button>
           ))}
         </Wrap>
-
-        <br />
-
-        <Text fontSize="sm" color="white">
-          Logged: 
-          {user.logged ? (
-            <Badge colorScheme="green"> IN </Badge>
-          ) : (
-            <Badge colorScheme="red"> OUT </Badge>
-          )}
-        </Text>
       </Card>
     </>
   )

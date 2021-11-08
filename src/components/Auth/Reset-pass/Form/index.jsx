@@ -14,7 +14,7 @@ export const ResetForm = () => {
     e.preventDefault() 
     console.info(info)
   }
-  const isValid = info.oldpass !== '' && info.newpass !== ''
+  const isValid = info.oldpass !== '' && info.newpass !== '' && info.oldpass === info.newpass
   const error = false
 
   return (

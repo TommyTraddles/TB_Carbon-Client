@@ -29,9 +29,6 @@ export const Onboarding = () => {
         <Button variant="outline" w="full" >
           <Link to={paths.register}> Registro</Link>
         </Button>
-        <Button variant="ghost">
-          <Link to={paths.calculator}> Continua sin iniciar sesión </Link>
-        </Button>
       </VStack>
     </>
   )

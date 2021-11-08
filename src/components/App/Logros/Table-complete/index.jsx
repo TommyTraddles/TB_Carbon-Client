@@ -11,7 +11,6 @@ export const LogrosTable = () => {
       <Card bg="red.100">
         <Heading size="md"> Tabla de histórico completa  </Heading>
         <Button colorScheme="secondary"> Paginación </Button>
-        <Button colorScheme="secondary"> Cambiar vista </Button>
         <Button colorScheme="secondary"> Badges </Button>
         <Button>
           <Link to={paths.results}> Ver detalle  </Link>
