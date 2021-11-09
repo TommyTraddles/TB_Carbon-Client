@@ -8,24 +8,33 @@ import { Card } from 'components/ui/Card'
 // hooks
 import { useState } from 'react'
 // data
-import { valPass, valEmail } from 'services/utils/regEx'
+// import { valPass, valEmail } from 'services/utils/regEx'
+
 
 export const RegisterForm = () => {
   // input
   const form = { email: '', password: '' }
   const [info, setinfo] = useState(form)
-
-  // 🤟 Pasword //////////////////// REFACTOR
+  
+  // 🤟 Pasword //////////////////// REFACTOR + USEEFFECT + FORM VALIDATION
+  const valPass = {
+    upper: new RegExp(/(?=.*?[A-Z])/),
+    lower: new RegExp(/(?=.*?[a-z])/),
+    digit: new RegExp(/(?=.*?[0-9])/),
+    special: new RegExp(/(?=.*?[#?!@$%^&*-])/),
+    length: new RegExp(/.{8,}$/),
+  }
+  const valEmail = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)
+  // 
   const [upper, setupper] = useState({ message: 'Letras mayúsculas', valid: false,})
-  const [lower, setlower] = useState({ message: 'Letras minúsculas', valid: false,})
   const [digit, setdigit] = useState({ message: 'Al menos un número', valid: false,})
   const [special, setspecial] = useState({ message: 'Un caracter especial', valid: false,})
   const [length, setlength] = useState({ message: '8 o más caracteres', valid: false,})
+  // const [strength, setstrength] = useState(1)
   // 
   const value = {
     email: valEmail.test(info.email),
     upper: valPass.upper.test(info.password), 
-    lower: valPass.lower.test(info.password),
     digit: valPass.digit.test(info.password),
     special: valPass.special.test(info.password),
     length: valPass.length.test(info.password),
@@ -33,20 +42,30 @@ export const RegisterForm = () => {
   const fn = (fn, bool) => fn((curr) => ({ ...curr, valid: bool }))
   const validatedPass = () => {
     value.upper ? fn(setupper, true) : fn(setupper, false )
-    value.lower ? fn(setlower, true) : fn(setlower, false )
     value.digit ? fn(setdigit, true) : fn(setdigit, false )
     value.special ? fn(setspecial, true) : fn(setspecial, false )
     value.length ? fn(setlength, true) : fn(setlength, false )
+
+    // upper.valid && setstrength(strength + 1)
+    // digit.valid && setstrength(strength + 1)
+    // special.valid && setstrength(strength + 1)
+    // length.valid && setstrength(strength + 1)
   }
   // 🤟 Pasword //////////////////// REFACTOR
   
+
+
+
+
   // inputs
   const handleInput = (e) => {
     setinfo((curr) => ({ ...curr, [e.target.name]: e.target.value }))
     validatedPass()
+    // console.info(strength)
   }
+  
   // not empty
-  const isValid = value.email && value.upper && value.lower && value.digit && value.special && value.length
+  const isValid = value.email && value.length
 
   // submit
   const handleSubmit = (e) => {
@@ -63,9 +82,9 @@ export const RegisterForm = () => {
           <InputEmail handleInput={handleInput} info={info} />
           <InputPass handleInput={handleInput} info={info} />
 
+          {/* REFATOR ////////////////////////////////  */}
           <Card bg='red.100'>
           <PassValidator valid={upper.valid} value={upper.message} />
-          <PassValidator valid={lower.valid} value={lower.message} />
           <PassValidator valid={digit.valid} value={digit.message} />
           <PassValidator valid={special.valid} value={special.message} />
           <PassValidator valid={length.valid} value={length.message} />
