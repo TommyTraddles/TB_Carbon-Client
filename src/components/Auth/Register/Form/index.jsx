@@ -4,44 +4,49 @@ import { InputEmail } from 'components/ui/Input/Email'
 import { InputPass } from 'components/ui/Input/Password'
 import { SubmitBtn } from 'components/ui/Button/Submit'
 import { PassValidator } from 'components/ui/Input/Password/Validator'
+import { Card } from 'components/ui/Card'
 // hooks
 import { useState } from 'react'
+// data
+import { valPass, valEmail } from 'services/utils/regEx'
 
 export const RegisterForm = () => {
   // input
   const form = { email: '', password: '' }
   const [info, setinfo] = useState(form)
 
-  // 🔥 VALUES
-  const passError = [
-    { name: 'upper', values: { message: 'Letras mayúsculas', valid: false } },
-    { name: 'lower', values: { message: 'Letras minúsculas', valid: false } },
-    { name: 'digit', values: { message: 'Al menos un número', valid: false } },
-    { name: 'special', values: { message: 'Un caracter especial', valid: false }, },
-    { name: 'length', values: { message: '8 o más caracteres', valid: false } },
-  ]
-  const [passerror, setpasserror] = useState(passError)
-
-  // 🔥 REGEX
-  const validPass = {
-    upper: new RegExp('(?=.*?[A-Z])'),
-    lower: new RegExp('(?=.*?[a-z])'),
-    digit: new RegExp('(?=.*?[0-9])'),
-    special: new RegExp('(?=.*?[#?!@$%^&*-])'),
-    length: new RegExp('.{8,}$'),
+  // 🤟 Pasword //////////////////// REFACTOR
+  const [upper, setupper] = useState({ message: 'Letras mayúsculas', valid: false,})
+  const [lower, setlower] = useState({ message: 'Letras minúsculas', valid: false,})
+  const [digit, setdigit] = useState({ message: 'Al menos un número', valid: false,})
+  const [special, setspecial] = useState({ message: 'Un caracter especial', valid: false,})
+  const [length, setlength] = useState({ message: '8 o más caracteres', valid: false,})
+  // 
+  const value = {
+    email: valEmail.test(info.email),
+    upper: valPass.upper.test(info.password), 
+    lower: valPass.lower.test(info.password),
+    digit: valPass.digit.test(info.password),
+    special: valPass.special.test(info.password),
+    length: valPass.length.test(info.password),
   }
-
+  const fn = (fn, bool) => fn((curr) => ({ ...curr, valid: bool }))
+  const validatedPass = () => {
+    value.upper ? fn(setupper, true) : fn(setupper, false )
+    value.lower ? fn(setlower, true) : fn(setlower, false )
+    value.digit ? fn(setdigit, true) : fn(setdigit, false )
+    value.special ? fn(setspecial, true) : fn(setspecial, false )
+    value.length ? fn(setlength, true) : fn(setlength, false )
+  }
+  // 🤟 Pasword //////////////////// REFACTOR
+  
   // inputs
   const handleInput = (e) => {
     setinfo((curr) => ({ ...curr, [e.target.name]: e.target.value }))
-    // render menssage
-    const validation = (a) =>
-      passerror.filter((o) => o.name === a)[0].values.message
-    if (validPass.upper.test(info.password)) console.info(validation('upper'))
+    validatedPass()
   }
-
   // not empty
-  const isValid = info.email !== '' && info.password !== ''
+  const isValid = value.email && value.upper && value.lower && value.digit && value.special && value.length
 
   // submit
   const handleSubmit = (e) => {
@@ -58,13 +63,13 @@ export const RegisterForm = () => {
           <InputEmail handleInput={handleInput} info={info} />
           <InputPass handleInput={handleInput} info={info} />
 
-          {passerror.map((o, i) => (
-            <PassValidator
-              key={i}
-              valid={o.values.valid}
-              value={o.values.message}
-            />
-          ))}
+          <Card bg='red.100'>
+          <PassValidator valid={upper.valid} value={upper.message} />
+          <PassValidator valid={lower.valid} value={lower.message} />
+          <PassValidator valid={digit.valid} value={digit.message} />
+          <PassValidator valid={special.valid} value={special.message} />
+          <PassValidator valid={length.valid} value={length.message} />
+          </Card>
 
           <SubmitBtn isValid={isValid} name="Registro" />
         </form>
@@ -72,9 +77,3 @@ export const RegisterForm = () => {
     </>
   )
 }
-
-// email
-// const validFormat = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)
-// const validEmail = () => {
-//   if(!validFormat.test(info.email)) console.info(' valid mail')
-// }
