@@ -49,6 +49,12 @@ export const LoginForm = ({LoC, RoO}) => {
         <Button colorScheme="facebook" w="full" variant="outline">
           Continúa con Facebook
         </Button>
+        <Button colorScheme="gray" w="full" variant="outline">
+          Continúa con Google
+        </Button>
+        <Button colorScheme="gray" w="full" variant="outline">
+          Continúa con Apple
+        </Button>
       </VStack>
     </>
   )

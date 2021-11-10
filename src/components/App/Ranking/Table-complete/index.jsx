@@ -7,6 +7,7 @@ export const RankingTable = () => {
       <Card bg="red.100">
         <Heading size="md"> Tabla completa de Ranking </Heading>
         <Button colorScheme="secondary"> Filtrar por fecha </Button>
+        <Button colorScheme="secondary"> Filtrar por ZIPCODE </Button>
       </Card>
     </>
   )

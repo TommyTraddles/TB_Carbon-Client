@@ -11,7 +11,6 @@ import { Ranking } from 'pages/App/Ranking'
 // user
 import { Perfil } from 'pages/User/Perfil'
 import { Iniciativas } from 'pages/User/Iniciativas'
-import { Subscription } from 'pages/User/Subscription'
 // icons
 import {
   AiOutlineHistory,
@@ -19,7 +18,6 @@ import {
   AiOutlineUser,
   AiOutlineDashboard,
 } from 'react-icons/ai'
-// import { BiHomeSmile } from 'react-icons/bi'
 import { RiStarSmileLine } from 'react-icons/ri'
 
 export const paths = {
@@ -117,11 +115,6 @@ export const routes = [
   {
     component: Iniciativas,
     path: paths.iniciativas,
-    layout: 'private',
-  },
-  {
-    component: Subscription,
-    path: paths.planes,
     layout: 'private',
   },
 ]
