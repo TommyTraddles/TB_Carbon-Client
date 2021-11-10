@@ -17,8 +17,9 @@ import {
   AiOutlineHistory,
   AiOutlineTrophy,
   AiOutlineUser,
+  AiOutlineDashboard,
 } from 'react-icons/ai'
-import { BiHomeSmile } from 'react-icons/bi'
+// import { BiHomeSmile } from 'react-icons/bi'
 import { RiStarSmileLine } from 'react-icons/ri'
 
 export const paths = {
@@ -42,13 +43,13 @@ export const paths = {
 export const navlinks = [
   {
     path: paths.home,
-    icon: <BiHomeSmile />,
-    name: 'home',
+    icon: <AiOutlineDashboard />,
+    name: 'dashboard',
   },
   {
     path: paths.logros,
     icon: <AiOutlineHistory />,
-    name: 'mis logros',
+    name: 'logros',
   },
   {
     path: paths.ranking,
