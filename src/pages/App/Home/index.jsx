@@ -13,16 +13,16 @@ import { useEffect } from 'react'
 export const Home = () => {
   // reminder
   const { isOpen: CiO, onOpen: CoO, onClose: CoC } = useDisclosure()
-  useEffect(() => { if (!user.today_input) CoO() }, [CoO])
+  useEffect(() => { if (!user.today_input && !user.today_input_skip) CoO() }, [CoO])
 
   return (
     <>
       <Heading> Progeso </Heading>
-      <Modal isOpen={CiO} onClose={CoC} content={<CalculatorModal />} />
+      <Modal isOpen={CiO} onClose={CoC} content={<CalculatorModal CoC={CoC}/>} />
 
       <ResumeStatistics />
       <br />
-      <ResumeSolutions />
+      <ResumeSolutions/>
 
     </>
   )
