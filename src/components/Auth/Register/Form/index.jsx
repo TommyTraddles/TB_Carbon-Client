@@ -65,7 +65,9 @@ export const RegisterForm = () => {
   }
   
   // not empty
+  // const isValid = true
   const isValid = value.email && value.length
+
 
   // submit
   const handleSubmit = (e) => {
