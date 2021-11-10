@@ -1,6 +1,7 @@
 // auth
-import { Login } from 'pages/Auth/Login'
-import { Register } from 'pages/Auth/Register'
+// import { Login } from 'pages/Auth/Login'
+// import { Register } from 'pages/Auth/Register'
+import { Index } from 'pages/Auth/Index'
 import { Forgot } from 'pages/Auth/Forgot-pass'
 import { Reset } from 'pages/Auth/New-pass'
 // app
@@ -26,6 +27,7 @@ import { BiHomeSmile } from 'react-icons/bi'
 import { RiStarSmileLine } from 'react-icons/ri'
 
 export const paths = {
+  index: '/auth',
   onboarding: '/auth/onboarding',
   login: '/auth/login',
   forgot: '/auth/forgot-pass',
@@ -77,20 +79,25 @@ export const navlinks = [
 
 export const routes = [
   {
+    component: Index,
+    path: paths.index,
+    layout: 'public',
+  },
+  {
     component: Onboarding,
     path: paths.onboarding,
     layout: 'public',
   },
-  {
-    component: Register,
-    path: paths.register,
-    layout: 'public',
-  },
-  {
-    component: Login,
-    path: paths.login,
-    layout: 'public',
-  },
+  // {
+  //   component: Register,
+  //   path: paths.register,
+  //   layout: 'public',
+  // },
+  // {
+  //   component: Login,
+  //   path: paths.login,
+  //   layout: 'public',
+  // },
   {
     component: Forgot,
     path: paths.forgot,

@@ -1,6 +1,5 @@
 // components
 import { Heading, Box } from '@chakra-ui/react'
-import { BackButton } from 'components/ui/Button/Back'
 import { InputEmail } from 'components/ui/Input/Email'
 import { SubmitBtn } from 'components/ui/Button/Submit'
 // hooks
@@ -22,7 +21,6 @@ export const ForgotForm = () => {
   return (
     <>
       <Heading> Olvidé mi contraseña </Heading>
-      <BackButton />
 
       <Box my={4}>
         <form method="POST" onSubmit={handleSubmit}>

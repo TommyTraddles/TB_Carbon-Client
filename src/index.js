@@ -23,7 +23,7 @@ ReactDOM.render(
         <Switch>
           <Route path='/auth' component={Public} />
           <Route path='/' component={Private} />
-          <Redirect to={paths.onboarding}/>
+          <Redirect to={paths.index}/>
         </Switch>
       </Router>
     </ChakraProvider>

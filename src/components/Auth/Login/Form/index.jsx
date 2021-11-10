@@ -3,13 +3,16 @@ import { Box, VStack, HStack, Heading, Button, Text } from '@chakra-ui/react'
 import { InputPass } from 'components/ui/Input/Password'
 import { InputEmail } from 'components/ui/Input/Email'
 import { SubmitBtn } from 'components/ui/Button/Submit'
-// data
-import { Link } from 'react-router-dom'
-import { paths } from 'services/routes'
+import { ForgotModal } from 'components/Auth/Forgot-pass/Modal'
+import { Modal } from 'components/ui/Modal'
 // hooks
 import { useState } from 'react'
+// hooks
+import { useDisclosure } from '@chakra-ui/hooks'
 
-export const LoginForm = () => {
+export const LoginForm = ({LoC, RoO}) => {
+  // forgot modal
+  const { isOpen: FiO, onOpen: FoO, onClose: FoC } = useDisclosure()
   // inputs
   const form = { email: '', password: '' }
   const [info, setinfo] = useState(form)
@@ -32,9 +35,10 @@ export const LoginForm = () => {
           <InputEmail handleInput={handleInput} info={info} error={error} />
           <InputPass handleInput={handleInput} info={info} error={error} />
           <HStack justifyContent='flex-end' my={2}>
-            <Button variant="link">
-              <Link to={paths.forgot}> Olvidé mi contraseña </Link>
-            </Button>
+
+          <Button onClick={FoO} my={2} w="full" variant='link'> olvidé mi contraseña </Button>
+          <Modal isOpen={FiO} onClose={FoC} content={<ForgotModal LoC={LoC} FoC={FoC} RoO={RoO} />} />
+
           </HStack>
           <SubmitBtn isValid={isValid} name="Login" />
         </form>
