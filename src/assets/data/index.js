@@ -6,6 +6,7 @@ export const user = {
   user: 'ConcernedCitizen',
   plan: 'monthly',
   logged: false,
+  today_input: false,
   billing_link: "https://support.stripe.com/questions/how-to-accept-donations-through-stripe"
 }
 

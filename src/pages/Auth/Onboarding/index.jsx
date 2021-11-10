@@ -1,5 +1,5 @@
 // components
-import { Heading, Button, HStack, VStack } from '@chakra-ui/react'
+import { Heading, Button, HStack } from '@chakra-ui/react'
 import { Card } from 'components/ui/Card'
 // data
 import { Link } from 'react-router-dom'
