@@ -15,21 +15,16 @@ export const Onboarding = () => {
   return (
     <>
       <Heading> Onboarding </Heading>
+        <Button variant='link'>
+          <Link to={paths.home}> Omitir </Link>
+        </Button>
 
       <HStack my={2}>
         <Card bg='red.100' > 1 </Card>
         <Card bg='red.100' > 2 </Card>
         <Card bg='red.100' > 3 </Card>
       </HStack>
-
-      <VStack>
-        <Button my={2} w="full" >
-          <Link to={paths.login}> Login </Link>
-        </Button>
-        <Button variant="outline" w="full" >
-          <Link to={paths.register}> Registro</Link>
-        </Button>
-      </VStack>
+        <Button my={2} w="full" colorScheme='secondary'> Continuar </Button>
     </>
   )
 }
