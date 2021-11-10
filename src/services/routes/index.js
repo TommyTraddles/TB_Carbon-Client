@@ -1,8 +1,5 @@
 // auth
-// import { Login } from 'pages/Auth/Login'
-// import { Register } from 'pages/Auth/Register'
 import { Index } from 'pages/Auth/Index'
-import { Forgot } from 'pages/Auth/Forgot-pass'
 import { Reset } from 'pages/Auth/New-pass'
 // app
 import { Onboarding } from 'pages/Auth/Onboarding'
@@ -15,13 +12,11 @@ import { Ranking } from 'pages/App/Ranking'
 import { Perfil } from 'pages/User/Perfil'
 import { Iniciativas } from 'pages/User/Iniciativas'
 import { Subscription } from 'pages/User/Subscription'
-// import { Preferences } from 'pages/User/Preferences'
 // icons
 import {
   AiOutlineHistory,
   AiOutlineTrophy,
   AiOutlineUser,
-  // AiOutlineCalculator,
 } from 'react-icons/ai'
 import { BiHomeSmile } from 'react-icons/bi'
 import { RiStarSmileLine } from 'react-icons/ri'
@@ -55,11 +50,6 @@ export const navlinks = [
     icon: <AiOutlineHistory />,
     name: 'mis logros',
   },
-  // {
-  //   path: paths.calculator,
-  //   icon: <AiOutlineCalculator />,
-  //   name: 'calcule',
-  // },
   {
     path: paths.ranking,
     icon: <AiOutlineTrophy />,
@@ -86,21 +76,6 @@ export const routes = [
   {
     component: Onboarding,
     path: paths.onboarding,
-    layout: 'public',
-  },
-  // {
-  //   component: Register,
-  //   path: paths.register,
-  //   layout: 'public',
-  // },
-  // {
-  //   component: Login,
-  //   path: paths.login,
-  //   layout: 'public',
-  // },
-  {
-    component: Forgot,
-    path: paths.forgot,
     layout: 'public',
   },
   {
@@ -138,11 +113,6 @@ export const routes = [
     path: paths.perfil,
     layout: 'private',
   },
-  // {
-  //   component: Preferences,
-  //   path: paths.preferences,
-  //   layout: 'private',
-  // },
   {
     component: Iniciativas,
     path: paths.iniciativas,
