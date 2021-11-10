@@ -1,6 +1,6 @@
 // componentes
 import { Card } from 'components/ui/Card'
-// import { Heading, Button } from '@chakra-ui/react'
+import { Heading, Button } from '@chakra-ui/react'
 import { Table, Thead, Th, Tbody, Tr, Td } from '@chakra-ui/react'
 
 export const RankingTable = () => {
