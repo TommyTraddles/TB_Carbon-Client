@@ -83,13 +83,13 @@ export const routes = [
     layout: 'public',
   },
   {
-    component: Calculator,
-    path: paths.calculator,
+    component: Home,
+    path: paths.home,
     layout: 'private',
   },
   {
-    component: Home,
-    path: paths.home,
+    component: Calculator,
+    path: paths.calculator,
     layout: 'private',
   },
   {

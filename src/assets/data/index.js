@@ -20,6 +20,31 @@ export const support = {
 }
 
 // INICIATIVAS
+
+export const iniciativas = [
+  {
+    id: 1,
+    title: 'Salvar el Amazonas',
+    text: 'ONG',
+    url: '',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ipsam, tenetur earum corporis deleniti dolorum molestiae sapiente eos sunt amet fugit ut totam voluptate modi explicabo recusandae commodi non perferendis! ',
+  },
+  {
+    id: 2,
+    title: 'Destruir  el Amazonas',
+    text: 'ONG',
+    url: '',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ipsam, tenetur earum corporis deleniti dolorum molestiae sapiente eos sunt amet fugit ut totam voluptate modi explicabo recusandae commodi non perferendis!',
+  },
+  {
+    id: 3,
+    title: 'Un café para el equipo',
+    text: 'Estudiantes',
+    url: '',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ipsam, tenetur earum corporis deleniti dolorum molestiae sapiente eos sunt amet fugit ut totam voluptate modi explicabo recusandae commodi non perferendis!',
+  },
+]
+
 export const subsOptions = [
   { value: 'free', desc: 'Lorem ipsum 1' },
   { value: 'one-time payment', desc: 'Lorem ipsum 2' },
