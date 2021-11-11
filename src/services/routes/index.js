@@ -1,3 +1,5 @@
+// sandbox
+import { Sandbox } from 'pages/_SANDBOX-PAGE'
 // auth
 import { Index } from 'pages/Auth/Index'
 import { Reset } from 'pages/Auth/New-pass'
@@ -28,7 +30,7 @@ export const paths = {
   reset: '/auth/reset-pass',
   register: '/auth/register',
   home: '/',
-  calculator: '/new',
+  calculator: '/caluladora',
   logros: '/logros',
   results: '/new/results',
   ranking: '/ranking',
@@ -36,6 +38,7 @@ export const paths = {
   preferences: '/perfil/preferences',
   iniciativas: '/iniciativa',
   planes: '/iniciativa/planes',
+  sandbox: '/sandbox',
 }
 
 export const navlinks = [
@@ -115,6 +118,11 @@ export const routes = [
   {
     component: Iniciativas,
     path: paths.iniciativas,
+    layout: 'private',
+  },
+  {
+    component: Sandbox,
+    path: paths.sandbox,
     layout: 'private',
   },
 ]
