@@ -1,18 +1,14 @@
 // componentes
 import { Card } from 'components/ui/Card'
-import { Heading, Button } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 import { Table, Thead, Th, Tbody, Tr, Td } from '@chakra-ui/react'
 
 export const RankingTable = () => {
   return (
     <>
-      {/* <Card bg="red.100">
-        <Heading size="md"> Tabla completa de Ranking </Heading>
-        <Button colorScheme="secondary"> Filtrar por fecha </Button>
-        <Button colorScheme="secondary"> Filtrar por ZIPCODE </Button>
-      </Card> */}
-
-      <br/>
+      <Button colorScheme="secondary"> Buscar (d/w/m) </Button>
+      <Button colorScheme="secondary"> Buscar Zipcode </Button>
+      <Button colorScheme="secondary"> Buscar username </Button>
 
       <Card>
         <Table>
