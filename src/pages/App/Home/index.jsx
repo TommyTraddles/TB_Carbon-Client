@@ -1,7 +1,7 @@
 // components
 import { Heading, Button } from '@chakra-ui/react'
-import { ResumeStatistics } from 'components/App/Results/Statistics-short'
-import { ResumeSolutions } from 'components/App/Results/Solutions-short'
+import { ResumeStatistics } from 'components/App/Calculator/Dashboard-global'
+import { ResumeSolutions } from 'components/App/Calculator/Dashboard-diario'
 import { CalculatorModal } from 'components/App/Calculator/Modal'
 import { Modal } from 'components/ui/Modal'
 // data

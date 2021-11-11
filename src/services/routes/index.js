@@ -7,7 +7,6 @@ import { Reset } from 'pages/Auth/New-pass'
 import { Onboarding } from 'pages/Auth/Onboarding'
 import { Home } from 'pages/App/Home'
 import { Calculator } from 'pages/App/Calculator'
-import { Results } from 'pages/App/[results]'
 import { Logros } from 'pages/App/Logros'
 import { Ranking } from 'pages/App/Ranking'
 // user
@@ -25,19 +24,13 @@ import { RiStarSmileLine } from 'react-icons/ri'
 export const paths = {
   index: '/auth',
   onboarding: '/auth/onboarding',
-  login: '/auth/login',
-  forgot: '/auth/forgot-pass',
   reset: '/auth/reset-pass',
-  register: '/auth/register',
   home: '/',
   calculator: '/caluladora',
   logros: '/logros',
-  results: '/new/results',
   ranking: '/ranking',
-  perfil: '/perfil',
-  preferences: '/perfil/preferences',
   iniciativas: '/iniciativa',
-  planes: '/iniciativa/planes',
+  perfil: '/perfil',
   sandbox: '/sandbox',
 }
 
@@ -86,13 +79,13 @@ export const routes = [
     layout: 'public',
   },
   {
-    component: Home,
-    path: paths.home,
+    component: Calculator,
+    path: paths.calculator,
     layout: 'private',
   },
   {
-    component: Calculator,
-    path: paths.calculator,
+    component: Home,
+    path: paths.home,
     layout: 'private',
   },
   {
@@ -101,23 +94,18 @@ export const routes = [
     layout: 'private',
   },
   {
-    component: Results,
-    path: paths.results,
-    layout: 'private',
-  },
-  {
     component: Ranking,
     path: paths.ranking,
     layout: 'private',
   },
   {
-    component: Perfil,
-    path: paths.perfil,
+    component: Iniciativas,
+    path: paths.iniciativas,
     layout: 'private',
   },
   {
-    component: Iniciativas,
-    path: paths.iniciativas,
+    component: Perfil,
+    path: paths.perfil,
     layout: 'private',
   },
   {

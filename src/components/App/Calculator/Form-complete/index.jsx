@@ -11,7 +11,7 @@ export const Form = () => {
       <Card bg="red.100">
         <Heading size="md"> Formulario de CO2 </Heading>
         <Button>
-          <Link to={paths.results}> ver resultado </Link>
+          <Link to={paths.home}> ver resultado </Link>
         </Button>
       </Card>
     </>
