@@ -17,4 +17,5 @@ jobs:
       - name: deploy to Vercel
         id: branch_deploy_vercel
         run: |
-          URL=$(npx vercel --prod --confirm -n ${{ secrets.VERCEL_PROJECT_ID }} -t ${{ secrets.VERCEL_TOKEN }} --scope ${{ secrets.VERCEL_ORG_ID }} -b DEPLOY_ENV=staging -e DEPLOY_ENV=staging)
+          URL=$(npx vercel --prod --confirm -n ${{ secrets.VERCEL_PROJECT_ID }} -t ${{ secrets.TOKEN_CARBON_CLIENT }} --scope ${{ secrets.VERCEL_ORG_ID }} -b DEPLOY_ENV=staging -e DEPLOY_ENV=staging)
+          
