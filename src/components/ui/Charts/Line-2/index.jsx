@@ -1,3 +1,5 @@
+import { Heading, Text } from '@chakra-ui/layout'
+import { Card } from 'components/ui/Card'
 import {
   AreaChart,
   Area,
@@ -5,94 +7,109 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  // ResponsiveContainer,
+  ResponsiveContainer,
 } from 'recharts'
 
 const data = [
   {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
+    date: 'jan',
+    me: 400,
+    compared_user: 240,
   },
   {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
+    date: 'Feb',
+    me: 300,
+    compared_user: 139,
   },
   {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
+    date: 'Mar',
+    me: 200,
+    compared_user: 980,
   },
   {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
+    date: 'Apr',
+    me: 278,
+    compared_user: 390,
   },
   {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
+    date: 'May',
+    me: 189,
+    compared_user: 480,
   },
 ]
+
+const CustomTooltip = ({ active, payload, label }) => {
+  console.info(payload)
+  if (active) {
+    return (
+      <>
+        <Card p={2}>
+          <Heading size="xs"> {label} </Heading>
+          <Text fontSize="xs"> You: {payload[0].value} </Text>
+          <Text fontSize="xs"> Other: {payload[1].value} </Text>
+        </Card>
+      </>
+    )
+  }
+  return null
+}
 
 export const ChartTest2 = () => {
   return (
     <>
-      {/* <ResponsiveContainer width="100%" height="100%"> */}
-      <AreaChart
-        width={730}
-        height={250}
-        data={data}
-        margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-      >
-        <defs>
-          <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-            <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
-          </linearGradient>
-          <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8} />
-            <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
-          </linearGradient>
-        </defs>
-        <XAxis dataKey="name" />
-        <YAxis />
-        <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip />
-        <Area
-          type="monotone"
-          dataKey="uv"
-          stroke="#8884d8"
-          fillOpacity={1}
-          fill="url(#colorUv)"
-        />
-        <Area
-          type="monotone"
-          dataKey="pv"
-          stroke="#82ca9d"
-          fillOpacity={1}
-          fill="url(#colorPv)"
-        />
-      </AreaChart>
-      {/* </ResponsiveContainer> */}
+      <ResponsiveContainer width={350} height={200}>
+        <AreaChart data={data}>
+          <defs>
+            <linearGradient id="colorme" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#2D3748" stopOpacity={0.8} />
+              <stop offset="75%" stopColor="#2D3748" stopOpacity={0.05} />
+            </linearGradient>
+            <linearGradient id="compared_user" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#4fd1c5" stopOpacity={0.8} />
+              <stop offset="95%" stopColor="#4fd1c5" stopOpacity={0.05} />
+            </linearGradient>
+          </defs>
+
+          <Area
+            dataKey="me"
+            strokeWidth={4}
+            stroke="#2D3748"
+            fill="url(#colorme)"
+            type="monotone"
+          />
+          <Area
+            dataKey="compared_user"
+            strokeWidth={4}
+            stroke="#4fd1c5"
+            fill="url(#compared_user)"
+            type="monotone"
+          />
+
+          <XAxis
+            dataKey="date"
+            axisLine={false}
+            tickLine={false}
+            tickCount={5}
+            tick={{ fontSize: 12, fill: '#A0AEC0' }}
+          />
+
+          <YAxis
+            axisLine={false}
+            tickLine={false}
+            tickCount={6}
+            tick={{ fontSize: 12, fill: '#A0AEC0' }}
+          />
+
+          <Tooltip content={<CustomTooltip />} />
+
+          <CartesianGrid
+            opacity={0.5}
+            vertical={false}
+            strokeDasharray="8"
+            stroke="#A0AEC0"
+          />
+        </AreaChart>
+      </ResponsiveContainer>
     </>
   )
 }

@@ -1,8 +1,10 @@
+import { Flex } from '@chakra-ui/layout'
+
 import {
   RadialBarChart,
   RadialBar,
   Legend,
-  // ResponsiveContainer,
+  ResponsiveContainer,
 } from 'recharts'
 
 const data = [
@@ -59,7 +61,9 @@ const style = {
 export const ChartTest5 = () => {
   return (
     <>
-      {/* <ResponsiveContainer width="100%" height="100%"> */}
+  {/* <div> */}
+
+      <ResponsiveContainer width="50%" height="50%">
       <RadialBarChart
         cx="50%"
         cy="50%"
@@ -67,22 +71,23 @@ export const ChartTest5 = () => {
         outerRadius="80%"
         barSize={10}
         data={data}
-      >
+        >
         <RadialBar
           minAngle={15}
-          label={{ position: 'insideStart', fill: '#fff' }}
+          // label={{ position: 'insideStart', fill: '#fff' }}
           background
           clockWise
           dataKey="uv"
-        />
-        <Legend
+          />
+        {/* <Legend
           iconSize={10}
           layout="vertical"
           verticalAlign="middle"
           wrapperStyle={style}
-        />
+        /> */}
       </RadialBarChart>
-      {/* </ResponsiveContainer> */}
+      </ResponsiveContainer>
+        {/* </div> */}
     </>
   )
 }
