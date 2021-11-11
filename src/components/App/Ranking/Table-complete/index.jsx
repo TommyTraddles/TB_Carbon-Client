@@ -6,7 +6,7 @@ import { Table, Thead, Th, Tbody, Tr, Td } from '@chakra-ui/react'
 export const RankingTable = () => {
   return (
     <>
-      <Button colorScheme="secondary"> Buscar (d/w/m) </Button>
+      <Button colorScheme="secondary"> Buscar   (d/w/m) </Button>
       <Button colorScheme="secondary"> Buscar Zipcode </Button>
       <Button colorScheme="secondary"> Buscar username </Button>
 
