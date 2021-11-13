@@ -7,8 +7,9 @@ import { ForgotModal } from 'components/Auth/Forgot-pass/Modal'
 import { Modal } from 'components/ui/Modal'
 // hooks
 import { useState } from 'react'
-// hooks
 import { useDisclosure } from '@chakra-ui/hooks'
+// fetch
+import { authAPI } from 'services/api'
 
 export const LoginForm = ({LoC, RoO}) => {
   // forgot modal
@@ -16,10 +17,10 @@ export const LoginForm = ({LoC, RoO}) => {
   // inputs
   const form = { email: '', password: '' }
   const [info, setinfo] = useState(form)
-  const handleInput = (e) =>
-    setinfo((curr) => ({ ...curr, [e.target.name]: e.target.value }))
+  const handleInput = (e) => setinfo((curr) => ({ ...curr, [e.target.name]: e.target.value }))
   const handleSubmit = (e) => {
     e.preventDefault()
+    authAPI.login(info)
     console.info(info)
   }
   // state

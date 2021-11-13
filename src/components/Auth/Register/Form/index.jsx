@@ -2,6 +2,7 @@
 import { Heading, Box } from '@chakra-ui/react'
 import { InputEmail } from 'components/ui/Input/Email'
 import { InputPass } from 'components/ui/Input/Password'
+import { InputText } from 'components/ui/Input/Text'
 import { SubmitBtn } from 'components/ui/Button/Submit'
 import { PassValidator } from 'components/ui/Input/Password/Validator'
 import { Card } from 'components/ui/Card'
@@ -9,11 +10,13 @@ import { Card } from 'components/ui/Card'
 import { useState } from 'react'
 // data
 // import { valPass, valEmail } from 'services/utils/regEx'
-
+// fetch
+// import { authAPI } from 'services/api'
+import axios from 'axios'
 
 export const RegisterForm = () => {
   // input
-  const form = { email: '', password: '' }
+  const form = { email: '', password: '' , username: ''}
   const [info, setinfo] = useState(form)
   
   // 🤟 Pasword //////////////////// REFACTOR + USEEFFECT + FORM VALIDATION
@@ -71,9 +74,32 @@ export const RegisterForm = () => {
 
   // submit
   const handleSubmit = (e) => {
-    e.preventDefault()
     console.info(info)
+    e.preventDefault()
+    
+    try {
+      const result = axios.post('http://localhost:3000/auth/register', { email: info.email, password: info.password, username: info.username})
+      console.info(result)
+    } catch (error) {
+      console.info(error)
+    }
+
+
+    // ( async ()  => {
+    //     try{
+    //       const result = await authAPI.register(info)
+    //       console.log(result)
+    //     } catch (e) {
+    //       console.info(' error at Fetch ')
+    //     }
+    //   }
+    // )()
   }
+
+
+
+
+
 
   return (
     <>
@@ -82,6 +108,7 @@ export const RegisterForm = () => {
       <Box my={4}>
         <form method="POST" onSubmit={handleSubmit}>
           <InputEmail handleInput={handleInput} info={info} />
+          <InputText handleInput={handleInput} info={info} name='username' placeholder='username' type='text' /> 
           <InputPass handleInput={handleInput} info={info} />
 
           {/* REFATOR ////////////////////////////////  */}
