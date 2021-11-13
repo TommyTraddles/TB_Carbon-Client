@@ -3,6 +3,7 @@ import { VStack, Button, Heading, Text } from '@chakra-ui/react'
 import { Modal } from 'components/ui/Modal'
 import { LoginModal } from 'components/Auth/Login/Modal'
 import { RegisterModal } from 'components/Auth/Register/Modal'
+import { SSO } from 'components/Auth/SSO'
 // hooks
 import { useDisclosure } from '@chakra-ui/hooks'
 
@@ -22,6 +23,9 @@ export const Index = () => {
     <Button onClick={RoO} my={2} w="full" variant='outline'> Regístrate </Button>
     <Modal isOpen={RiO} onClose={RoC} content={<RegisterModal RoC={RoC} LoO={LoO} />} />
     </VStack>
+
+    <SSO />
+
     </>
   )
 }

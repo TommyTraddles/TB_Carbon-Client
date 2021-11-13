@@ -1,5 +1,5 @@
 // components
-import { Box, VStack, HStack, Heading, Button, Text } from '@chakra-ui/react'
+import { Box, HStack, Heading, Button } from '@chakra-ui/react'
 import { InputPass } from 'components/ui/Input/Password'
 import { InputEmail } from 'components/ui/Input/Email'
 import { SubmitBtn } from 'components/ui/Button/Submit'
@@ -43,19 +43,6 @@ export const LoginForm = ({LoC, RoO}) => {
           <SubmitBtn isValid={isValid} name="Login" />
         </form>
       </Box>
-
-      <VStack my={2}>
-        <Text> ó </Text>
-        <Button colorScheme="facebook" w="full" variant="outline">
-          Continúa con Facebook
-        </Button>
-        <Button colorScheme="gray" w="full" variant="outline">
-          Continúa con Google
-        </Button>
-        <Button colorScheme="gray" w="full" variant="outline">
-          Continúa con Apple
-        </Button>
-      </VStack>
     </>
   )
 }
