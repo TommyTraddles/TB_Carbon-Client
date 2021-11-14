@@ -9,15 +9,16 @@ import {
   Button,
 } from '@chakra-ui/react'
 // hooks
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useHistory } from 'react-router-dom'
+import { useToast } from '@chakra-ui/toast'
 // data
 import { authAPI } from 'services/api'
 import { paths } from 'services/routes'
 
 export const ForgotForm = () => {
-  const history = useHistory()
-
+  
   // ✅  form hook
   const {
     register,
@@ -26,7 +27,7 @@ export const ForgotForm = () => {
     trigger,
     setError,
   } = useForm()
-
+  
   // ✅  form validation
   const registerOptions = {
     email: {
@@ -37,18 +38,29 @@ export const ForgotForm = () => {
       },
     },
   }
-
+  
   // ✅ handle submit
+  const toast = useToast()
+  const history = useHistory()
+  const [loading, setloading] = useState(false)
   const onSubmit = async (e) => {
+    setloading(true)
     const result = await authAPI.forgot(e)
     if (!result.success) {
-      console.info(result)
       const serverError = { type: 'server', message: result.message }
       setError('email', serverError)
+      setloading(false)
     }
     if (result.success) {
-      console.info(result)
-      history.push(paths.index)
+      setloading(false)
+      toast({
+        title: 'Correo enviado',
+        description: "Hemos enviado un correo",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+      })
+      setTimeout( () => history.push(paths.index), 3000)
     }
   }
 
@@ -77,7 +89,7 @@ export const ForgotForm = () => {
           </FormControl>
 
           {/* 🔥 submit */}
-          <Button type="submit" w="full">
+          <Button type="submit" w="full" isLoading={loading}>
             Enviar mail
           </Button>
         </form>

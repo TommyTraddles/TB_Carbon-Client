@@ -18,14 +18,14 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import { useToast } from '@chakra-ui/toast'
 // data
 import { Link } from 'react-router-dom'
 import { authAPI } from 'services/api'
 import { paths } from 'services/routes'
 
 export const LoginForm = ({ LoC, RoO }) => {
-  // ✅ redirect on success
-  const history = useHistory()
+
   // ✅  form hook
   const {
     register,
@@ -34,7 +34,7 @@ export const LoginForm = ({ LoC, RoO }) => {
     trigger,
     setError,
   } = useForm()
-
+  
   // ✅  show password
   const [show, setshow] = useState(false)
   const handleShow = () => setshow(!show)
@@ -53,6 +53,9 @@ export const LoginForm = ({ LoC, RoO }) => {
     },
   }
   // ✅ handle submit
+  const toast = useToast()
+  const history = useHistory()
+  const [loading, setloading] = useState(false)
   const onSubmit = async (e) => {
     const result = await authAPI.login(e)
     if (!result.success) {
@@ -61,8 +64,15 @@ export const LoginForm = ({ LoC, RoO }) => {
       setError('password', serverError)
     }
     if (result.success) {
-      console.info(result)
-      history.push(paths.home)
+      toast({
+        title: 'Login exitoso',
+        description: "",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+      })
+      setloading(false)
+      setTimeout( () => history.push(paths.home), 2000)
     }
   }
 
@@ -126,7 +136,7 @@ export const LoginForm = ({ LoC, RoO }) => {
           </HStack>
 
           {/* 🔥 submit */}
-          <Button type="submit" w="full">
+          <Button type="submit" w="full" isLoading={loading}>
             Login
           </Button>
         </form>

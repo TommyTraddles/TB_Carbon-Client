@@ -18,13 +18,14 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import { useToast } from '@chakra-ui/toast'
 // data
 import { authAPI } from 'services/api'
 import { paths } from 'services/routes'
 
 export const RegisterForm = ({ RoC }) => {
-  const history = useHistory()
-  // form hook
+
+  // ✅  form hook
   const {
     register,
     formState: { errors },
@@ -57,6 +58,9 @@ export const RegisterForm = ({ RoC }) => {
     },
   }
   // ✅ handle submit
+  const toast = useToast()
+  const history = useHistory()
+  const [loading, setloading] = useState(false)
   const onSubmit = async (e) => {
     const result = await authAPI.register(e)
     if (!result.success){
@@ -65,8 +69,15 @@ export const RegisterForm = ({ RoC }) => {
       setError('username', serverError)
     }
     if (result.success){
-      history.push(paths.firstCalculator)
-      // RoC()
+      toast({
+        title: 'Registro exitoso',
+        description: "",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+      })
+      setloading(false)
+      setTimeout( () => history.push(paths.firstCalculator), 2000)
     }
   }
 
@@ -134,7 +145,7 @@ export const RegisterForm = ({ RoC }) => {
           </FormControl>
 
           {/* 🔥 submit */}
-          <Button type="submit" w="full">
+          <Button type="submit" w="full" isLoading={loading}>
             Registrar
           </Button>
         </form>
