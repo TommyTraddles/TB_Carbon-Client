@@ -12,7 +12,7 @@ export const InputEmail = ({ handleInput, info, error }) => {
           onChange={handleInput}
           value={info.email}
         />
-         { error ? <FormHelperText color='red.400'> Helper text </FormHelperText> : ''}
+         { error ? <FormHelperText color='red.400'> {error} </FormHelperText> : ''}
       </FormControl>
     </>
   )

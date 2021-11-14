@@ -10,7 +10,7 @@ export const RegisterModal = ({RoC, LoO}) => {
 
   return (
     <>
-      <RegisterForm />
+      <RegisterForm RoC={RoC}/>
       <Text> ¿Tienes una cuenta? <Button variant='link' onClick={handleClick}> login </Button> </Text>
     </>
   )
