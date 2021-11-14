@@ -3,6 +3,7 @@ import { Sandbox } from 'pages/_SANDBOX-PAGE'
 // auth
 import { Index } from 'pages/Auth/Index'
 import { Reset } from 'pages/Auth/New-pass'
+import { Forgot } from 'pages/Auth/Forgot-pass'
 import { FirstCalculator } from 'pages/Auth/First-calculator'
 // app
 import { Onboarding } from 'pages/Auth/Onboarding'
@@ -33,6 +34,7 @@ export const paths = {
   onboarding: '/auth/onboarding',
   firstCalculator: '/auth/first-calculator',
   reset: '/auth/reset-pass',
+  forgot: '/auth/forgot-pass',
   home: '/',
   calculator: '/caluladora',
   logros: '/logros',
@@ -89,6 +91,11 @@ export const routes = [
   {
     component: Reset,
     path: paths.reset,
+    layout: 'public',
+  },
+  {
+    component: Forgot,
+    path: paths.forgot,
     layout: 'public',
   },
   {

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { login, register } from 'services/api/auth'
+import { login, register, forgot } from 'services/api/auth'
 
 const client = axios.create({
   baseURL: process.env.REACT_APP_BACK_URL,
@@ -12,4 +12,5 @@ const client = axios.create({
 export const authAPI = {
   login: login(client),
   register: register(client),
+  forgot: forgot(client),
 }

@@ -12,22 +12,18 @@ import {
   Button,
   HStack,
 } from '@chakra-ui/react'
-import { ForgotModal } from 'components/Auth/Forgot-pass/Modal'
-import { Modal } from 'components/ui/Modal'
 // icons
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 // hooks
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { useDisclosure } from '@chakra-ui/hooks'
 // data
+import { Link } from 'react-router-dom'
 import { authAPI } from 'services/api'
 import { paths } from 'services/routes'
 
 export const LoginForm = ({ LoC, RoO }) => {
-  // ✅  forgot modal
-  const { isOpen: FiO, onOpen: FoO, onClose: FoC } = useDisclosure()
   // ✅ redirect on success
   const history = useHistory()
   // ✅  form hook
@@ -69,7 +65,6 @@ export const LoginForm = ({ LoC, RoO }) => {
       history.push(paths.home)
     }
   }
-
 
   return (
     <>
@@ -125,14 +120,9 @@ export const LoginForm = ({ LoC, RoO }) => {
 
           {/* 🔥 Forgot pass  */}
           <HStack justifyContent="flex-end" my={2}>
-            <Button onClick={FoO} my={2} w="full" variant="link">
-              olvidé mi contraseña
+            <Button variant="link">
+              <Link to={paths.forgot}> olvidé mi contraseña </Link>
             </Button>
-            <Modal
-              isOpen={FiO}
-              onClose={FoC}
-              content={<ForgotModal LoC={LoC} FoC={FoC} RoO={RoO} />}
-            />
           </HStack>
 
           {/* 🔥 submit */}

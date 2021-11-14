@@ -13,3 +13,11 @@ export const register = ({ post }) => async (info) => {
     return e.response.data
   }
 }
+
+export const forgot = ({ post }) => async (info) => {
+  try {
+    return (await post('/auth/forgot-pass', { ...info} )).data
+  } catch (e) {
+    return e.response.data
+  }
+}
