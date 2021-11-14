@@ -79,11 +79,6 @@ export const routes = [
     layout: 'public',
   },
   {
-    component: Onboarding,
-    path: paths.onboarding,
-    layout: 'public',
-  },
-  {
     component: Forgot,
     path: paths.forgot,
     layout: 'public',
@@ -91,6 +86,11 @@ export const routes = [
   {
     component: Reset,
     path: paths.reset,
+    layout: 'public',
+  },
+  {
+    component: Onboarding,
+    path: paths.onboarding,
     layout: 'public',
   },
   {

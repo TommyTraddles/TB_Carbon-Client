@@ -16,17 +16,18 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 // hooks
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 import { useToast } from '@chakra-ui/toast'
 // data
 import { authAPI } from 'services/api'
 import { paths } from 'services/routes'
 
 export const ResetForm = () => {
-  // ❌ retrieve from URL QUERY
-  const token =
-    '12c497f1db284e6bb392a54d8903b9ceffacc7609b73331c04fe202cdb12db3e3d30e0eb5699fcd3fa2e01cf8f09eb59253576c43db1db86ecc3dcd2890deab1'
-  const email = 'ill.better.be.off@gmail.com'
+  // ✅  retrieve from URL QUERY
+  const location = useLocation()
+  const query = new URLSearchParams(location.search);
+  const token = query.get('token') || '123'
+  const email = query.get('email') || 'ill.better.be.off@gmail.com'
 
   // ✅  form hook
   const {
