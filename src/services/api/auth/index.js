@@ -21,3 +21,11 @@ export const forgot = ({ post }) => async (info) => {
     return e.response.data
   }
 }
+
+export const reset = ({ post }) => async ({token, email}, info) => {
+  try {
+    return (await post(`/auth/password/request?token=${token}&email=${email}`, { ...info} )).data
+  } catch (e) {
+    return e.response.data
+  }
+}
