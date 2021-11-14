@@ -33,10 +33,10 @@ export const paths = {
   index: '/auth',
   onboarding: '/auth/onboarding',
   firstCalculator: '/auth/first-calculator',
-  reset: '/auth/reset-pass',
   forgot: '/auth/forgot-pass',
+  reset: '/auth/password/request',
   home: '/',
-  calculator: '/caluladora',
+  calculator: '/calculadora',
   logros: '/logros',
   ranking: '/ranking',
   iniciativas: '/iniciativa',
@@ -79,13 +79,13 @@ export const routes = [
     layout: 'public',
   },
   {
-    component: FirstCalculator,
-    path: paths.firstCalculator,
+    component: Onboarding,
+    path: paths.onboarding,
     layout: 'public',
   },
   {
-    component: Onboarding,
-    path: paths.onboarding,
+    component: Forgot,
+    path: paths.forgot,
     layout: 'public',
   },
   {
@@ -94,8 +94,8 @@ export const routes = [
     layout: 'public',
   },
   {
-    component: Forgot,
-    path: paths.forgot,
+    component: FirstCalculator,
+    path: paths.firstCalculator,
     layout: 'public',
   },
   {
