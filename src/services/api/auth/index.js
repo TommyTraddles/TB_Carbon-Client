@@ -9,9 +9,8 @@ export const login = ({ post }) => async (info) => {
 
 export const register = ({ post }) => async (info) => {
   try {
-    return await post('/auth/register', { ...info} )
+    return (await post('/auth/register', { ...info} )).data
   } catch (e) {
-    console.info(" error at 'login' fetch :", e.message)
-    return false
+    return e.response.data
   }
 }

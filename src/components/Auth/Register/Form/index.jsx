@@ -1,16 +1,21 @@
 // components
-import { Heading, Box, VStack, Input, Button } from '@chakra-ui/react'
-// import { Card } from 'components/ui/Card'
-// import { Modal } from 'components/ui/Modal'
-import { InputEmail } from 'components/ui/Input/Email'
-import { InputPass } from 'components/ui/Input/Password'
-import { InputText } from 'components/ui/Input/Text'
-import { SubmitBtn } from 'components/ui/Button/Submit'
-// import { PassValidator } from 'components/ui/Input/Password/Validator'
-// import { RegisterTYP } from 'components/Auth/Register/TYP'
+import {
+  FormControl,
+  FormLabel,
+  FormHelperText,
+  InputGroup,
+  InputRightElement,
+  IconButton,
+  Input,
+  Heading,
+  Box,
+  Button,
+} from '@chakra-ui/react'
+// icons
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 // hooks
-// import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { useState } from 'react'
 // import { useHistory } from 'react-router-dom'
 // import { useDisclosure } from '@chakra-ui/hooks'
 // fetch
@@ -28,66 +33,48 @@ export const RegisterForm = ({ RoC }) => {
     formState: { errors },
     handleSubmit,
     trigger,
+    setError,
   } = useForm()
 
-  // ✅ input
-  // const form = { email: '', password: '', username: '' }
-  // const [info, setinfo] = useState(form)
 
-  // ❌ error handler
-  // const errors = { email: '', password: '' , username: ''}
-  // const [error, seterror] = useState(errors)
-
-  // ❌ Pasword --> refactor
-  // const valPass = {
-  //   upper: new RegExp(/(?=.*?[A-Z])/),
-  //   lower: new RegExp(/(?=.*?[a-z])/),
-  //   digit: new RegExp(/(?=.*?[0-9])/),
-  //   special: new RegExp(/(?=.*?[#?!@$%^&*-])/),
-  //   length: new RegExp(/.{8,}$/),
-  // }
-  // const valEmail = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)
-  // //
-  // const [upper, setupper] = useState({ message: 'Letras mayúsculas', valid: false,})
-  // const [digit, setdigit] = useState({ message: 'Al menos un número', valid: false,})
-  // const [special, setspecial] = useState({ message: 'Un caracter especial', valid: false,})
-  // const [length, setlength] = useState({ message: '8 o más caracteres', valid: false,})
-  // //
-  // const value = {
-  //   email: valEmail.test(info.email),
-  //   upper: valPass.upper.test(info.password),
-  //   digit: valPass.digit.test(info.password),
-  //   special: valPass.special.test(info.password),
-  //   length: valPass.length.test(info.password),
-  // }
-  // const fn = (fn, bool) => fn((curr) => ({ ...curr, valid: bool }))
-  // const validatedPass = () => {
-  //   value.upper ? fn(setupper, true) : fn(setupper, false )
-  //   value.digit ? fn(setdigit, true) : fn(setdigit, false )
-  //   value.special ? fn(setspecial, true) : fn(setspecial, false )
-  //   value.length ? fn(setlength, true) : fn(setlength, false )
-  // }
-
-  // ✅ inputs
-  // const handleInput = (e) => {
-    // setinfo((curr) => ({ ...curr, [e.target.name]: e.target.value }))
-    // validatedPass()
-  // }
-
-  // ✅ validate form
-  // const isValid = info.email && info.password && info.username
-  // const isValid = !errors ? true : false  
+  // ✅  password
+  const [show, setshow] = useState(false)
+  const handleShow = () => setshow(!show)
 
   // ✅ submit
   const onSubmit = async (e) => {
-    console.info(e)
-    console.info(errors)
-    // e.preventDefault()
-    // console.info(info)
-    const { data } = await authAPI.register(e)
-    console.info('> retrieved data: ', data)
-    // if (data) RoC()
-    // if(!data) seterror('delete')
+    const result = await authAPI.register(e)
+    if (!result.success){
+      const serverError = {type: 'server', message: result.message }
+      setError('email', serverError)
+      setError('username', serverError)
+    }
+    if (result.success){
+      RoC()
+    }
+  }
+
+  // validation
+  const registerOptions = {
+    email: {
+      required: 'campo requerido',
+      pattern: {
+        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        message: 'formato de correo no válido',
+      },
+    },
+    username: {
+      required: 'campo obligatorio',
+    },
+    password: {
+      required: 'campo obligatorio',
+      pattern: {
+        value:
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?^&]).{8,}$/,
+        message:
+          'Al menos 8 caracteres, una minúscula, una mayúscula, un número, y un caracter especial',
+      },
+    },
   }
 
   return (
@@ -95,92 +82,76 @@ export const RegisterForm = ({ RoC }) => {
       <Heading> Registro </Heading>
 
       <Box my={4}>
-        <VStack>
         <form onSubmit={handleSubmit(onSubmit)}>
-
           {/* 🔥 email */}
-          <label> email </label> 
-          <Input 
-            {...register('email', {
-              required: 'campo requerido',
-              pattern: {
-                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: 'formato de correo no válido'
-              }
-            })}
-            onKeyUp={() => trigger('email')}
-            isInvalid={ errors.email ? true : false }
-            errorBorderColor={ errors.email ? "red.500" : 'none' }
+          <FormControl my={2}>
+            <FormLabel> Email </FormLabel>
+            <Input
+              type="email"
+              placeholder="hola@gmail.com"
+              {...register('email', registerOptions.email)}
+              onKeyUp={() => trigger('email')}
+              isInvalid={errors.email ? true : false}
+              errorBorderColor={errors.email ? 'red.500' : 'none'}
             />
-          { errors.email && ( <small> { errors.email.message } </small> )}
-          
+            {errors.email && (
+              <FormHelperText color="red.500">
+                {errors.email.message}
+              </FormHelperText>
+            )}
+          </FormControl>
+
           {/* 🔥 username */}
-          <label> username </label> 
-          <Input 
-            type='text'
-            {...register('username', {
-              required: 'campo obligatorio',
-            })}
-            onKeyUp={() => trigger('username')}
-            isInvalid={ errors.username ? true : false }
-            errorBorderColor={ errors.username ? "red.500" : 'none' }
+          <FormControl my={2}>
+            <FormLabel> Username </FormLabel>
+            <Input
+              type="text"
+              placeholder="username"
+              {...register('username', registerOptions.username)}
+              onKeyUp={() => trigger('username')}
+              isInvalid={errors.username ? true : false}
+              errorBorderColor={errors.username ? 'red.500' : 'none'}
             />
-            { errors.username && ( <small> { errors.username.message } </small> )}
+            {errors.username && (
+              <FormHelperText color="red.500">
+                {errors.username.message}
+              </FormHelperText>
+            )}
+          </FormControl>
 
           {/* 🔥 password */}
-          <label> password </label> 
-          <Input 
-            type='text'
-            {...register('password', {
-              required: 'campo requerido',
-              pattern: {
-                value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?^&]).{8,}$/,
-                message: 'Al menos 8 caracteres, una minúscula, una mayúscula, un número, y un caracter especial',
-              },
-            })}
-            onKeyUp={() => trigger('password')}
-            isInvalid={ errors.password ? true : false }
-            errorBorderColor={ errors.password ? "red.500" : 'none' }
-            />
-            { errors.password && ( <small> { errors.password.message } </small> )}
+          <FormControl my={2}>
+            <FormLabel> Contraseña </FormLabel>
+            <InputGroup>
+              <Input
+                type={show ? 'text' : 'password'}
+                placeholder="contraseña"
+                {...register('password', registerOptions.password)}
+                onKeyUp={() => trigger('password')}
+                isInvalid={errors.username ? true : false}
+                errorBorderColor={errors.username ? 'red.500' : 'none'}
+              />
+              <InputRightElement>
+                <IconButton
+                  variant="ghost"
+                  onClick={handleShow}
+                  colorScheme={errors.password ? 'red' : 'primary'}
+                  icon={show ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
+                />
+              </InputRightElement>
+            </InputGroup>
+            {errors.password && (
+              <FormHelperText color="red.500">
+                {errors.password.message}
+              </FormHelperText>
+            )}
+          </FormControl>
 
-
-          <Button
-            type='submit'
-            isDisabled={ !errors ? true : false }
-          > Registrar
-            </Button> 
-
-          {/* <InputEmail 
-            handleInput={handleInput} 
-            info={info} 
-            />
-          <InputText
-            // handleInput={handleInput}
-            // info={info}
-            // name="username"
-            // placeholder="username"
-            // type="text"
-          />
-          <InputPass
-            // handleInput={handleInput}
-            // info={info}
-          /> */}
-
-          {/* REFATOR ////////////////////////////////  */}
-          {/* <Card bg='red.100'>
-          <PassValidator valid={upper.valid} value={upper.message} error={error.email}/>
-          <PassValidator valid={digit.valid} value={digit.message} />
-          <PassValidator valid={special.valid} value={special.message} />
-          <PassValidator valid={length.valid} value={length.message} />
-          </Card> */}
-
-          {/* <SubmitBtn 
-            isValid={isValid} 
-            name="Registro" 
-            /> */}
+          {/* 🔥 submit */}
+          <Button type="submit" w="full">
+            Registrar
+          </Button>
         </form>
-        </VStack>
       </Box>
     </>
   )
