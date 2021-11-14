@@ -22,6 +22,12 @@ import {
 } from 'react-icons/ai'
 import { RiStarSmileLine } from 'react-icons/ri'
 
+export const SSOpaths = {
+  google: `${process.env.REACT_APP_BACK_URL}/auth/google`,
+  facebook: `${process.env.REACT_APP_BACK_URL}/auth/google`,
+  apple: `${process.env.REACT_APP_BACK_URL}/auth/google`,
+}
+
 export const paths = {
   index: '/auth',
   onboarding: '/auth/onboarding',
