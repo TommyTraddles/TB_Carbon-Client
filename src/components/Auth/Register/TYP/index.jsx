@@ -1,8 +1,11 @@
+// components
+import { Heading, Text } from '@chakra-ui/react'
+
 export const RegisterTYP = () => {
-  return(
+  return (
     <>
-      Gracias por registrate
-      Enviaremos un correo con más información
+      <Heading> Gracias por registrarte </Heading>
+      <Text>Revisa tu bandeja de entrada, hemos enviado un correo</Text>
     </>
   )
 }

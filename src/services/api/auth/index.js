@@ -1,9 +1,8 @@
 export const login = ({ post }) => async (info) => {
   try {
-    return await post('/auth/login', { ...info })
+    return (await post('/auth/login', { ...info })).data
   } catch (e) {
-    console.info(" error at 'login' fetch :", e.message)
-    return false
+    return e.response.data
   }
 }
 

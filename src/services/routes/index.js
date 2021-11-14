@@ -3,6 +3,7 @@ import { Sandbox } from 'pages/_SANDBOX-PAGE'
 // auth
 import { Index } from 'pages/Auth/Index'
 import { Reset } from 'pages/Auth/New-pass'
+import { FirstCalculator } from 'pages/Auth/First-calculator'
 // app
 import { Onboarding } from 'pages/Auth/Onboarding'
 import { Home } from 'pages/App/Home'
@@ -24,6 +25,7 @@ import { RiStarSmileLine } from 'react-icons/ri'
 export const paths = {
   index: '/auth',
   onboarding: '/auth/onboarding',
+  firstCalculator: '/auth/first-calculator',
   reset: '/auth/reset-pass',
   home: '/',
   calculator: '/caluladora',
@@ -66,6 +68,11 @@ export const routes = [
   {
     component: Index,
     path: paths.index,
+    layout: 'public',
+  },
+  {
+    component: FirstCalculator,
+    path: paths.firstCalculator,
     layout: 'public',
   },
   {
