@@ -4,12 +4,13 @@ import { Sandbox } from 'pages/_SANDBOX-PAGE'
 import { Index } from 'pages/Auth/Index'
 import { Reset } from 'pages/Auth/New-pass'
 import { Forgot } from 'pages/Auth/Forgot-pass'
-import { FirstCalculator } from 'pages/Auth/First-calculator'
+import { Calculator } from 'pages/Auth/Calculator'
 // app
 import { Onboarding } from 'pages/Auth/Onboarding'
 import { Home } from 'pages/App/Home'
-import { Calculator } from 'pages/App/Calculator'
+import { Daily } from 'pages/App/Daily'
 import { Logros } from 'pages/App/Logros'
+import { Acciones } from 'pages/App/Acciones'
 import { Ranking } from 'pages/App/Ranking'
 // user
 import { Perfil } from 'pages/User/Perfil'
@@ -32,11 +33,12 @@ export const SSOpaths = {
 export const paths = {
   index: '/auth',
   onboarding: '/auth/onboarding',
-  firstCalculator: '/auth/first-calculator',
+  calculator: '/auth/calculator',
   forgot: '/auth/forgot-pass',
   reset: '/auth/password/request',
   home: '/',
-  calculator: '/calculadora',
+  daily: '/daily',
+  acciones: '/acciones',
   logros: '/logros',
   ranking: '/ranking',
   iniciativas: '/iniciativa',
@@ -94,18 +96,23 @@ export const routes = [
     layout: 'public',
   },
   {
-    component: FirstCalculator,
-    path: paths.firstCalculator,
-    layout: 'public',
-  },
-  {
     component: Calculator,
     path: paths.calculator,
-    layout: 'private',
+    layout: 'public',
   },
   {
     component: Home,
     path: paths.home,
+    layout: 'private',
+  },
+  {
+    component: Daily,
+    path: paths.daily,
+    layout: 'private',
+  },
+  {
+    component: Acciones,
+    path: paths.acciones,
     layout: 'private',
   },
   {

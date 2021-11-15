@@ -77,7 +77,7 @@ export const RegisterForm = ({ RoC }) => {
         isClosable: true,
       })
       setloading(false)
-      setTimeout( () => history.push(paths.firstCalculator), 2000)
+      setTimeout( () => history.push(paths.calculator), 2000)
     }
   }
 
