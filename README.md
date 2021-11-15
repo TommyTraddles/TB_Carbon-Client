@@ -99,3 +99,48 @@
 
 ----------------
 
+<!-- 
+
+CALCULATOR: 
+👉 Stepper:
+- vertical: https://codesandbox.io/s/swtow
+- horizontal: https://codesandbox.io/s/8v7m1?file=/src/Stepper.js
+- Horizonatl: https://codesandbox.io/s/chakra-stepper-hook-bx8zf
+
+
+DASHBOARD:
+👉 Chart: 
+- 
+
+
+ACCIONES:
+🤖  Selector
+
+
+LOGROS:
+🤖  Ver logros
+
+
+RANKING:
+
+👉 Table:
+- https://codesandbox.io/s/o6psn
+- https://choc-ui.tech/docs/lists/tables
+
+👉 Map:
+- 
+
+🤖 Comparador: 
+- 
+
+ONBOARDING: 
+👉 Carrousel: 
+- 
+
+
+INICIATIVAS:
+👉 Stripe: 
+- 
+
+
+ -->
