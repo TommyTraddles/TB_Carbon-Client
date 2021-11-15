@@ -1,45 +1,91 @@
 // componentes
 import { Card } from 'components/ui/Card'
-import { Button } from '@chakra-ui/react'
-import { Table, Thead, Th, Tbody, Tr, Td } from '@chakra-ui/react'
+import { Table, Thead, Tbody, Tr, Th, Td } from '@chakra-ui/react'
+// hooks
+import {
+  useTable,
+  useSortBy,
+  useGlobalFilter,
+} from 'react-table'
+import { useMemo } from 'react'
 
-export const RankingTable = () => {
+// .......
+
+import { InputGroup, Input, InputRightElement } from '@chakra-ui/react'
+import { BsSearch } from 'react-icons/bs'
+
+export const GlobalFilter = ({ filter, setfilter }) => {
   return (
     <>
-      <Button colorScheme="secondary"> Buscar   (d/w/m) </Button>
-      <Button colorScheme="secondary"> Buscar Zipcode </Button>
-      <Button colorScheme="secondary"> Buscar username </Button>
+      <InputGroup>
+        <Input
+          placeholder="Buscar"
+          value={filter || ''}
+          onChange={(e) => setfilter(e.target.value)}
+        />
+        <InputRightElement children={<BsSearch color="green.500" />} />
+      </InputGroup>
+    </>
+  )
+}
+
+export const RankingTable = () => {
+  // table
+  const DATA = [
+    { Id: '1', ranking: '1', username: 'Pablo ', postal_code: '28000' },
+    { Id: '2', ranking: '2', username: 'Elena ', postal_code: '28000' },
+    { Id: '3', ranking: '3', username: 'Maria ', postal_code: '28000' },
+  ]
+  const COLUMNS = [
+    { Header: 'Ranking', accessor: 'ranking' },
+    { Header: 'Username', accessor: 'username' },
+  ]
+  const data = useMemo(() => DATA, [])
+  const columns = useMemo(() => COLUMNS, [])
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+    state,
+    setGlobalFilter,
+  } = useTable({ columns, data }, useGlobalFilter, useSortBy)
+  const { globalFilter } = state
+
+  return (
+    <>
+      <GlobalFilter filter={globalFilter} setfilter={setGlobalFilter} />
 
       <Card>
-        <Table>
+        <Table {...getTableProps()}>
           <Thead>
-            <Tr>
-              <Th>Ranking</Th>
-              <Th>Nombre</Th>
-              <Th>CP</Th>
-            </Tr>
+            {headerGroups.map((headerGroup) => (
+              <Tr {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((column) => (
+                  <Th {...column.getHeaderProps(column.getSortByToggleProps())} >
+                    {column.render('Header')}
+                    <span>
+                  {column.isSorted ? column.isSortedDesc ? ' ⬇️' : ' ⬆️' : ' ↕️'}
+                </span>
+                  </Th>
+                ))}
+              </Tr>
+            ))}
           </Thead>
-          <Tbody>
-            <Tr>
-              <Td>1</Td>
-              <Td>Nombre</Td>
-              <Td>28000</Td>
-            </Tr>
-            <Tr>
-              <Td>1</Td>
-              <Td>Nombre</Td>
-              <Td>28000</Td>
-            </Tr>
-            <Tr>
-              <Td>1</Td>
-              <Td>Nombre</Td>
-              <Td>28000</Td>
-            </Tr>
-            <Tr>
-              <Td>1</Td>
-              <Td>Nombre</Td>
-              <Td>28000</Td>
-            </Tr>
+          <Tbody {...getTableBodyProps()}>
+            {rows.map((row) => {
+              prepareRow(row)
+              return (
+                <Tr {...row.getRowProps()}>
+                  {row.cells.map((cell) => {
+                    return (
+                      <Td {...cell.getCellProps()}>{cell.render('Cell')}</Td>
+                    )
+                  })}
+                </Tr>
+              )
+            })}
           </Tbody>
         </Table>
       </Card>
