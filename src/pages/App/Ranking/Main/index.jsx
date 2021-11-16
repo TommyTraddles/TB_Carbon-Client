@@ -16,6 +16,7 @@ export const Ranking = () => {
       <Heading> Ranking </Heading>
 
       <Tabs variant="solid-rounded">
+        
         <TabList justifyContent='space-between' px={4}>
           <Tab w='48%' >Mapa</Tab>
           <Tab w='48%' >Ranking</Tab>

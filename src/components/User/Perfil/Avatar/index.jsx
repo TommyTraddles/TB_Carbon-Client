@@ -1,6 +1,7 @@
 import { Text, Avatar, HStack} from '@chakra-ui/react'
 
 export const PerfilCard = ({ name, user }) => {
+
   return(
     <>
     <HStack>

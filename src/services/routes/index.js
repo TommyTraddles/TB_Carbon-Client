@@ -42,7 +42,7 @@ export const paths = {
   acciones: '/acciones',
   logros: '/logros',
   ranking: '/ranking',
-  compare: '/ranking/id',
+  compare: '/ranking/:id',
   iniciativas: '/iniciativa',
   perfil: '/perfil',
   sandbox: '/sandbox',

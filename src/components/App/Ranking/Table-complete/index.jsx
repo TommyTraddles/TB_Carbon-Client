@@ -1,7 +1,7 @@
 // componentes
-import { Table, Thead, Tbody, Tr, Td, Text } from '@chakra-ui/react'
-import { PerfilCard } from 'components/User/Perfil/Avatar'
-import { Avatar, HStack} from '@chakra-ui/react'
+import { Table, Thead, Tbody, Tr, Td, Text, HStack } from '@chakra-ui/react'
+import { GlobalFilter } from 'components/App/Ranking/Filter'
+import { RankingCard } from 'components/App/Ranking/Avatar'
 // hooks
 import {
   useTable,
@@ -9,224 +9,64 @@ import {
   useGlobalFilter,
   usePagination,
 } from 'react-table'
-import { useMemo } from 'react'
+import { useMemo, useState, useEffect } from 'react'
+import { useHistory } from 'react-router'
 // data
-import { Link } from 'react-router-dom'
 import { paths } from 'services/routes'
-
-// .......
-
-import { InputGroup, Input, InputRightElement } from '@chakra-ui/react'
-import { BsSearch } from 'react-icons/bs'
-
-export const GlobalFilter = ({ filter, setfilter }) => {
-  return (
-    <>
-      <InputGroup>
-        <Input
-          placeholder="Buscar"
-          value={filter || ''}
-          onChange={(e) => setfilter(e.target.value)}
-        />
-        <InputRightElement children={<BsSearch color="green.500" />} />
-      </InputGroup>
-    </>
-  )
-}
-
-// .......
+import { rankingAPI } from 'services/api'
 
 export const RankingTable = () => {
-  // table
+
+  // ❌ 'SETUSERS' NO CARGA INMEDIATAMENTE
+  const [users, setusers] = useState()
+  const onFetch = async () => {
+    const data = await rankingAPI.users()
+    setusers(data)
+    console.info('> DATA', data)
+    console.info('> USERS: ', users)
+  }
+  useEffect(() => { onFetch() }, [])
+
+  // ❌ ESTA DATA ES DUMMY MIENTRAS SE RESUELVE LA LLAMADA A LA API
+  // ❌ Revisar comportamiento cuando hay nombres largos 
   const DATA = [
-    {
-      Id: '1',
-      ranking: '1',
-      username: 'Pablo ',
-      zipcode: '28000',
-      carbon: '20',
-    },
-    {
-      Id: '2',
-      ranking: '2',
-      username: 'Elena ',
-      zipcode: '28000',
-      carbon: '20',
-    },
-    {
-      Id: '3',
-      ranking: '3',
-      username: 'Maria ',
-      zipcode: '27000',
-      carbon: '20',
-    },
-    {
-      Id: '4',
-      ranking: '4',
-      username: 'Juan ',
-      zipcode: '26000',
-      carbon: '20',
-    },
-    {
-      Id: '5',
-      ranking: '5',
-      username: 'Pablo ',
-      zipcode: '28000',
-      carbon: '20',
-    },
-    {
-      Id: '6',
-      ranking: '6',
-      username: 'Elena ',
-      zipcode: '28000',
-      carbon: '20',
-    },
-    {
-      Id: '7',
-      ranking: '7',
-      username: 'Maria ',
-      zipcode: '27000',
-      carbon: '20',
-    },
-    {
-      Id: '8',
-      ranking: '8',
-      username: 'Juan ',
-      zipcode: '26000',
-      carbon: '20',
-    },
-    {
-      Id: '9',
-      ranking: '9',
-      username: 'Pablo ',
-      zipcode: '28000',
-      carbon: '20',
-    },
-    {
-      Id: '10',
-      ranking: '10',
-      username: 'Elena ',
-      zipcode: '28000',
-      carbon: '20',
-    },
-    {
-      Id: '11',
-      ranking: '11',
-      username: 'Maria ',
-      zipcode: '27000',
-      carbon: '20',
-    },
-    {
-      Id: '4',
-      ranking: '4',
-      username: 'Juan ',
-      zipcode: '26000',
-      carbon: '20',
-    },
-    {
-      Id: '5',
-      ranking: '5',
-      username: 'Pablo ',
-      zipcode: '28000',
-      carbon: '20',
-    },
-    {
-      Id: '6',
-      ranking: '6',
-      username: 'Elena ',
-      zipcode: '28000',
-      carbon: '20',
-    },
-    {
-      Id: '7',
-      ranking: '7',
-      username: 'Maria ',
-      zipcode: '27000',
-      carbon: '20',
-    },
-    {
-      Id: '8',
-      ranking: '8',
-      username: 'Juan ',
-      zipcode: '26000',
-      carbon: '20',
-    },
-    {
-      Id: '1',
-      ranking: '1',
-      username: 'Pablo ',
-      zipcode: '28000',
-      carbon: '20',
-    },
-    {
-      Id: '2',
-      ranking: '2',
-      username: 'Elena ',
-      zipcode: '28000',
-      carbon: '20',
-    },
-    {
-      Id: '3',
-      ranking: '3',
-      username: 'Maria ',
-      zipcode: '27000',
-      carbon: '20',
-    },
-    {
-      Id: '4',
-      ranking: '4',
-      username: 'Juan ',
-      zipcode: '26000',
-      carbon: '20',
-    },
-    {
-      Id: '5',
-      ranking: '5',
-      username: 'Pablo ',
-      zipcode: '28000',
-      carbon: '20',
-    },
-    {
-      Id: '6',
-      ranking: '6',
-      username: 'Elena ',
-      zipcode: '28000',
-      carbon: '20',
-    },
-    {
-      Id: '7',
-      ranking: '7',
-      username: 'Maria ',
-      zipcode: '27000',
-      carbon: '20',
-    },
-    {
-      Id: '8',
-      ranking: '8',
-      username: 'Juan ',
-      zipcode: '26000',
-      carbon: '20',
-    },
+    { id: '1', username: 'Fran ', address: { zipcode: '28000', number: '200',},},
+    { id: '2', username: 'Reyes ', address: { zipcode: '27000', number: '242',},},
+    { id: '3', username: 'Juan', address: { zipcode: '27000', number: '212',},},
+    { id: '4', username: 'Kike', address: { zipcode: '27000', number: '310',},},
+    { id: '5', username: 'Borja', address: { zipcode: '27000', number: '122',},},
+    { id: '6', username: 'Jorge', address: { zipcode: '27000', number: '350',},},
   ]
+  // ❌ CAMBIAR 'ACCESSOR' POR DATO TRAIDO DE LA API
   const COLUMNS = [
-    { width: '10%', Header: 'Ranking', accessor: 'ranking' },
-    { width: '60%', Header: 'Usuario', accessor: 'username' },
-    { width: '15%', Header: 'Codigo Postal', accessor: 'zipcode' },
-    { width: '15%', Header: 'Carbon', accessor: 'carbon' },
+    { width: '10%', Header: 'Ranking', accessor: 'id' },
+    { width: '55%', Header: 'Usuario', accessor: 'username' },
+    { width: '15%', Header: 'Codigo Postal', accessor: 'address.zipcode' },
+    { width: '20%', Header: 'Carbon', accessor: 'address.number' },
   ]
+  // handleClick
+  const history = useHistory()
+  const handleClick = (id) => history.push(`${paths.ranking}/${id}`)
+
+  // table
+  // ❌ ES NECESARIO PASAR 'DATA' PRIMERO MIENTRAS RESUELVO USESTATE
   const data = useMemo(() => DATA, [])
   const columns = useMemo(() => COLUMNS, [])
+  const tableInstance = useTable(
+    { columns, data },
+    useGlobalFilter,
+    useSortBy,
+    usePagination
+  )
   const {
-    // render and sort
     getTableProps,
     getTableBodyProps,
     headerGroups,
     prepareRow,
     rows,
-    // filter
     state,
     setGlobalFilter,
-  } = useTable({ columns, data }, useGlobalFilter, useSortBy, usePagination)
+  } = tableInstance
   const { globalFilter } = state
 
   return (
@@ -247,41 +87,48 @@ export const RankingTable = () => {
           {rows.map((row) => {
             prepareRow(row)
             return (
-              <Link to={paths.compare}>
-                <Tr
-                  {...row.getRowProps()}
-                  display="flex"
-                  my={3}
-                  py={3}
-                  px={5}
-                  bg={row.original.ranking < 4 ? 'green.50' : 'white'}
-                  borderRadius="xl"
-                  boxShadow="xl"
-                >
-                  {row.cells.map((cell) => {
-                    return (
-                      <Td p={1} h='70px' w={cell.column.width} {...cell.getCellProps()}>
-                        {cell.column.Header === 'Ranking' && (
-                          <Text fontSize="xs">{cell.render('Cell')}</Text>
-                          )}
-                        {cell.column.Header === 'Usuario' && (
-                          <Text fontWeight='bold'> @{cell.render('Cell')}</Text>
-                        )}
-                        {cell.column.Header === 'Codigo Postal' && (
-                          <Text textAlign="end" fontSize="xs" color='gray.500' >
-                            {cell.render('Cell')}
-                          </Text>
-                        )}
-                        {cell.column.Header === 'Carbon' && (
-                          <Text textAlign="end" fontSize="xs" color='gray.500'>
-                            {cell.render('Cell')}
-                          </Text>
-                        )}
-                      </Td>
-                    )
-                  })}
-                </Tr>
-              </Link>
+              <Tr
+                {...row.getRowProps()}
+                display="flex"
+                my={3}
+                py={2}
+                px={3}
+                // ❌ CAMBIAR '.ID' POR '.RANKING' EN LA BBDD FINAL
+                bg={row.original.id < 4 ? 'green.50' : 'white'}
+                borderRadius="xl"
+                boxShadow="xl"
+                onClick={() => handleClick(row.original.id)}
+              >
+                {row.cells.map((cell) => {
+                  return (
+                    <Td
+                      p={1}
+                      w={cell.column.width}
+                      {...cell.getCellProps()}
+                    >
+                      {/* ❌ MAQUETA */}
+                      {cell.column.Header === 'Ranking' && (
+                        <Text fontSize="xs" >{cell.render('Cell')}</Text>
+                      )}
+                      {cell.column.Header === 'Usuario' && (
+                        <HStack>
+                          <RankingCard name={(cell.render('Cell'))} size='lg'/>
+                        </HStack>
+                      )}
+                      {cell.column.Header === 'Codigo Postal' && (
+                        <Text textAlign="end" fontSize="xs" color="gray.500">
+                          {cell.render('Cell')}
+                        </Text>
+                      )}
+                      {cell.column.Header === 'Carbon' && (
+                        <Text textAlign="end" fontSize="xs" color="gray.500">
+                          {cell.render('Cell')} <small> Kg/CO2 </small>
+                        </Text>
+                      )}
+                    </Td>
+                  )
+                })}
+              </Tr>
             )
           })}
         </Tbody>
