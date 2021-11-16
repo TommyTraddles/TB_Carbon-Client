@@ -4,6 +4,19 @@ import { RadialBarChart, RadialBar as RadBar, Tooltip } from 'recharts'
 // data
 import { dataLogroPuntajeAcumulado } from 'assets/data/charts'
 
+export const DATA = [
+  {
+    name: 'Apoyo al medio ambiente',
+    score: 100,
+    fill: '#fff',
+  },
+  {
+    name: 'Apoyo al medio ambiente',
+    score: 50,
+    fill: '#8884d8',
+  },
+]
+
 const CustomTooltip = ({ active, payload, label }) => {
   if (active) {
     return (
@@ -22,9 +35,9 @@ export const RadialBar = () => {
   return (
     <>
       <RadialBarChart
-        innerRadius="10%"
+        innerRadius="20%"
         outerRadius="100%"
-        data={dataLogroPuntajeAcumulado}
+        data={DATA}
         startAngle={180}
         endAngle={0}
         width={200}
