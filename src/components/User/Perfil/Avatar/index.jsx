@@ -5,7 +5,7 @@ export const PerfilCard = ({ name, user }) => {
     <>
     <HStack>
       <Avatar name={name} />
-      <Text fontWeight='bold'> @{user} </Text>
+      <Text fontWeight='bold'> @{user ? user : name } </Text>
     </HStack>
     </>
   )

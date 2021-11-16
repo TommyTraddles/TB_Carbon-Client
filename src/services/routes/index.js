@@ -11,7 +11,8 @@ import { Home } from 'pages/App/Home'
 import { Daily } from 'pages/App/Daily'
 import { Logros } from 'pages/App/Logros'
 import { Acciones } from 'pages/App/Acciones'
-import { Ranking } from 'pages/App/Ranking'
+import { Ranking } from 'pages/App/Ranking/Main'
+import { Compare } from 'pages/App/Ranking/[Compare]'
 // user
 import { Perfil } from 'pages/User/Perfil'
 import { Iniciativas } from 'pages/User/Iniciativas'
@@ -41,6 +42,7 @@ export const paths = {
   acciones: '/acciones',
   logros: '/logros',
   ranking: '/ranking',
+  compare: '/ranking/id',
   iniciativas: '/iniciativa',
   perfil: '/perfil',
   sandbox: '/sandbox',
@@ -123,6 +125,11 @@ export const routes = [
   {
     component: Ranking,
     path: paths.ranking,
+    layout: 'private',
+  },
+  {
+    component: Compare,
+    path: paths.compare,
     layout: 'private',
   },
   {
