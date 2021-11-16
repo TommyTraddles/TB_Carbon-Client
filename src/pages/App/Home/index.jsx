@@ -20,6 +20,10 @@ export const Home = () => {
     if (!user.today_input && !user.today_input_skip) CoO()
   }, [CoO])
 
+
+  // fetch
+
+
   return (
     <>
       <Heading> Progeso </Heading>

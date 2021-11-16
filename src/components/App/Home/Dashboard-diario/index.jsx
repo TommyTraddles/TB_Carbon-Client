@@ -1,6 +1,5 @@
 // components
 import { Card } from 'components/ui/Card'
-import { Text } from '@chakra-ui/react'
 import { RadialBar } from 'components/ui/Charts/RadialBar'
 
 export const ResumeSolutions = () => {

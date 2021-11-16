@@ -1,6 +1,6 @@
 // components
 import { Card } from 'components/ui/Card'
-import { Heading, Text, Button } from '@chakra-ui/react'
+import { Text, Button } from '@chakra-ui/react'
 import { AreaStackSingle } from 'components/ui/Charts/Area-stack-single'
 
 // https://recharts.org/en-US/examples/DashedLineChart
