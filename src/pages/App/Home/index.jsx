@@ -3,6 +3,7 @@ import { Heading, Button } from '@chakra-ui/react'
 import { ResumeStatistics } from 'components/App/Home/Dashboard-acumulado'
 import { ResumeSolutions } from 'components/App/Home/Dashboard-diario'
 import { CalculatorModal } from 'components/App/Home/Modal'
+import { ResumeStats } from 'components/App/Home/Stats-diario'
 import { Modal } from 'components/ui/Modal'
 // data
 import { user } from 'assets/data'
@@ -23,6 +24,8 @@ export const Home = () => {
     <>
       <Heading> Progeso </Heading>
 
+      <ResumeStats />
+      <br />
       <ResumeStatistics />
       <br />
       <ResumeSolutions />

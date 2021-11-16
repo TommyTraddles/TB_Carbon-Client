@@ -1,6 +1,7 @@
 // components
 import { Card } from 'components/ui/Card'
-import { Heading, Button } from '@chakra-ui/react'
+import { Heading, Text, Button } from '@chakra-ui/react'
+import { AreaStackSingle } from 'components/ui/Charts/Area-stack-single'
 
 // https://recharts.org/en-US/examples/DashedLineChart
 // https://www.chartjs.org/docs/latest/samples/bar/stacked.html
@@ -8,9 +9,13 @@ import { Heading, Button } from '@chakra-ui/react'
 export const ResumeStatistics = () => {
   return (
     <>
-      <Card bg="red.100">
-        <Heading size="md"> Dashboard Global </Heading>
-        <Button colorScheme="secondary"> Filtrar por fecha </Button>
+      <Card p="3">
+        <Text fontSize="lg" fontWeight="bold" mb="6px">
+          Acumulado total
+        </Text>
+        <Text> Estas activo desde... </Text>
+        <AreaStackSingle />
+        <Button colorScheme='secondary'> Filtro de fecha </Button>
       </Card>
     </>
   )
