@@ -1,16 +1,16 @@
 import { InputGroup, Input, InputRightElement } from '@chakra-ui/react'
 import { BsSearch } from 'react-icons/bs'
 
-export const GlobalFilter = ({ filter, setfilter }) => {
+export const RankingFilter = ({ filter, setfilter }) => {
   return (
     <>
       <InputGroup>
         <Input
           placeholder="Buscar"
-          value={filter || ''}
+          value={filter}
           onChange={(e) => setfilter(e.target.value)}
         />
-        <InputRightElement children={<BsSearch color="green.500" />} />
+        <InputRightElement children={<BsSearch />} />
       </InputGroup>
     </>
   )

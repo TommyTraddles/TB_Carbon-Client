@@ -3,7 +3,7 @@ import { Card } from 'components/ui/Card'
 import { BackButton } from 'components/ui/Button/Back'
 import { PerfilCard } from 'components/ui/Avatar/Perfil'
 import { AreaStackComp } from 'components/ui/Charts/Area-stack-comp'
-import { Heading, Button, HStack, VStack, Divider } from '@chakra-ui/react'
+import { Heading, Button, VStack, Divider } from '@chakra-ui/react'
 // hooks
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
@@ -11,15 +11,8 @@ import { useState, useEffect } from 'react'
 import { rankingAPI } from 'services/api'
 
 export const Compare = () => {
+
   // ❌ ESTA DATA ES DUMMY MIENTRAS SE RESUELVE LA LLAMADA A LA API
-  const ME = {
-    id: '6',
-    username: 'Jorge',
-  }
-  const OTHER = {
-    id: '1',
-    username: 'Fran',
-  }
   const COMPARATIVE = [
     {
       date: 'Enero',
@@ -48,37 +41,37 @@ export const Compare = () => {
     },
   ]
 
-  // ❌ USESTATE NOT UPDATING
+  // ❌ fetch BBDD
   const { id } = useParams()
-  const context = 'me'
-  const [my, setmy] = useState(ME)
-  const [your, setyour] = useState(OTHER)
-  const [result, setresult] = useState(COMPARATIVE)
+  const context = 7
+  const [my, setmy] = useState({})
+  const [your, setyour] = useState({})
+  // setresult Hook
+  const [result ] = useState(COMPARATIVE)
   useEffect(() => {
     ;(async () => {
       const mine = await rankingAPI.user(id)
+      setmy(mine)
       const yours = await rankingAPI.user(context)
-      const comparative = await rankingAPI.comparative(id, context)
+      setyour(yours)
+      // const comparative = await rankingAPI.comparative(id, context)
+      // setresult(comparative)
     })()
-  }, [])
+  }, [id])
 
   return (
     <>
       <BackButton />
       <Heading size="md"> Comparativa con: {your.username} </Heading>
 
-        <Card my={3} py={4} flexDir='row' justifyContent='center'>
-          <PerfilCard name={your.username} />
-          <Divider orientation='vertical' mx={3} color='red' />
-          <PerfilCard name={my.username} />
-        </Card>
+      <Card my={3} py={4} flexDir="row" justifyContent="center">
+        <PerfilCard name={your.username} />
+        <Divider orientation="vertical" mx={3} color="red" />
+        <PerfilCard name={my.username} />
+      </Card>
 
       <Card p="3">
-        <AreaStackComp
-          data={COMPARATIVE}
-          me={ME.username}
-          other={OTHER.username}
-        />
+        <AreaStackComp data={result} me={my.username} other={your.username} />
       </Card>
 
       <VStack>

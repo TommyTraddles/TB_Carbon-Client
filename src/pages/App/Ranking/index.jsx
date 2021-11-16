@@ -7,8 +7,8 @@ import {
   TabPanels,
   TabPanel,
 } from '@chakra-ui/react'
-import { RankingTable } from 'components/App/Ranking/Table-complete'
 import { RankingMap } from 'components/App/Ranking/Map'
+import { RankingTable } from 'components/App/Ranking/Table-complete/Index'
 
 export const Ranking = () => {
   return (

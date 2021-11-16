@@ -5,8 +5,8 @@ export const RankingCard = ({ name }) => {
   return(
     <>
     <HStack>
-      <Avatar size='md' name={name.props.cell.value} />
-      <Heading size='sm' > @{name.props.cell.value} </Heading>
+      <Avatar size='md' name={name} />
+      <Heading size='sm' > @{name} </Heading>
     </HStack>
     </>
   )
