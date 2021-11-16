@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { login, register, forgot, reset } from 'services/api/auth'
-import { rankingUsers } from 'services/api/ranking'
+import { users, user, comparative } from 'services/api/ranking'
 
 const client = axios.create({
   baseURL: process.env.REACT_APP_BACK_URL,
@@ -26,5 +26,7 @@ export const authAPI = {
 }
 
 export const rankingAPI = {
-  users: rankingUsers(dummy)
+  users: users(dummy),
+  user: user(dummy),
+  comparative: comparative(dummy),
 }

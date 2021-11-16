@@ -2,17 +2,16 @@
 import { Heading, Text } from '@chakra-ui/layout'
 import { Card } from 'components/ui/Card'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
-// data
-import { dataComparativeRanking } from 'assets/data/charts'
 
-const CustomTooltip = ({ active, payload, label }) => {
+
+const CustomTooltip = ({ active, payload, label, me, other }) => {
   if (active) {
     return (
       <>
         <Card p={2} variant='smooth'>
           <Heading size="xs"> {label} </Heading>
-          <Text fontSize="xs" fontWeight='bold' color={payload[0].color}> Juan: {payload[0].value} </Text>
-          <Text fontSize="xs" fontWeight='bold' color={payload[1].color}> Other: {payload[1].value} </Text>
+          <Text fontSize="xs" fontWeight='bold' color={payload[0].color}> {me}: {payload[0].value} </Text>
+          <Text fontSize="xs" fontWeight='bold' color={payload[1].color}> {other}: {payload[1].value} </Text>
         </Card>
       </>
     )
@@ -20,11 +19,11 @@ const CustomTooltip = ({ active, payload, label }) => {
   return null
 }
 
-export const AreaStackComp = () => {
+export const AreaStackComp = ({ data, me, other }) => {
   return (
     <>
       <AreaChart
-        data={dataComparativeRanking}
+        data={data}
         margin={{ right: 30, left: -10 }}
         width={350}
         height={250}
@@ -70,7 +69,7 @@ export const AreaStackComp = () => {
           tick={{ fontSize: 12, fill: '#A0AEC0' }}
         />
 
-        <Tooltip content={<CustomTooltip />} />
+        <Tooltip content={<CustomTooltip me={me} other={other}/>} />
 
         <CartesianGrid
           opacity={0.5}

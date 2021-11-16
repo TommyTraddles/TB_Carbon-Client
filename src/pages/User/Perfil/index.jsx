@@ -1,7 +1,7 @@
 // components
 import { Heading, Divider, VStack } from '@chakra-ui/react'
 import { Modal } from 'components/ui/Modal'
-import { PerfilCard } from 'components/User/Perfil/Avatar'
+import { PerfilCard } from 'components/ui/Avatar/Perfil'
 import { Feedback } from 'components/User/Perfil/Feedback'
 import { FAQs } from 'components/User/Perfil/FAQs'
 import { Accesibilidad } from 'components/User/Perfil/Accesibilidad'
