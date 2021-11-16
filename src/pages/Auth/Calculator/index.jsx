@@ -1,11 +1,8 @@
 // components
-import { Heading, Button } from '@chakra-ui/react'
+import { Heading, Text } from '@chakra-ui/react'
 import { Modal } from 'components/ui/Modal'
 import { RegisterTYP } from 'components/Auth/Register/TYP'
 import { CalculadoraForm } from 'components/Auth/Calculator/Form'
-// data
-import { Link } from 'react-router-dom'
-import { paths } from 'services/routes'
 // hooks
 import { useDisclosure } from '@chakra-ui/hooks'
 import { useEffect } from 'react'
@@ -15,18 +12,15 @@ export const Calculator = () => {
   const { isOpen: TYPiO, onOpen: TYPoO, onClose: TYPoC } = useDisclosure()
 
   useEffect(() => {
-    // TYPoO()
+    TYPoO()
   }, [TYPoO])
 
   return (
     <>
-      <Heading> Bienvenido </Heading>
+      <Heading> Calcula tu huella </Heading>
+      <Text> Serán 3 minutos </Text>
 
       <CalculadoraForm />
-
-      <Link to={paths.home}>
-        <Button size="lg"> Ver mi resultado </Button>
-      </Link>
 
       <Modal
         isOpen={TYPiO}

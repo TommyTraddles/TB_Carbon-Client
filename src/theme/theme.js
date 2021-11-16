@@ -12,6 +12,7 @@ import { Card } from 'theme/components/card'
 import { Checkbox } from 'theme/components/checkbox'
 import { Input } from 'theme/components/input'
 import { Radiocard } from './components/radiocard'
+import { Steps } from './components/steps'
 
 export const theme = extendTheme(
   {
@@ -25,6 +26,7 @@ export const theme = extendTheme(
       Checkbox,
       Input,
       Radiocard,
+      Steps,
     },
   },
   withDefaultColorScheme(colorScheme),
