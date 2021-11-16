@@ -37,7 +37,7 @@ export const RadialBar = () => {
       <RadialBarChart
         innerRadius="20%"
         outerRadius="100%"
-        data={DATA}
+        data={dataLogroPuntajeAcumulado}
         startAngle={180}
         endAngle={0}
         width={200}
