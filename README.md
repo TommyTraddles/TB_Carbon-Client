@@ -1,103 +1,120 @@
 
-## To-do
 
-#### Tech decisions
-- Mongo vs SQL
-- JWT vs Cookie
-- Passport vs Custom
+<!-- Comentarios -->
+17-nov-2021
 
+# Convenciones
+🎃 Jorge 
+👹 Juan
+🔥 Crítico
+⬅️ Petición a BBDD
 
-#### Forms Auth
-- Registro
-  - 👉 definir campos
-  - 👉 Validation: RegEx
-  - 👉 Email factory
-- Login
-  - 👉 Login with Facebook / Google
-- Forgot pass
-  - 👉 Email factory
-- Reset pass
-  - 👉 Validation: RegEx
+---
+### PROYECTO
+- Revisar Vercel y Heroku
+- Refactorizar Scafolding del back
 
-#### Forms User
-- Perfil
-  - 👉 send feedback
-- Preferences
-  - 👉 update info
-  - 👉 manage iniciativas
-  - 👉 delete account
+---
+### PRODUCTO
+
+# 🎃 [Jorge] LOGIN
+### ui
+### server
+- 🔥 google (inicio de sesión y logout) || redirección a Front
+- 🔥 gestionar GUARD para google
 
 
-#### Components
-- Onboarding: 
-  - 👉 👉 Carrusel
-- Home: 
-  - 👉 Short Time / Dashboard / See full
-  - 👉 Short table / pagination [login]
-- Calculator: 
-  - 👉 👉 Form
-- Logros: 
-  - 👉 Complete table [login]
-- Results: 
-  - 👉 👉 Complete Dashboard
-  - 👉 Suggested solutions
-    - cards
-- Ranking: 
-  - 👉 Complete table [login]
-    - filters, pagination
-- Subscription: 
-  - 👉 👉 Pricing table [login]
-    - free, one donation, montyly subscription
-
-- Help
-  - 👉 FAQS about Carbon
-  - 👉 Write feedback
+# 👹 [Juan]  ONBOARDING
+### ui
+- carrusel
+### server
+- ⬅️ GET información de Onboarding
 
 
-#### Integrations
-- Calculator:
-  - 👉 phone API
-  - 👉 websocket Chatbot
-- Subscription: 
-  - 👉 👉 Stripe
-
-### States
-- Skeleton - loading
-- Spring - motion
-- States - interaction 
-- States - error / success
-
-### Styling
-- UX Routing
-  - ✅ layout
-  - ✅ pages
-  - ✅ components
-  - ✅ elements
-
-- UI styling
-  - UI Kit
-  - Assets
+# 🎃 [Jorge] CALCULADORA 
+👉 Hablar con UX para Hacer al menos una vez por semana
+### ui
+- scroll top en botones de prev | next
+- scroll bottom en el último paso
+- 🔥 añadir formulario
+### server
+- 🔥 ⬅️ POST entrada en la BBDD calculadora
 
 
-----------------
+# 🎃 [Jorge] HOME 
+# ui
+- 🔥 tamaños de los elementos
+  - histórico de entradas
+  - card (comparativa de carbon)
+  - entradas último daily (display fecha)
+### server
+- 🔥 ⬅️ GET BOOL daily entry -> display modal
+- 🔥 ⬅️ GET acumulado vertical de huella de carbono (⬅️ query fecha, vertical)
+- 🔥 ⬅️ GET resultados de último daily (⬅️ query por fecha )
+- 🔥 ⬅️ GET diferencia acumulado entradas en el formulario
 
-## BBDD
+# [Pte asign] DAILY
+### ui
+- formulario checkbox
+### server
+- ⬅️ POST acciones diarias que bajan el impacto de la huella
+- ⬅️ GET descuentos de usuario
 
-#### USER
-- image:
-- pro: bool
-- location: 
-
-#### CALCULATOR
-- date:
-- entry:
-- self-calculated: 
-
-#### SOLUTION
-- ideas: …
+# [Pte asign] ACCIONES
+👉 Hablar con UX para funsionarlo con Daily
+### ui
+### server
 
 
-----------------
+# [Pte asign] LOGROS
+👉 Hablar con UX para funsionarlo con Daily
+### ui
+### server
+
+
+# 👹 [Juan] RANKING -  MAPA
+### ui
+- 🔥 integrar en la pantalla
+### server
+- 'Misma BBDD de RANKING - LISTADO' 
+
+
+# 🎃 [Jorge] RANKING - LISTADO
+### ui
+- integrar en la pantalla
+### server
+- 🔥 ⬅️ GET Obtener todos los usuarios ORDER huella de carbono 
+
+
+# 🎃 [Jorge] RANKING - COMPARADOR
+### ui
+- diseños de pantalla
+### server
+- ⬅️ GET Obtener el usuario 1 || 2 
+- 🔥 ⬅️ GET Obtener comparativa de huella de carbono entre usuario 1 || 2 (⬅️  query por fecha)
+
+
+# 🎃 [Jorge] INICIATIVAS
+### ui
+- estilo visual final
+### server
+- ⬅️ GET obtener todas las iniciativas
+- ⬅️ POST con la iniciativa e importe de donativo
+- 🔥 integración stripe para el pago
+
+
+# [Pte asign] PERFIL
+### ui
+- eliminar Modo oscuro
+- eliminar Accesibilidad
+- añadir enlaces de gestionar suscripción (o eliminar en últimas)
+### server
+- ⬅️ POST feedback de usuario
+- ⬅️ GET FAQs de usuario
+- 🔥 ⬅️ POST cerrar sesión (google, normal)
+
+
+
 
 <!-- 
 
@@ -106,44 +123,5 @@ CALCULATOR:
 - vertical: https://codesandbox.io/s/swtow
 - horizontal: https://codesandbox.io/s/8v7m1?file=/src/Stepper.js
 - Horizonatl: https://codesandbox.io/s/chakra-stepper-hook-bx8zf
-
-
-DASHBOARD:
-👉 Chart: 
-- 
-
-
-ACCIONES:
-🤖  Selector
-
-
-LOGROS:
-🤖  Ver logros
-
-
-RANKING:
-
-👉 Table:
-- https://codesandbox.io/s/o6psn
-- https://choc-ui.tech/docs/lists/tables
-- https://codesandbox.io/s/chakra-ui-react-table-nextjs-lxvru?file=/src/components/Table/Table.tsx
-- https://codesandbox.io/s/leasing-dashboard-93g2m?file=/src/GridView/GridView.js
-- https://codesandbox.io/s/react-table-executions-6gjy1?file=/src/App.js
-
-👉 Map:
-- 
-
-🤖 Comparador: 
-- 
-
-ONBOARDING: 
-👉 Carrousel: 
-- 
-
-
-INICIATIVAS:
-👉 Stripe: 
-- 
-
 
  -->
