@@ -11,4 +11,4 @@ export const DataProvider = ({ children }) => {
   )
 }
 
-export const useFormData = () => useContext(DataContext)
+export const useCalculatorFormData = () => useContext(DataContext)
