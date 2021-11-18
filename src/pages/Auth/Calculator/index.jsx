@@ -2,7 +2,7 @@
 import { Heading, Text } from '@chakra-ui/react'
 import { Modal } from 'components/ui/Modal'
 import { RegisterTYP } from 'components/Auth/Register/TYP'
-import { CalculadoraForm } from 'components/Auth/Calculator/Form'
+import { CalculadoraForm } from 'components/Auth/Calculator/Wizard'
 // hooks
 import { useDisclosure } from '@chakra-ui/hooks'
 import { useEffect } from 'react'

@@ -27,8 +27,6 @@
 # 👹 [Juan]  ONBOARDING
 ### ui
 - carrusel
-### server
-- ⬅️ GET información de Onboarding
 
 
 # 🎃 [Jorge] CALCULADORA 
@@ -77,6 +75,7 @@
 - 🔥 integrar en la pantalla
 ### server
 - 'Misma BBDD de RANKING - LISTADO' 
+- 🔥 Google ubicación
 
 
 # 🎃 [Jorge] RANKING - LISTADO
