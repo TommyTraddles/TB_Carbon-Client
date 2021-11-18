@@ -11,7 +11,8 @@ import { user } from 'assets/data'
 
 export const SubscriptionModal = () => {  
   const options = Object.keys(subsOptions).map(e => subsOptions[e].value)
-  // 🔥 se obtiene de usuario
+  
+  // se obtiene de usuario
   const [plan, setplan] = useState(user.plan)
   const handleChange = (e) => setplan(e)
   const { getRootProps, getRadioProps } = useRadioGroup({

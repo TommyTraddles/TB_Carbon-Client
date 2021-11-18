@@ -26,7 +26,7 @@ export const IniciativaForm = ({ id }) => {
 
   return (
     <>
-      {/* Donation Form */}
+      {/* 🔥  Donation Form */}
       <form method="POST" onSubmit={handleSubmit}>
         <VStack>
           <NumberInput

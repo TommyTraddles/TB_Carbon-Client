@@ -1,8 +1,9 @@
 // components
 import { Heading, Button } from '@chakra-ui/react'
-import { ResumeStatistics } from 'components/App/Results/Statistics-short'
-import { ResumeSolutions } from 'components/App/Results/Solutions-short'
-import { CalculatorModal } from 'components/App/Calculator/Modal'
+import { ResumeStatistics } from 'components/App/Home/Dashboard-acumulado'
+import { ResumeSolutions } from 'components/App/Home/Dashboard-diario'
+import { CalculatorModal } from 'components/App/Home/Modal'
+import { ResumeStats } from 'components/App/Home/Stats-diario'
 import { Modal } from 'components/ui/Modal'
 // data
 import { user } from 'assets/data'
@@ -19,10 +20,16 @@ export const Home = () => {
     if (!user.today_input && !user.today_input_skip) CoO()
   }, [CoO])
 
+
+  // fetch
+
+
   return (
     <>
       <Heading> Progeso </Heading>
 
+      <ResumeStats />
+      <br />
       <ResumeStatistics />
       <br />
       <ResumeSolutions />

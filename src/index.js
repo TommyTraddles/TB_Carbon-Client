@@ -10,23 +10,33 @@ import 'theme/styles.css'
 import { DEMO_LINKS } from 'components/_DEMO-LINKS'
 
 // routing
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom'
 import { Private } from 'layout/Private'
 import { Public } from 'layout/Public'
-import { paths } from 'services/routes'
+import { paths } from 'services/routes'
+
+// context
+import { DataProvider } from 'services/hooks/use-calculator-form-data'
 
 ReactDOM.render(
   <React.StrictMode>
-    <ChakraProvider theme={theme}>
-      <Router>
-        <DEMO_LINKS/>
-        <Switch>
-          <Route path='/auth' component={Public} />
-          <Route path='/' component={Private} />
-          <Redirect to={paths.index}/>
-        </Switch>
-      </Router>
-    </ChakraProvider>
+    <DataProvider>
+      <ChakraProvider theme={theme}>
+        <Router>
+          <DEMO_LINKS />
+          <Switch>
+            <Route path="/auth" component={Public} />
+            <Route path="/" component={Private} />
+            <Redirect to={paths.index} />
+          </Switch>
+        </Router>
+      </ChakraProvider>
+    </DataProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )
