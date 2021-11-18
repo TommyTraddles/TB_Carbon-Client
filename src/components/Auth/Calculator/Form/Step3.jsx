@@ -1,27 +1,34 @@
-// components
+// compstep_three_ants
 import {
   FormControl,
   FormLabel,
   FormHelperText,
   Input,
   Box,
+  HStack,
+  Button,
 } from '@chakra-ui/react'
-import { WizardSteps } from '../Wizard/Steps'
+import { Card } from 'components/ui/Card'
 // hooks
 import { useForm } from 'react-hook-form'
 import { useCalculatorFormData } from 'services/hooks/use-calculator-form-data'
 
 export const Step3 = ({ wizard }) => {
- 
+
   // ✅  form Data
   const { data, setValue } = useCalculatorFormData()
-  const { register, formState: { errors }, handleSubmit, trigger } = useForm({
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    trigger,
+  } = useForm({
     defaultValues: {
       step_three_a: data.step_three_a,
       step_three_b: data.step_three_b,
       step_three_c: data.step_three_c,
       step_three_d: data.step_three_d,
-    }
+    },
   })
 
   // ✅  form validation
@@ -35,26 +42,22 @@ export const Step3 = ({ wizard }) => {
   // ✅ handle submit
   const onSubmit = async (e) => {
     setValue(e)
-    console.info('> form:', e)
-    console.info('> errors', errors)
-    console.info('> context-form-data: ', data)
-    // console.info('> useCalculatorFormData hook: ', data)
+    wizard.nextStep()
   }
 
   return (
     <>
-      <Box py={3} w='300px'>
+      <Box py={3} w="300px">
         <form onSubmit={handleSubmit(onSubmit)}>
-
           {/* 🔥 step_three_a */}
           <FormControl my={2}>
-            <FormLabel size='sm'> step_three_a </FormLabel>
+            <FormLabel size="sm"> step_three_a </FormLabel>
             <Input
               type="text"
               placeholder="text"
               {...register('step_three_a', registerOptions.step_three_a)}
               onKeyUp={() => trigger('step_three_a')}
-              isInvalid={!!errors.step_three_a}
+              isInvalid={errors.step_three_a ? true : false}
               errorBorderColor={errors.step_three_a ? 'red.500' : 'none'}
             />
             {errors.step_three_a && (
@@ -73,7 +76,7 @@ export const Step3 = ({ wizard }) => {
               {...register('step_three_b', registerOptions.step_three_b)}
               onKeyUp={() => trigger('step_three_b')}
               isInvalid={errors.step_three_b ? true : false}
-              errorBorderColor={errors.step_three_b ? 'red.500' : 'none'}
+              errorBorderColor={errors.step_three_b ? 'red.500' : 'nstep_three_a'}
             />
             {errors.step_three_b && (
               <FormHelperText color="red.500">
@@ -91,7 +94,7 @@ export const Step3 = ({ wizard }) => {
               {...register('step_three_c', registerOptions.step_three_c)}
               onKeyUp={() => trigger('step_three_c')}
               isInvalid={errors.step_three_c ? true : false}
-              errorBorderColor={errors.step_three_c ? 'red.500' : 'none'}
+              errorBorderColor={errors.step_three_c ? 'red.500' : 'nstep_three_a'}
             />
             {errors.step_three_c && (
               <FormHelperText color="red.500">
@@ -99,7 +102,6 @@ export const Step3 = ({ wizard }) => {
               </FormHelperText>
             )}
           </FormControl>
-
 
           {/* 🔥 step_three_d */}
           <FormControl my={2}>
@@ -110,7 +112,7 @@ export const Step3 = ({ wizard }) => {
               {...register('step_three_d', registerOptions.step_three_d)}
               onKeyUp={() => trigger('step_three_d')}
               isInvalid={errors.step_three_d ? true : false}
-              errorBorderColor={errors.step_three_d ? 'red.500' : 'none'}
+              errorBorderColor={errors.step_three_d ? 'red.500' : 'nstep_three_a'}
             />
             {errors.step_three_d && (
               <FormHelperText color="red.500">
@@ -120,7 +122,39 @@ export const Step3 = ({ wizard }) => {
           </FormControl>
 
           {/* 🔥 step_three_d */}
-          <WizardSteps wizard={wizard} fetch={onSubmit}/>
+          {wizard.activeStep !== wizard.steps.length - 1 && (
+            <Card
+              // position="fixed"
+              // bottom={3}
+              // left={0}
+              // right={0}
+              // bg='white'
+              maxW="sm"
+              h={16}
+              pt={3}
+              m="auto"
+            >
+              <HStack width="full" justify="flex-end">
+                <Button
+                  mr={4}
+                  variant="ghost"
+                  size="md"
+                  onClick={wizard.prevStep}
+                  isDisabled={wizard.activeStep === 0}
+                >
+                  Previo
+                </Button>
+                <Button
+                  type="submit"
+                  isDisabled={wizard.nextDisabled}
+                  size="sm"
+                  onClick={fetch}
+                >
+                  {wizard.isLast ? 'Finaliza' : 'Siguiente'}
+                </Button>
+              </HStack>
+            </Card>
+          )}
         </form>
       </Box>
     </>

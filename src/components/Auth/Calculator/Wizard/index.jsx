@@ -20,33 +20,11 @@ const steps = [
     icon: FiCheckCircle,
   },
 ]
-// const steps = [
-//   { label: '' },
-//   { label: '' },
-//   { label: '' },
-//   { label: '' },
-//   { label: '' },
-//   { label: '' },
-//   {
-//     label: '',
-//     isCompletedStep: true,
-//     icon: FiCheckCircle,
-//   },
-// ]
 
 export const CalculadoraForm = () => {
   const { nextStep, prevStep, reset, activeStep } = useSteps({
     initialStep: 0,
   })
-
-  const handleNext = () => {
-    // window.scrollTo(0, 0)
-    nextStep()
-  }
-  const handlePrev = () => {
-    // window.scrollTo(0, 0)
-    prevStep()
-  }
 
   return (
     <>
@@ -63,8 +41,7 @@ export const CalculadoraForm = () => {
               <Step width="100%" label={label} key={label} icon={icon}>
                 {!isLast ? (
                   <>
-                  {/* ❌ ❌ ❌ ❌ 1 STEPER COMO UN TUBO */}
-                  <WizardContents my={1} index={index}  wizard={{ steps, activeStep, handleNext, handlePrev,}} />
+                  <WizardContents my={1} index={index}  wizard={{ steps, activeStep, nextStep, prevStep,}} />
                   </> 
                 ) : (
                   <Flex

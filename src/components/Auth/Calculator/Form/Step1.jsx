@@ -5,23 +5,30 @@ import {
   FormHelperText,
   Input,
   Box,
+  HStack,
+  Button,
 } from '@chakra-ui/react'
-import { WizardSteps } from '../Wizard/Steps'
+import { Card } from 'components/ui/Card'
 // hooks
 import { useForm } from 'react-hook-form'
 import { useCalculatorFormData } from 'services/hooks/use-calculator-form-data'
 
 export const Step1 = ({ wizard }) => {
- 
+
   // ✅  form Data
   const { data, setValue } = useCalculatorFormData()
-  const { register, formState: { errors }, handleSubmit, trigger } = useForm({
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    trigger,
+  } = useForm({
     defaultValues: {
       step_one_a: data.step_one_a,
       step_one_b: data.step_one_b,
       step_one_c: data.step_one_c,
       step_one_d: data.step_one_d,
-    }
+    },
   })
 
   // ✅  form validation
@@ -35,19 +42,16 @@ export const Step1 = ({ wizard }) => {
   // ✅ handle submit
   const onSubmit = async (e) => {
     setValue(e)
-    console.info('> form:', e)
-    console.info('> errors', errors)
-    console.info('> context-form-data: ', data)
+    wizard.nextStep()
   }
 
   return (
     <>
-      <Box py={3} w='300px'>
+      <Box py={3} w="300px">
         <form onSubmit={handleSubmit(onSubmit)}>
-
           {/* 🔥 step_one_a */}
           <FormControl my={2}>
-            <FormLabel size='sm'> step_one_a </FormLabel>
+            <FormLabel size="sm"> step_one_a </FormLabel>
             <Input
               type="text"
               placeholder="text"
@@ -99,7 +103,6 @@ export const Step1 = ({ wizard }) => {
             )}
           </FormControl>
 
-
           {/* 🔥 step_one_d */}
           <FormControl my={2}>
             <FormLabel> step_one_d </FormLabel>
@@ -119,8 +122,39 @@ export const Step1 = ({ wizard }) => {
           </FormControl>
 
           {/* 🔥 step_one_d */}
-          <WizardSteps wizard={wizard} fetch={onSubmit}/>
-
+          {wizard.activeStep !== wizard.steps.length - 1 && (
+            <Card
+              // position="fixed"
+              // bottom={3}
+              // left={0}
+              // right={0}
+              // bg='white'
+              maxW="sm"
+              h={16}
+              pt={3}
+              m="auto"
+            >
+              <HStack width="full" justify="flex-end">
+                <Button
+                  mr={4}
+                  variant="ghost"
+                  size="md"
+                  onClick={wizard.prevStep}
+                  isDisabled={wizard.activeStep === 0}
+                >
+                  Previo
+                </Button>
+                <Button
+                  type="submit"
+                  isDisabled={wizard.nextDisabled}
+                  size="sm"
+                  onClick={fetch}
+                >
+                  {wizard.isLast ? 'Finaliza' : 'Siguiente'}
+                </Button>
+              </HStack>
+            </Card>
+          )}
         </form>
       </Box>
     </>
