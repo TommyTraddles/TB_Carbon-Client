@@ -8,7 +8,7 @@ import { paths } from 'services/routes'
 export const Form = () => {
   return (
     <>
-      <Card bg="red.100">
+      <Card bg="blue.100">
         <Heading size="md"> Formulario de CO2 </Heading>
         <Button>
           <Link to={paths.home}> ver resultado </Link>
