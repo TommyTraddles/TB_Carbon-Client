@@ -5,13 +5,13 @@ import {
   FormHelperText,
   Input,
   Box,
-  Button,
 } from '@chakra-ui/react'
+import { WizardSteps } from '../Wizard/Steps'
 // hooks
 import { useForm } from 'react-hook-form'
 import { useCalculatorFormData } from 'services/hooks/use-calculator-form-data'
 
-export const Step6 = () => {
+export const Step6 = ({ wizard }) => {
  
   // ✅  form Data
   const { data, setValue } = useCalculatorFormData()
@@ -121,10 +121,8 @@ export const Step6 = () => {
 
 
           {/* 🔥 step_six_d */}
-          {/* 🔥 submit */}
-          <Button type="submit" w="full">
-            Login
-          </Button>
+          <WizardSteps wizard={wizard} fetch={onSubmit}/>
+
         </form>
       </Box>
     </>

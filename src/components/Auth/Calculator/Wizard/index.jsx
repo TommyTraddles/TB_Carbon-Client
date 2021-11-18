@@ -3,7 +3,6 @@ import { Flex } from '@chakra-ui/react'
 import { Step, Steps, useSteps } from 'chakra-ui-steps'
 import { Card } from 'components/ui/Card'
 import { WizardContents } from 'components/Auth/Calculator/Wizard/Contents'
-import { WizardStepButtons } from 'components/Auth/Calculator/Wizard/Steps'
 import { WizarResetPrompt } from 'components/Auth/Calculator/Wizard/Reset'
 // icons
 import { FiCheckCircle } from 'react-icons/fi'
@@ -21,6 +20,19 @@ const steps = [
     icon: FiCheckCircle,
   },
 ]
+// const steps = [
+//   { label: '' },
+//   { label: '' },
+//   { label: '' },
+//   { label: '' },
+//   { label: '' },
+//   { label: '' },
+//   {
+//     label: '',
+//     isCompletedStep: true,
+//     icon: FiCheckCircle,
+//   },
+// ]
 
 export const CalculadoraForm = () => {
   const { nextStep, prevStep, reset, activeStep } = useSteps({
@@ -50,11 +62,14 @@ export const CalculadoraForm = () => {
             return (
               <Step width="100%" label={label} key={label} icon={icon}>
                 {!isLast ? (
-                  <WizardContents my={1} index={index}/>
+                  <>
+                  {/* ❌ ❌ ❌ ❌ 1 STEPER COMO UN TUBO */}
+                  <WizardContents my={1} index={index}  wizard={{ steps, activeStep, handleNext, handlePrev,}} />
+                  </> 
                 ) : (
                   <Flex
                     mt="2"
-                    w='full'
+                    w="full"
                     py={4}
                     rounded="md"
                     align="center"
@@ -68,25 +83,6 @@ export const CalculadoraForm = () => {
             )
           })}
         </Steps>
-
-        {activeStep !== steps.length - 1 && (
-          <Card
-            position="fixed"
-            bottom={3}
-            left={0}
-            right={0}
-            maxW="sm"
-            h={16}
-            pt={3}
-            m="auto"
-          >
-            <WizardStepButtons
-              nextStep={handleNext}
-              prevStep={handlePrev}
-              prevDisabled={activeStep === 0}
-            />
-          </Card>
-        )}
       </Card>
     </>
   )

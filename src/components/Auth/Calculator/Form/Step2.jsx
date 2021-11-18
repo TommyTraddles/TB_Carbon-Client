@@ -1,17 +1,17 @@
-// components
+// compstep_two_ants
 import {
   FormControl,
   FormLabel,
   FormHelperText,
   Input,
   Box,
-  Button,
 } from '@chakra-ui/react'
+import { WizardSteps } from '../Wizard/Steps'
 // hooks
 import { useForm } from 'react-hook-form'
 import { useCalculatorFormData } from 'services/hooks/use-calculator-form-data'
 
-export const Step2 = () => {
+export const Step2 = ({ wizard }) => {
  
   // ✅  form Data
   const { data, setValue } = useCalculatorFormData()
@@ -38,7 +38,6 @@ export const Step2 = () => {
     console.info('> form:', e)
     console.info('> errors', errors)
     console.info('> context-form-data: ', data)
-    // console.info('> useCalculatorFormData hook: ', data)
   }
 
   return (
@@ -54,7 +53,7 @@ export const Step2 = () => {
               placeholder="text"
               {...register('step_two_a', registerOptions.step_two_a)}
               onKeyUp={() => trigger('step_two_a')}
-              isInvalid={!!errors.step_two_a}
+              isInvalid={errors.step_two_a ? true : false}
               errorBorderColor={errors.step_two_a ? 'red.500' : 'none'}
             />
             {errors.step_two_a && (
@@ -73,7 +72,7 @@ export const Step2 = () => {
               {...register('step_two_b', registerOptions.step_two_b)}
               onKeyUp={() => trigger('step_two_b')}
               isInvalid={errors.step_two_b ? true : false}
-              errorBorderColor={errors.step_two_b ? 'red.500' : 'none'}
+              errorBorderColor={errors.step_two_b ? 'red.500' : 'nstep_two_a'}
             />
             {errors.step_two_b && (
               <FormHelperText color="red.500">
@@ -91,7 +90,7 @@ export const Step2 = () => {
               {...register('step_two_c', registerOptions.step_two_c)}
               onKeyUp={() => trigger('step_two_c')}
               isInvalid={errors.step_two_c ? true : false}
-              errorBorderColor={errors.step_two_c ? 'red.500' : 'none'}
+              errorBorderColor={errors.step_two_c ? 'red.500' : 'nstep_two_a'}
             />
             {errors.step_two_c && (
               <FormHelperText color="red.500">
@@ -110,7 +109,7 @@ export const Step2 = () => {
               {...register('step_two_d', registerOptions.step_two_d)}
               onKeyUp={() => trigger('step_two_d')}
               isInvalid={errors.step_two_d ? true : false}
-              errorBorderColor={errors.step_two_d ? 'red.500' : 'none'}
+              errorBorderColor={errors.step_two_d ? 'red.500' : 'nstep_two_a'}
             />
             {errors.step_two_d && (
               <FormHelperText color="red.500">
@@ -119,12 +118,9 @@ export const Step2 = () => {
             )}
           </FormControl>
 
-
           {/* 🔥 step_two_d */}
-          {/* 🔥 submit */}
-          <Button type="submit" w="full">
-            Login
-          </Button>
+          <WizardSteps wizard={wizard} fetch={onSubmit}/>
+
         </form>
       </Box>
     </>
