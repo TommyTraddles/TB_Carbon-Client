@@ -8,7 +8,6 @@ import {
   HStack,
   Button,
 } from '@chakra-ui/react'
-import { Card } from 'components/ui/Card'
 // hooks
 import { useForm } from 'react-hook-form'
 import { useCalculatorFormData } from 'services/hooks/use-calculator-form-data'
@@ -48,7 +47,7 @@ export const Step1 = ({ wizard }) => {
 
   return (
     <>
-      <Box py={3} w="300px">
+      <Box py={1} w="300px">
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* 🔥 step_one_a */}
           <FormControl my={2}>
@@ -124,18 +123,7 @@ export const Step1 = ({ wizard }) => {
 
           {/* 🔥 step_one_d */}
           {wizard.activeStep !== wizard.steps.length - 1 && (
-            <Card
-              // position="fixed"
-              // bottom={3}
-              // left={0}
-              // right={0}
-              // bg='white'
-              maxW="sm"
-              h={16}
-              pt={3}
-              m="auto"
-            >
-              <HStack width="full" justify="flex-end">
+              <HStack width="full" justify="flex-end" m='auto' h={16} mt={3}>
                 <Button
                   mr={4}
                   variant="ghost"
@@ -154,7 +142,6 @@ export const Step1 = ({ wizard }) => {
                   {wizard.isLast ? 'Finaliza' : 'Siguiente'}
                 </Button>
               </HStack>
-            </Card>
           )}
         </form>
       </Box>

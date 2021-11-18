@@ -16,7 +16,8 @@ export const WizarResetPrompt = ({ onReset, ...rest }) => {
   // 
   const handleSubmit = async () => {
     const result = await calculatorAPI.entry(data)
-    console.info(result)
+    console.info('> data sent: ', data)
+    console.info('> response received: ', result)
     history.push(paths.home)
   }
 
