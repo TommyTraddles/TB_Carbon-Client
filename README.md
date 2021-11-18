@@ -32,16 +32,14 @@
 # 🎃 [Jorge] CALCULADORA 
 👉 Hablar con UX para Hacer al menos una vez por semana
 ### ui
-- scroll top en botones de prev | next
-- scroll bottom en el último paso
-- 🔥 añadir formulario
+- 🔥🔥🔥 añadir formulario con preguntas finales
 ### server
 - 🔥 ⬅️ POST entrada en la BBDD calculadora
 
 
 # 🎃 [Jorge] HOME 
 # ui
-- 🔥 tamaños de los elementos
+- 🔥🔥🔥 tamaños de los elementos
   - histórico de entradas
   - card (comparativa de carbon)
   - entradas último daily (display fecha)
