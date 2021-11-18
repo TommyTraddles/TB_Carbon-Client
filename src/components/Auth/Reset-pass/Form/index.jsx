@@ -23,13 +23,13 @@ import { authAPI } from 'services/api'
 import { paths } from 'services/routes'
 
 export const ResetForm = () => {
-  // ✅  retrieve from URL QUERY
+  // retrieve from URL QUERY
   const location = useLocation()
   const query = new URLSearchParams(location.search);
   const token = query.get('token') || '123'
   const email = query.get('email') || 'ill.better.be.off@gmail.com'
 
-  // ✅  form hook
+  // form hook
   const {
     register,
     formState: { errors },
@@ -38,11 +38,11 @@ export const ResetForm = () => {
     getValues,
   } = useForm()
 
-  // ✅  show password
+  // show password
   const [show, setshow] = useState(false)
   const handleShow = () => setshow(!show)
 
-  // ✅  form validation
+  // form validation
   const registerOptions = {
     pass: {
       required: 'campo obligatorio',
@@ -57,7 +57,7 @@ export const ResetForm = () => {
       validate: () => getValues("pass") === getValues("repeat") || 'Las contraseñas deben ser iguales'
     },
   }
-  // ✅ handle submit
+  // handle submit
   const toast = useToast()
   const history = useHistory()
   const [loading, setloading] = useState(false)

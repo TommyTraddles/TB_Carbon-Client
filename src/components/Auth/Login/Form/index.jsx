@@ -26,7 +26,7 @@ import { paths } from 'services/routes'
 
 export const LoginForm = ({ LoC, RoO }) => {
 
-  // ✅  form hook
+  // form hook
   const {
     register,
     formState: { errors },
@@ -35,11 +35,11 @@ export const LoginForm = ({ LoC, RoO }) => {
     setError,
   } = useForm()
   
-  // ✅  show password
+  // show password
   const [show, setshow] = useState(false)
   const handleShow = () => setshow(!show)
 
-  // ✅  form validation
+  // form validation
   const registerOptions = {
     email: {
       required: 'campo requerido',
@@ -52,7 +52,7 @@ export const LoginForm = ({ LoC, RoO }) => {
       required: 'campo requerido',
     },
   }
-  // ✅ handle submit
+  // handle submit
   const toast = useToast()
   const history = useHistory()
   const [loading, setloading] = useState(false)

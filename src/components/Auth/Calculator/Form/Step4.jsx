@@ -15,7 +15,7 @@ import { useCalculatorFormData } from 'services/hooks/use-calculator-form-data'
 
 export const Step4 = ({ wizard }) => {
 
-  // ✅  form Data
+  // form Data
   const { data, setValue } = useCalculatorFormData()
   const {
     register,
@@ -31,7 +31,7 @@ export const Step4 = ({ wizard }) => {
     },
   })
 
-  // ✅  form validation
+  // form validation
   const registerOptions = {
     step_four_a: { required: 'campo requerido' },
     step_four_b: { required: 'campo requerido' },
@@ -39,7 +39,7 @@ export const Step4 = ({ wizard }) => {
     step_four_d: { required: 'campo requerido' },
   }
 
-  // ✅ handle submit
+  // handle submit
   const onSubmit = async (e) => {
     setValue(e)
     wizard.nextStep()

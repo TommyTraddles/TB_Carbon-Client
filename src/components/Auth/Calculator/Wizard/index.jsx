@@ -33,7 +33,6 @@ export const CalculadoraForm = () => {
           checkIcon={FiCheckCircle}
           orientation="vertical"
           activeStep={activeStep}
-          // size='sm'
         >
           {steps.map(({ label, icon }, index) => {
             const isLast = index === steps.length - 1

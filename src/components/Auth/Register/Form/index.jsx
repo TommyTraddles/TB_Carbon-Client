@@ -25,7 +25,7 @@ import { paths } from 'services/routes'
 
 export const RegisterForm = ({ RoC }) => {
 
-  // ✅  form hook
+  // form hook
   const {
     register,
     formState: { errors },
@@ -34,11 +34,11 @@ export const RegisterForm = ({ RoC }) => {
     setError,
   } = useForm()
 
-  // ✅  show password
+  // show password
   const [show, setshow] = useState(false)
   const handleShow = () => setshow(!show)
 
-  // ✅  form validation
+  // form validation
   const registerOptions = {
     email: {
       required: 'campo requerido',
@@ -57,7 +57,7 @@ export const RegisterForm = ({ RoC }) => {
       },
     },
   }
-  // ✅ handle submit
+  // handle submit
   const toast = useToast()
   const history = useHistory()
   const [loading, setloading] = useState(false)
@@ -88,16 +88,6 @@ export const RegisterForm = ({ RoC }) => {
 
       <Box my={4}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          {/* 🔥 new email */}
-          {/* <NewInputEmail
-            kw='email'
-            title='Email'
-            placeholder='hola@gmail.com'
-            errors={errors}
-            {...register('email', registerOptions.email)}
-            onKeyUp={() => trigger('email')}
-          /> */}
-
           {/* 🔥 email */}
           <FormControl my={2}>
             <FormLabel> Email </FormLabel>

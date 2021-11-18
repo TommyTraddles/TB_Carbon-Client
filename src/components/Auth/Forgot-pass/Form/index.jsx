@@ -19,7 +19,7 @@ import { paths } from 'services/routes'
 
 export const ForgotForm = () => {
   
-  // ✅  form hook
+  // form hook
   const {
     register,
     formState: { errors },
@@ -28,7 +28,7 @@ export const ForgotForm = () => {
     setError,
   } = useForm()
   
-  // ✅  form validation
+  // form validation
   const registerOptions = {
     email: {
       required: 'campo requerido',
@@ -39,7 +39,7 @@ export const ForgotForm = () => {
     },
   }
   
-  // ✅ handle submit
+  // handle submit
   const toast = useToast()
   const history = useHistory()
   const [loading, setloading] = useState(false)

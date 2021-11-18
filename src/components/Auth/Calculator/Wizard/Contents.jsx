@@ -22,7 +22,7 @@ export const WizardContents = ({ wizard, index, ...rest }) => {
       {...rest}
     >
 
-      {/* ❌ ❌ ❌ ❌ REFACTORIZAR */}
+      {/* ❌ REFACTORIZAR */}
       {index === 0 && <Step1 wizard={wizard} />}
       {index === 1 && <Step2 wizard={wizard} />}
       {index === 2 && <Step3 wizard={wizard} />}
